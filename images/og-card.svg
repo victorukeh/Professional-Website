@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="og" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1c1c1e"/>
+      <stop offset="100%" style="stop-color:#000000"/>
+    </linearGradient>
+    <linearGradient id="oga" x1="80%" y1="0%" x2="20%" y2="100%">
+      <stop offset="0%" style="stop-color:#2997ff;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#0066cc;stop-opacity:0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#og)"/>
+  <ellipse cx="950" cy="180" rx="320" ry="280" fill="url(#oga)"/>
+  <text x="72" y="280" fill="#f5f5f7" font-family="system-ui,Inter,sans-serif" font-size="56" font-weight="600">Ukeh Victor </text>
+  <text x="72" y="350" fill="#a1a1a6" font-family="system-ui,Inter,sans-serif" font-size="28" font-weight="500">Senior Backend and Distributed Systems</text>
+  <text x="72" y="520" fill="#6e6e73" font-family="system-ui,Inter,sans-serif" font-size="20">Production APIs, USD contract engagements</text>
+  <rect x="72" y="400" width="120" height="4" rx="2" fill="#2997ff" opacity="0.9"/>
+</svg>

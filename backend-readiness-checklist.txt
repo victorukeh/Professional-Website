@@ -1,0 +1,53 @@
+Backend Readiness Checklist
+
+Use this one page checklist before launching a backend service that handles critical user flows.
+
+1) Idempotency and Retries
+- Every write path is safe to retry.
+- Idempotency keys are enforced at API boundaries.
+- Queue consumers are idempotent and side effect safe.
+
+2) Observability Baseline
+- Structured logs include request and correlation IDs.
+- Metrics exist for latency, error rate, and saturation.
+- Alerting is configured for API and background job failures.
+
+3) Security and Fraud Controls
+- Authentication and authorization are enforced per route.
+- Sensitive data handling is documented and tested.
+- Abuse and fraud controls are defined for money movement paths.
+
+4) Data Integrity
+- Critical data updates use transactions or equivalent guarantees.
+- Validation exists at input, domain, and persistence layers.
+- Backfill and correction scripts are reviewed and repeatable.
+
+5) Release Safety
+- Rollout plan includes rollback steps.
+- Migrations are backward compatible where possible.
+- Cutover checklist exists with owner and communication plan.
+
+6) Incident Readiness
+- Runbooks exist for top failure scenarios.
+- On call ownership is clear.
+- Escalation path is documented with response time expectations.
+
+7) Performance and Capacity
+- Load profile is known for peak and average traffic.
+- Performance budgets are defined for critical endpoints.
+- Capacity limits and scaling strategy are documented.
+
+8) Reliability Testing
+- Happy path, failure path, and timeout path are tested.
+- Dependency failures are simulated in staging.
+- Recovery behavior is validated before launch.
+
+9) Documentation
+- Architecture overview is current.
+- API contracts and event schemas are versioned.
+- Operational playbooks are accessible to the team.
+
+10) Ownership and Accountability
+- Each critical service has a clear technical owner.
+- Service level objectives are defined and reviewed.
+- Post incident review process is in place.

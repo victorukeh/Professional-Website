@@ -1,0 +1,11 @@
+# Static site: Render uploads the files under staticPublishPath to the CDN.
+# Do NOT put shell commands (e.g. npm run dev) in “Publish directory” in the dashboard—only a path like . or dist.
+# Local preview: npm run dev
+# https://render.com/docs/static-sites
+services:
+  - type: web
+    name: personal-website
+    runtime: static
+    plan: free
+    buildCommand: "true"
+    staticPublishPath: .

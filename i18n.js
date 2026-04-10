@@ -233,7 +233,7 @@
       personality: {
         title: "How I work",
         body:
-          "Async first and documentation heavy. I avoid temporary fixes that become permanent. Based in Nigeria (WAT) with practical overlap for EU and US morning calls. Deployments and cutovers are planned, communicated, and tested.",
+          "Async first and documentation heavy. I avoid temporary fixes that become permanent. My work overlaps EU and US morning calls and working schedules. Deployments and cutovers are planned, communicated, and tested.",
       },
       skills: {
         title: "Technical stack",
@@ -491,7 +491,7 @@
       personality: {
         title: "How I dey work",
         body:
-          "Async first and documentation heavy. I no like temporary fix wey go become permanent. I dey Nigeria (WAT) with practical overlap for EU and US morning call. Deployment and cutover dey planned, communicated, and tested.",
+          "Async first and documentation heavy. I no like temporary fix wey go become permanent. My work dey overlap with EU and US morning calls and working schedules. Deployment and cutover dey planned, communicated, and tested.",
       },
       skills: {
         title: "Technical stack",

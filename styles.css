@@ -1593,7 +1593,7 @@ body {
 
 .intake-section {
   border-top: 1px solid var(--border);
-  background: var(--bg-elevated);
+  background: var(--bg);
 }
 
 .intake-form {

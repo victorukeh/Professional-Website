@@ -1,6 +1,9 @@
 {
   "name": "personal-website",
   "private": true,
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "serve -s . -l ${PORT:-3000}",
     "dev": "serve -s . -l 3000"

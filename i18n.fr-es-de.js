@@ -211,7 +211,7 @@
   },
   "personality": {
     "title": "Façon de travailler",
-    "body": "Priorité à l’asynchrone et à la documentation. Je évite les correctifs temporaires qui deviennent permanents. Basé au Nigeria (WAT) avec recouvrement pratique des matinées EU et US. Déploiements et bascules planifiés, communiqués et testés."
+    "body": "Priorité à l’asynchrone et à la documentation. J’évite les correctifs temporaires qui deviennent permanents. Mon travail s’aligne sur les matinées EU et US et les plannings de travail. Déploiements et bascules planifiés, communiqués et testés."
   },
   "skills": {
     "title": "Stack technique",
@@ -452,7 +452,7 @@
   },
   "personality": {
     "title": "Forma de trabajar",
-    "body": "Prioridad al trabajo asíncrono y a la documentación. Evito parches temporales que se quedan. Basado en Nigeria (WAT) con solapamiento práctico con mañanas de la UE y EE. UU. Despliegues y cortes planificados, comunicados y probados."
+    "body": "Prioridad al trabajo asíncrono y a la documentación. Evito parches temporales que se quedan. Mi trabajo se solapa con las mañanas de la UE y EE. UU. y los horarios laborales. Despliegues y cortes planificados, comunicados y probados."
   },
   "skills": {
     "title": "Stack técnico",
@@ -693,7 +693,7 @@
   },
   "personality": {
     "title": "Arbeitsweise",
-    "body": "Async-first und stark dokumentiert. Ich vermeide temporäre Fixes, die dauerhaft bleiben. Standort Nigeria (WAT) mit praktischer Überlappung zu EU- und US-Vormittagen. Deployments und Cutovers sind geplant, kommuniziert und getestet."
+    "body": "Async-first und stark dokumentiert. Ich vermeide temporäre Fixes, die dauerhaft bleiben. Meine Arbeit überlappt mit EU- und US-Vormittagen und Arbeitszeiten. Deployments und Cutovers sind geplant, kommuniziert und getestet."
   },
   "skills": {
     "title": "Technischer Stack",

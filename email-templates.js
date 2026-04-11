@@ -109,7 +109,7 @@
       bodies.forEach(function (body, i) {
         const tierName = pricing?.tiers?.[i]?.name || "Tier " + (i + 1);
         addSection(
-          "Pricing — " + tierName,
+          "Pricing: " + tierName,
           "Pre-filled body when someone uses the pricing card button for this tier.",
           body
         );

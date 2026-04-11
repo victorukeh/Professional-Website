@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Services, rates, stack, and how Victor Ukeh works with teams as a senior backend engineer."
+    />
+    <title>Services · Victor Ukeh</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231c1c1e'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='15' font-weight='600' fill='%232997ff' font-family='system-ui,sans-serif'%3EU%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="theme-boot.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="services">
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+    <header class="site-header" id="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo-mark">Victor Ukeh</a>
+        <button
+          type="button"
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open menu"
+        >
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <a href="work.html" data-i18n="nav.work">Work</a>
+          <a href="services.html" aria-current="page" data-i18n="nav.services">Services</a>
+          <a href="contact.html" class="nav-cta" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="header-tools">
+          <label class="lang-label">
+            <span class="visually-hidden" data-i18n="nav.langAria">Language</span>
+            <select id="lang-select" class="lang-select" aria-label="Language"></select>
+          </label>
+          <button type="button" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
+            <span class="theme-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section page-lead">
+        <div class="container">
+          <p class="page-lead-text" data-i18n="servicesPage.lead">Engagement options, rates, and technical stack.</p>
+        </div>
+      </section>
+
+      <section id="services" class="section services-section">
+        <div class="container">
+          <h2 class="section-title">
+            <span class="section-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V10H8v10"/><path d="M4 10h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10Z"/><path d="M8 10V8a4 4 0 0 1 8 0v2"/></svg>
+            </span>
+            <span data-i18n="services.title">What I do for clients</span>
+          </h2>
+          <p class="section-intro" data-i18n="services.intro">
+            Backend work that respects your users, your ledger, and your on call rotation.
+          </p>
+          <div id="services-root" class="services-grid"></div>
+        </div>
+      </section>
+
+      <section id="pricing" class="section pricing-section">
+        <div class="container">
+          <h2 class="section-title">
+            <span class="section-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </span>
+            <span data-i18n="pricing.title">Engagement and rates</span>
+          </h2>
+          <p class="section-intro" data-i18n="pricing.intro">
+            Indicative USD starting points. Final fees depend on scope, integrations, compliance, and risk.
+          </p>
+          <p class="pricing-fx" data-i18n="pricing.fx">Invoices are in USD unless we agree otherwise in writing.</p>
+          <div id="pricing-root" class="pricing-grid"></div>
+          <p class="pricing-cta-wrap">
+            <a class="btn btn-primary mailto-guided" href="mailto:victorukeh1@gmail.com" data-i18n="pricing.cta">Discuss scope by email</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section personality-section">
+        <div class="container">
+          <div class="personality-card">
+            <h2 class="personality-title" data-i18n="personality.title">How I work</h2>
+            <p class="personality-body" data-i18n="personality.body">
+              Async first and documentation heavy. I avoid temporary fixes that become permanent. My work overlaps EU and US morning calls and working schedules. Deployments and cutovers are planned, communicated, and tested.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section skills-section">
+        <div class="container">
+          <h2 class="section-title">
+            <span class="section-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+            </span>
+            <span data-i18n="skills.title">Technical stack</span>
+          </h2>
+          <p class="section-intro" data-i18n="skills.intro">
+            Grouped for recruiters and clients who need to scan quickly.
+          </p>
+          <div class="skill-bento">
+            <article class="skill-card skill-span-2">
+              <h3 data-i18n="skills.cards.lang">Languages</h3>
+              <ul class="skill-tags">
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>Java</li>
+                <li>Go</li>
+                <li>Python</li>
+              </ul>
+            </article>
+            <article class="skill-card">
+              <h3 data-i18n="skills.cards.backend">Backend &amp; messaging</h3>
+              <ul class="skill-tags">
+                <li>RabbitMQ</li>
+                <li>gRPC</li>
+                <li>Kafka</li>
+                <li>REST</li>
+                <li>Event-driven design</li>
+              </ul>
+            </article>
+            <article class="skill-card">
+              <h3 data-i18n="skills.cards.frameworks">Frameworks</h3>
+              <ul class="skill-tags">
+                <li>NestJS</li>
+                <li>Next.js</li>
+                <li>Express</li>
+                <li>Spring Boot</li>
+                <li>Svelte</li>
+                <li>Vite</li>
+                <li>Gin</li>
+              </ul>
+            </article>
+            <article class="skill-card skill-span-2">
+              <h3 data-i18n="skills.cards.data">Data stores</h3>
+              <ul class="skill-tags">
+                <li>MongoDB</li>
+                <li>PostgreSQL</li>
+                <li>MySQL</li>
+                <li>DynamoDB</li>
+                <li>Redis</li>
+                <li>Clickhouse</li>
+                <li>Aurora</li>
+                <li>Elasticsearch</li>
+              </ul>
+            </article>
+            <article class="skill-card skill-span-2">
+              <h3 data-i18n="skills.cards.cloud">Cloud &amp; DevOps</h3>
+              <ul class="skill-tags">
+                <li>AWS</li>
+                <li>GCP</li>
+                <li>Firebase</li>
+                <li>DigitalOcean</li>
+                <li>Heroku</li>
+                <li>Docker</li>
+                <li>Kubernetes</li>
+                <li>Jenkins</li>
+                <li>GitHub Actions</li>
+                <li>CI/CD</li>
+              </ul>
+            </article>
+            <article class="skill-card">
+              <h3 data-i18n="skills.cards.test">Testing</h3>
+              <ul class="skill-tags">
+                <li>Jest</li>
+                <li>Mocha</li>
+                <li>Cypress</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section checklist-teaser" aria-labelledby="checklist-teaser-heading">
+        <div class="container">
+          <h2 id="checklist-teaser-heading" class="section-title">
+            <span class="section-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </span>
+            <span data-i18n="checklist.title">Free one page backend checklist</span>
+          </h2>
+          <p class="section-intro" data-i18n="checklist.intro">
+            A self serve one page checklist for fintech and high growth teams. No call required.
+          </p>
+          <p class="checklist-teaser-actions">
+            <a class="btn btn-ghost" href="checklist.html" data-i18n="servicesPage.checklistCta">Free one-page backend checklist</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Ukeh Victor</p>
+        <p class="footer-legal">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">·</span>
+          <a href="email-templates.html">Email templates</a>
+          <span aria-hidden="true">·</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="i18n.js" defer></script>
+    <script src="i18n.fr-es-de.js" defer></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>

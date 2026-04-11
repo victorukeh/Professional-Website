@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Selected work, metrics, and experience: Victor Ukeh, senior backend engineer."
+    />
+    <title>Work · Victor Ukeh</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231c1c1e'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='15' font-weight='600' fill='%232997ff' font-family='system-ui,sans-serif'%3EU%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="theme-boot.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="work">
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+    <header class="site-header" id="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo-mark">Victor Ukeh</a>
+        <button
+          type="button"
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open menu"
+        >
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <a href="work.html" aria-current="page" data-i18n="nav.work">Work</a>
+          <a href="services.html" data-i18n="nav.services">Services</a>
+          <a href="contact.html" class="nav-cta" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="header-tools">
+          <label class="lang-label">
+            <span class="visually-hidden" data-i18n="nav.langAria">Language</span>
+            <select id="lang-select" class="lang-select" aria-label="Language"></select>
+          </label>
+          <button type="button" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
+            <span class="theme-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section stats-section" aria-labelledby="stats-heading">
+        <div class="container">
+          <h2 id="stats-heading" class="section-title">
+            <span class="section-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+            </span>
+            <span data-i18n="stats.title">Outcomes that survived production</span>
+          </h2>
+          <p class="section-intro" data-i18n="stats.intro">Figures from production systems, not slide decks.</p>
+          <div class="stats-bento">
+            <article class="stat-card">
+              <span class="stat-value" data-i18n="stats.s1v">&lt;250ms</span>
+              <span class="stat-label" data-i18n="stats.s1l">API latency target</span>
+              <p class="stat-detail" data-i18n="stats.s1d">Kept while scaling savings flows</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value" data-i18n="stats.s2v">~10M / mo</span>
+              <span class="stat-label" data-i18n="stats.s2l">Event-driven requests</span>
+              <p class="stat-detail" data-i18n="stats.s2d">Idempotent savings on payment events</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value" data-i18n="stats.s3v">0%</span>
+              <span class="stat-label" data-i18n="stats.s3l">Fraud cases</span>
+              <p class="stat-detail" data-i18n="stats.s3d">Security posture on critical products</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value" data-i18n="stats.s4v">~1M jobs / day</span>
+              <span class="stat-label" data-i18n="stats.s4l">Fault-tolerant jobs</span>
+              <p class="stat-detail" data-i18n="stats.s4d">High throughput with race conditions removed at the job layer</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value" data-i18n="stats.s5v">99%</span>
+              <span class="stat-label" data-i18n="stats.s5l">Critical delivery bar</span>
+              <p class="stat-detail" data-i18n="stats.s5d">Notifications and savings comms where near enough is not acceptable</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value" data-i18n="stats.s6v">&lt;2h</span>
+              <span class="stat-label" data-i18n="stats.s6l">Customer-visible turnaround</span>
+              <p class="stat-detail" data-i18n="stats.s6d">Tight loops from alert to resolution when money and trust are on the line</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value" data-i18n="stats.s7v">Zero</span>
+              <span class="stat-label" data-i18n="stats.s7l">User disruption on migrations</span>
+              <p class="stat-detail" data-i18n="stats.s7d">Sunsets, cutovers, and data moves without breaking active customers</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value" data-i18n="stats.s8v">~90%</span>
+              <span class="stat-label" data-i18n="stats.s8l">Fewer production fires</span>
+              <p class="stat-detail" data-i18n="stats.s8d">
+                Reliability work that reduced tickets, defects, and repeat incidents
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="case-studies" class="section case-studies-section" aria-labelledby="case-studies-heading">
+        <div class="container">
+          <h2 id="case-studies-heading" class="section-title">
+            <span class="section-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </span>
+            <span data-i18n="caseStudies.title">Selected work</span>
+          </h2>
+          <p class="section-intro" data-i18n="caseStudies.intro">Named projects and outcomes.</p>
+          <div id="case-studies-root" class="case-studies-grid"></div>
+        </div>
+      </section>
+
+      <section id="right-fit" class="section right-fit-section" aria-labelledby="right-fit-heading">
+        <div class="container">
+          <h2 id="right-fit-heading" class="section-title">
+            <span class="section-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <span data-i18n="rightFit.title">Who this is for</span>
+          </h2>
+          <p class="section-intro" data-i18n="rightFit.intro">
+            Clear fit helps both of us move faster.
+          </p>
+          <ul id="right-fit-list" class="right-fit-list" role="list"></ul>
+        </div>
+      </section>
+
+      <section class="section testimonial-section" aria-labelledby="testimonial-heading">
+        <div class="container">
+          <h2 id="testimonial-heading" class="section-title">
+            <span class="section-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 3.417 3.134 7 6 7z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 3.417 3.134 7 6 7z"/></svg>
+            </span>
+            <span data-i18n="testimonial.title">References</span>
+          </h2>
+          <blockquote class="testimonial-block">
+            <p data-i18n="testimonial.body">
+              Formal written recommendations from engineering leadership at Moniepoint and GetStac are available on request, including via LinkedIn.
+            </p>
+          </blockquote>
+          <div id="reference-cards" class="reference-cards" role="list"></div>
+          <p class="testimonial-attribution" data-i18n="testimonial.attribution">
+            Ask when you email or book a call.
+          </p>
+        </div>
+      </section>
+
+      <section id="experience" class="section experience-section">
+        <div class="container">
+          <h2 class="section-title">
+            <span class="section-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>
+            </span>
+            <span data-i18n="exp.title">The track</span>
+          </h2>
+          <p class="section-intro" data-i18n="exp.intro">
+            Think of it as one long run: early levels were tickets and tests; later ones are regulated money and job systems at massive scale. Each waypoint is a chapter, not a checklist.
+          </p>
+          <ol id="experience-timeline" class="game-board" role="list"></ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Ukeh Victor</p>
+        <p class="footer-legal">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">·</span>
+          <a href="email-templates.html">Email templates</a>
+          <span aria-hidden="true">·</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="i18n.js" defer></script>
+    <script src="i18n.fr-es-de.js" defer></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>

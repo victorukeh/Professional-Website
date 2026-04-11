@@ -4,18 +4,41 @@
   global.PORTFOLIO_I18N.fr = {
   "nav": {
     "skip": "Aller au contenu",
+    "home": "Accueil",
+    "work": "Réalisations",
+    "services": "Services",
+    "contact": "Contact",
     "experience": "Expérience",
     "video": "Intro",
-    "services": "Services",
     "pricing": "Tarifs",
     "intake": "Brief projet",
     "checklist": "Checklist gratuite",
     "skills": "Compétences",
-    "contact": "Contact",
     "book": "Prendre rendez-vous",
     "langAria": "Langue",
     "menuOpen": "Ouvrir le menu",
     "menuClose": "Fermer le menu"
+  },
+  "home": {
+    "heroLead": "Backends de production pour la fintech et la croissance — APIs fiables, flux événementiels, systèmes pensés pour l’échelle.",
+    "hubWorkTitle": "Réalisations",
+    "hubWorkDesc": "Études de cas, métriques et parcours.",
+    "hubServicesTitle": "Services",
+    "hubServicesDesc": "Offres, tarifs et stack.",
+    "hubContactTitle": "Contact",
+    "hubContactDesc": "Appel ou message court.",
+    "hubSectionTitle": "Explorer"
+  },
+  "pages": {
+    "docTitle": "Victor Ukeh · Ingénieur backend",
+    "docWork": "Réalisations · Victor Ukeh",
+    "docServices": "Services · Victor Ukeh",
+    "docContact": "Contact · Victor Ukeh",
+    "docChecklist": "Checklist · Victor Ukeh"
+  },
+  "servicesPage": {
+    "lead": "Modalités, tarifs et stack technique.",
+    "checklistCta": "Checklist backend gratuite (une page)"
   },
   "mailto": {
     "subject": "Prise de contact — Victor Ukeh (portfolio)",
@@ -131,17 +154,19 @@
     ]
   },
   "intake": {
-    "title": "Dites-moi ce que vous construisez",
-    "intro": "Les fourchettes automatiques sont souvent trop larges sans contexte. Envoyez un bref descriptif ; je réponds avec une vue argumentée, en général par e-mail.",
+    "title": "Écrivez-moi",
+    "intro": "Quelques lignes suffisent. Je réponds en général sous quelques jours ouvrés.",
+    "labelMessage": "Message",
+    "placeholderMessage": "Besoin, liens, délais…",
     "labelProject": "Que construisez-vous ou corrigez-vous ?",
     "labelAudience": "Pour qui (utilisateurs, équipes internes, régulateurs si pertinent) ?",
     "labelTimeline": "Échéancier ou contraintes",
     "labelBudget": "Budget ou mode d’engagement (facultatif)",
     "labelLinks": "Liens (deck, dépôt, docs)",
-    "submit": "Ouvrir l’e-mail avec ce brief",
-    "emailSubject": "Brief projet depuis le site",
-    "emailHeading": "Détail du brief",
-    "emailFooter": "\n\n—\nEnvoyé via le formulaire de brief sur victorukeh.com"
+    "submit": "Envoyer par e-mail",
+    "emailSubject": "Message depuis le site",
+    "emailHeading": "Message",
+    "emailFooter": "\n\n—\nEnvoyé via le formulaire de contact sur victorukeh.com"
   },
   "checklist": {
     "title": "Checklist backend gratuite sur une page",
@@ -154,7 +179,8 @@
   },
   "caseStudies": {
     "title": "Réalisations ciblées",
-    "intro": "Contexte nommé en bref. La section expérience liste les rôles et métriques complets.",
+    "intro": "Projets nommés et résultats.",
+    "expandLabel": "Ouvrir pour lire l’étude complète",
     "items": [
       {
         "company": "Moniepoint",
@@ -226,25 +252,27 @@
     }
   },
   "exp": {
-    "title": "Expérience",
-    "intro": "Rôles sélectionnés : ownership backend, échelle et fiabilité."
+    "title": "Le parcours",
+    "intro": "Une trajectoire en une ligne droite qui s’élargit : premiers tickets, puis backends réglementés et systèmes de jobs à très grande échelle. Chaque point de passage raconte un chapitre, pas une liste de specs.",
+    "checkpoint": "Point de passage",
+    "activeLeg": "Secteur actif",
+    "hint": "Survolez ou focus un point de passage pour lire le chapitre. La ligne suit la course."
   },
   "contact": {
     "title": "Contact",
-    "lead": "Poste senior backend, mission ou revue d’architecture : envoyez un brief avec du contexte. Je réponds en quelques jours ouvrés.",
+    "lead": "Embauche, mission ou conseil : un message suffit. Réponse en quelques jours ouvrés.",
     "email": "M’écrire",
     "cv": "Télécharger le CV",
     "book": "Prendre rendez-vous",
     "linkedin": "LinkedIn",
     "github": "GitHub"
-  },
-  "footer": {
-    "note": "Site statique, rapide à charger et simple à héberger."
   }
 };
   global.PORTFOLIO_I18N.es = {
   "nav": {
     "skip": "Ir al contenido",
+    "home": "Inicio",
+    "work": "Trabajos",
     "experience": "Experiencia",
     "video": "Intro",
     "services": "Servicios",
@@ -257,6 +285,27 @@
     "langAria": "Idioma",
     "menuOpen": "Abrir menú",
     "menuClose": "Cerrar menú"
+  },
+  "home": {
+    "heroLead": "Backends de producción para fintech y equipos en crecimiento: APIs fiables, flujos por eventos y sistemas preparados para escalar.",
+    "hubWorkTitle": "Trabajos",
+    "hubWorkDesc": "Casos de uso, métricas y experiencia.",
+    "hubServicesTitle": "Servicios",
+    "hubServicesDesc": "Ofertas, tarifas y stack.",
+    "hubContactTitle": "Contacto",
+    "hubContactDesc": "Llamada o mensaje breve.",
+    "hubSectionTitle": "Explorar"
+  },
+  "pages": {
+    "docTitle": "Victor Ukeh · Ingeniero backend",
+    "docWork": "Trabajos · Victor Ukeh",
+    "docServices": "Servicios · Victor Ukeh",
+    "docContact": "Contacto · Victor Ukeh",
+    "docChecklist": "Checklist · Victor Ukeh"
+  },
+  "servicesPage": {
+    "lead": "Modalidades, tarifas y stack técnico.",
+    "checklistCta": "Checklist backend gratis (una página)"
   },
   "mailto": {
     "subject": "Contacto — Victor Ukeh (portfolio)",
@@ -372,17 +421,19 @@
     ]
   },
   "intake": {
-    "title": "Cuéntame qué estás construyendo",
-    "intro": "Los rangos automáticos suelen ser demasiado amplios sin contexto. Envía un brief breve; responderé con una opinión fundamentada, normalmente por correo.",
+    "title": "Escríbeme",
+    "intro": "Unas líneas bastan. Respondo en unos días laborables.",
+    "labelMessage": "Mensaje",
+    "placeholderMessage": "Qué necesitas, enlaces, plazos…",
     "labelProject": "¿Qué construyes o corriges?",
     "labelAudience": "¿Para quién es (usuarios, equipos internos, reguladores si aplica)?",
     "labelTimeline": "Plazo objetivo o restricciones",
     "labelBudget": "Presupuesto o modalidad de engagement (opcional)",
     "labelLinks": "Enlaces (deck, repo, docs)",
-    "submit": "Abrir correo con este brief",
-    "emailSubject": "Brief de proyecto desde la web",
-    "emailHeading": "Detalle del brief",
-    "emailFooter": "\n\n—\nEnviado desde el formulario de brief en victorukeh.com"
+    "submit": "Enviar por correo",
+    "emailSubject": "Mensaje desde la web",
+    "emailHeading": "Mensaje",
+    "emailFooter": "\n\n—\nEnviado desde el formulario de contacto en victorukeh.com"
   },
   "checklist": {
     "title": "Checklist backend gratis de una página",
@@ -395,7 +446,8 @@
   },
   "caseStudies": {
     "title": "Trabajos destacados",
-    "intro": "Contexto nombrado en breve. La sección de experiencia lista roles y métricas completas.",
+    "intro": "Proyectos con nombre y resultados.",
+    "expandLabel": "Abrir para leer el caso completo",
     "items": [
       {
         "company": "Moniepoint",
@@ -467,25 +519,27 @@
     }
   },
   "exp": {
-    "title": "Experiencia",
-    "intro": "Roles seleccionados: ownership backend, escala y fiabilidad."
+    "title": "La pista",
+    "intro": "Una carrera que va de los primeros tickets a backends regulados y sistemas de jobs a escala real. Cada punto es un capítulo, no un listado de tareas.",
+    "checkpoint": "Punto",
+    "activeLeg": "Tramo activo",
+    "hint": "Pasa el cursor o enfoca un punto para leer el capítulo. La línea marca el recorrido."
   },
   "contact": {
     "title": "Contacto",
-    "lead": "Rol backend senior, proyecto por contrato o revisión de arquitectura: envía un brief con contexto. Respondo en unos días laborables.",
+    "lead": "Contratación, proyecto o asesoría: un mensaje basta. Respondo en unos días laborables.",
     "email": "Escríbeme",
     "cv": "Descargar CV",
     "book": "Reservar llamada",
     "linkedin": "LinkedIn",
     "github": "GitHub"
-  },
-  "footer": {
-    "note": "Sitio estático, rápido de cargar y fácil de alojar."
   }
 };
   global.PORTFOLIO_I18N.de = {
   "nav": {
     "skip": "Zum Inhalt springen",
+    "home": "Startseite",
+    "work": "Arbeiten",
     "experience": "Erfahrung",
     "video": "Intro",
     "services": "Leistungen",
@@ -498,6 +552,27 @@
     "langAria": "Sprache",
     "menuOpen": "Menü öffnen",
     "menuClose": "Menü schließen"
+  },
+  "home": {
+    "heroLead": "Produktions-Backends für Fintech und schnell wachsende Teams — zuverlässige APIs, event-getriebene Flüsse, skalierbare Systeme.",
+    "hubWorkTitle": "Arbeiten",
+    "hubWorkDesc": "Fallstudien, Kennzahlen und Erfahrung.",
+    "hubServicesTitle": "Leistungen",
+    "hubServicesDesc": "Angebote, Sätze und Stack.",
+    "hubContactTitle": "Kontakt",
+    "hubContactDesc": "Call oder kurze Nachricht.",
+    "hubSectionTitle": "Entdecken"
+  },
+  "pages": {
+    "docTitle": "Victor Ukeh · Backend-Engineer",
+    "docWork": "Arbeiten · Victor Ukeh",
+    "docServices": "Leistungen · Victor Ukeh",
+    "docContact": "Kontakt · Victor Ukeh",
+    "docChecklist": "Checkliste · Victor Ukeh"
+  },
+  "servicesPage": {
+    "lead": "Engagement-Modelle, Honorare und Tech-Stack.",
+    "checklistCta": "Kostenlose einseitige Backend-Checkliste"
   },
   "mailto": {
     "subject": "Kontakt — Victor Ukeh (Portfolio)",
@@ -613,17 +688,19 @@
     ]
   },
   "intake": {
-    "title": "Sagen Sie mir, was Sie bauen",
-    "intro": "Automatische Preisspannen sind ohne Kontext oft zu breit. Senden Sie ein kurzes Briefing; ich antworte mit einer begründeten Einschätzung, in der Regel per E-Mail.",
+    "title": "Schreiben Sie mir",
+    "intro": "Ein paar Zeilen reichen. Ich antworte in der Regel innerhalb weniger Werktage.",
+    "labelMessage": "Nachricht",
+    "placeholderMessage": "Bedarf, Links, Zeitrahmen…",
     "labelProject": "Was bauen oder beheben Sie?",
     "labelAudience": "Für wen (Nutzer, interne Teams, Aufsicht wenn relevant)?",
     "labelTimeline": "Zielzeitrahmen oder Rahmenbedingungen",
     "labelBudget": "Budgetrahmen oder Engagement-Modell (optional)",
     "labelLinks": "Links (Deck, Repo, Docs)",
-    "submit": "E-Mail mit diesem Brief öffnen",
-    "emailSubject": "Projektbrief von der Website",
-    "emailHeading": "Brief-Details",
-    "emailFooter": "\n\n—\nGesendet über das Projektbrief-Formular auf victorukeh.com"
+    "submit": "Per E-Mail senden",
+    "emailSubject": "Nachricht von der Website",
+    "emailHeading": "Nachricht",
+    "emailFooter": "\n\n—\nGesendet über das Kontaktformular auf victorukeh.com"
   },
   "checklist": {
     "title": "Kostenlose einseitige Backend-Checkliste",
@@ -636,7 +713,8 @@
   },
   "caseStudies": {
     "title": "Ausgewählte Arbeiten",
-    "intro": "Kurzer, benannter Kontext. Unter Erfahrung stehen Rollen und Kennzahlen vollständig.",
+    "intro": "Benannte Projekte und Ergebnisse.",
+    "expandLabel": "Öffnen für die vollständige Fallstudie",
     "items": [
       {
         "company": "Moniepoint",
@@ -708,20 +786,20 @@
     }
   },
   "exp": {
-    "title": "Erfahrung",
-    "intro": "Ausgewählte Rollen: Backend-Ownership, Skalierung und Zuverlässigkeit."
+    "title": "Die Strecke",
+    "intro": "Ein Lauf von ersten Tickets bis zu regulierten Fintech-Backends und Job-Systemen mit Millionen Ausführungen pro Tag. Jeder Wegpunkt ist ein Kapitel, keine Spezifikationsliste.",
+    "checkpoint": "Wegpunkt",
+    "activeLeg": "Aktives Segment",
+    "hint": "Wegpunkt mit Maus oder Tastatur fokussieren, um das Kapitel zu lesen. Die Linie zeigt den Lauf."
   },
   "contact": {
     "title": "Kontakt",
-    "lead": "Senior-Backend-Rolle, Auftrag oder Architektur-Review: Senden Sie ein Briefing mit Kontext. Ich antworte innerhalb weniger Werktage.",
+    "lead": "Anstellung, Projekt oder Beratung: eine kurze Nachricht reicht. Antwort in wenigen Werktagen.",
     "email": "E-Mail",
     "cv": "CV herunterladen",
     "book": "Termin buchen",
     "linkedin": "LinkedIn",
     "github": "GitHub"
-  },
-  "footer": {
-    "note": "Statische Website, schnell ladend und einfach zu hosten."
   }
 };
   global.EXPERIENCE_BY_LANG = global.EXPERIENCE_BY_LANG || {};
@@ -730,76 +808,43 @@
     "title": "Ingénieur backend (niveau senior)",
     "org": "Moniepoint, épargne et dépôts",
     "dates": "2025, en cours",
-    "bullets": [
-      "Direction backend pour Target Savings, montée à ~5 000 nouveaux plans d’épargne/jour avec API <250 ms ; forte croissance des dépôts sur les six premiers mois.",
-      "Réduction de 90 % des incidents signalés par les clients après lancement (monitoring, perf, réponse incident).",
-      "Système de jobs haut débit, idempotent et tolérant aux pannes (~1 M jobs actifs/jour) ; suppression des conditions de course et goulots.",
-      "Coucher du produit Locked Savings sans impact utilisateur, intégrité des données préservée.",
-      "Sécurité et réponse incident de bout en bout : 0 cas de fraude ; résolution des problèmes clients <2 h.",
-      "Traitement épargne événementiel sur paiements, exécution idempotente, ~10 M requêtes/mois.",
-      "Notifications fiables avec redondance et dégradation contrôlée ; succès des notifications Fixed Savings ~99 %."
-    ]
+    "summary": "Le tour que je pilote aujourd’hui : Target Savings à très grande échelle—API qui tiennent la route quand les plans s’empilent, couche de jobs idempotents vers un million d’exécutions quotidiennes, flux d’épargne sur événements de paiement, couchers de produits sans casse, fraude à zéro et incidents refermés avant qu’on en fasse une légende."
   },
   {
     "title": "Ingénieur backend senior",
     "org": "GetStac",
     "dates": "2025",
-    "bullets": [
-      "Plateforme d’appariement : assignation agent→magasin de bout en bout, latence <300 ms, architecture résiliente.",
-      "Travail fiabilité : −70 % d’incidents clients en moins d’un mois.",
-      "Cohérence des données et cycle de vie solides ; ~60 % d’erreurs visibles client en moins."
-    ]
+    "summary": "Chez GetStac, le fil critique du matching agent→magasin de bout en bout : latence maîtrisée, cycles de données plus sains, et une fiabilité qui s’est vue vite en moins d’escalades clients."
   },
   {
     "title": "Ingénieur backend",
     "org": "Moniepoint, gestion de trésorerie",
     "dates": "2024 à 2025",
-    "bullets": [
-      "Backend pour flux de trésorerie à fort volume ; ~40 % de friction en moins sur l’approvisionnement cash.",
-      "Contrôles sécurité : 0 % de fraude.",
-      "Pipelines ML validation image/texte ; latence requête/validation −30 à 40 % sur gros volumes."
-    ]
+    "summary": "Cash Management : flux réglementés à gros volume, friction d’approvisionnement réduite, fraude maintenue à zéro, pipelines ML de validation qui restent respirants sur de gros volumes."
   },
   {
     "title": "Ingénieur full stack",
     "org": "IX Note Service Limited",
     "dates": "2022 à 2024",
-    "bullets": [
-      "Intégration Firebase pour notifications web et mobile.",
-      "Durcissement sécurité portefeuille PXN : ~+60 % satisfaction, ~−80 % vulnérabilités.",
-      "Framework d’événements analytics pour 10 000+ utilisateurs.",
-      "Chatbot Slack pour tâches et événements dev, gain de productivité d’équipe."
-    ]
+    "summary": "À IX Note, entre produit et plateforme : portefeuille PXN et notifications Firebase, durcissement sécurité, analytics pour des dizaines de milliers d’utilisateurs, et un bot Slack qui a réduit le bruit d’équipe."
   },
   {
     "title": "Développeur backend",
     "org": "Cargle",
     "dates": "2022 à 2024",
-    "bullets": [
-      "Correctifs sécurité : ~−90 % de problèmes de sécurité.",
-      "Multi-cloud (AWS, Firebase, Heroku, DigitalOcean) : ~−35 % de coût mensuel.",
-      "Système de dispatch avec taux de complétion >90 %.",
-      "Architecture et UX Spikk Deliveries ; ~+15 % de revenu annuel."
-    ]
+    "summary": "Cargle : correctifs sécurité et multi-cloud avec coûts mieux maîtrisés, dispatch fiable, et paris produit comme Spikk visibles sur la ligne de revenu."
   },
   {
     "title": "Développeur full stack",
     "org": "ITF",
     "dates": "2021 à 2022",
-    "bullets": [
-      "Logiciel de réunions du conseil ITF ; ~600 $/mois d’économies.",
-      "Mentorat de développeurs juniors (outils et langages)."
-    ]
+    "summary": "ITF : livrer un outil de conseil qui économisait de l’argent chaque mois et faire monter des juniors sur des stacks qu’ils allaient posséder."
   },
   {
     "title": "Stagiaire développement logiciel",
     "org": "IX Note Service Limited",
     "dates": "2020 à 2021",
-    "bullets": [
-      "Backend application hôpital Krakenhaus ; forte hausse de satisfaction client.",
-      "Documentation et gestion de projet améliorées.",
-      "Discipline de tests et garde-fous qualité rigoureux."
-    ]
+    "summary": "Le niveau stage : backend hôpital, documentation plus serrée, et une exigence de tests qui est restée après le badge."
   }
 ];
   global.EXPERIENCE_BY_LANG.es = [
@@ -807,76 +852,43 @@
     "title": "Ingeniero backend (alcance senior)",
     "org": "Moniepoint, ahorros y depósitos",
     "dates": "2025 a la fecha",
-    "bullets": [
-      "Lideré el backend de Target Savings, escalando a ~5.000 planes de ahorro nuevos/día con API <250 ms; fuerte crecimiento de depósitos en los primeros seis meses.",
-      "Reducción del 90 % de incidencias reportadas por clientes tras el lanzamiento (monitorización, rendimiento, respuesta a incidentes).",
-      "Sistema de jobs de alto rendimiento, idempotente y tolerante a fallos (~1M jobs activos/día); eliminación de condiciones de carrera y cuellos de botella.",
-      "Retirada sin riesgo de Locked Savings sin afectar a usuarios e integridad de datos.",
-      "Seguridad y respuesta a incidentes de extremo a extremo: 0 fraude; resolución de incidencias de cliente <2 h.",
-      "Procesamiento de ahorro orientado a eventos de pago, ejecución idempotente, ~10M solicitudes/mes.",
-      "Notificaciones fiables con redundancia y degradación elegante; éxito de notificaciones Fixed Savings ~99 %."
-    ]
+    "summary": "La vuelta que piloto ahora: Target Savings a escala real—APIs que aguantan cuando los planes se acumulan, una capa de jobs idempotente hacia millones de ejecuciones diarias, ahorro orientado a eventos de pago, retirada limpia de productos viejos, fraude en cero e incidentes cerrados antes de que cuenten la historia."
   },
   {
     "title": "Ingeniero backend senior",
     "org": "GetStac",
     "dates": "2025",
-    "bullets": [
-      "Plataforma de emparejamiento: asignación agente→tienda de extremo a extremo, latencia <300 ms, arquitectura resiliente.",
-      "Trabajo de fiabilidad: −70 % de incidencias de clientes en menos de un mes.",
-      "Consistencia de datos y ciclo de vida sólidos; ~60 % menos errores visibles para el cliente."
-    ]
+    "summary": "En GetStac enhebré el matching de punta a punta: asignaciones rápidas, ciclos de datos más sanos y menos escaladas de clientes en las primeras semanas."
   },
   {
     "title": "Ingeniero backend",
     "org": "Moniepoint, gestión de efectivo",
     "dates": "2024 a 2025",
-    "bullets": [
-      "Backend para flujos de efectivo de alto volumen; ~40 % menos fricción en abastecimiento de efectivo.",
-      "Controles de seguridad con 0 % de fraude.",
-      "Pipelines ML de validación imagen/texto; latencia de consulta y validación un 30 a 40 % menor en grandes volúmenes."
-    ]
+    "summary": "Cash Management: flujos regulados a gran volumen, menos fricción al abastecer efectivo, fraude en cero y pipelines ML que no se ahogan con cargas grandes."
   },
   {
     "title": "Ingeniero full stack",
     "org": "IX Note Service Limited",
     "dates": "2022 a 2024",
-    "bullets": [
-      "Integración Firebase para notificaciones web y móvil.",
-      "Endurecimiento de seguridad en monedero PXN: ~+60 % satisfacción, ~−80 % vulnerabilidades.",
-      "Marco de eventos de analítica para 10.000+ usuarios.",
-      "Chatbot de Slack para tareas y eventos de desarrollo, mejora de productividad del equipo."
-    ]
+    "summary": "En IX Note alterné producto y plataforma—monedero PXN y notificaciones Firebase, endurecimiento de seguridad, analítica para decenas de miles de usuarios y un bot de Slack que bajó el ruido del equipo."
   },
   {
     "title": "Desarrollador backend",
     "org": "Cargle",
     "dates": "2022 a 2024",
-    "bullets": [
-      "Parches de seguridad: ~−90 % de problemas de seguridad.",
-      "Multi-nube (AWS, Firebase, Heroku, DigitalOcean): ~−35 % de coste mensual.",
-      "Sistema de despacho con tasa de finalización >90 %.",
-      "Arquitectura y UX de Spikk Deliveries; ~+15 % de ingresos anuales."
-    ]
+    "summary": "Cargle fue parchear y optimizar: seguridad arriba, coste mensual más bajo, despacho que termina lo que empieza y apuestas como Spikk que se notan en ingresos."
   },
   {
     "title": "Desarrollador full stack",
     "org": "ITF",
     "dates": "2021 a 2022",
-    "bullets": [
-      "Software de reuniones del consejo ITF; ~600 $/mes de ahorro.",
-      "Mentoría a desarrolladores junior en herramientas y lenguajes."
-    ]
+    "summary": "ITF: entregar software de consejo que ahorraba dinero cada mes y acompañar a juniors en stacks que luego serían suyos."
   },
   {
     "title": "Becario desarrollo de software",
     "org": "IX Note Service Limited",
     "dates": "2020 a 2021",
-    "bullets": [
-      "Backend de la app hospitalaria Krakenhaus; fuerte mejora de satisfacción del cliente.",
-      "Mejoras en documentación y gestión de proyectos.",
-      "Disciplina de pruebas rigurosa y controles de calidad."
-    ]
+    "summary": "El nivel becario: backend hospitalario, documentación más clara y un hábito de pruebas que se quedó después del pase."
   }
 ];
   global.EXPERIENCE_BY_LANG.de = [
@@ -884,76 +896,43 @@
     "title": "Backend Engineer (Senior Scope)",
     "org": "Moniepoint, Sparen und Einlagen",
     "dates": "2025 bis heute",
-    "bullets": [
-      "Backend-Leitung für Target Savings, Skalierung auf ~5.000 neue Sparpläne/Tag mit API <250 ms; starkes Einzahlungswachstum in den ersten sechs Monaten.",
-      "90 % weniger kundenmeldepflichtige Vorfälle nach Launch (Monitoring, Performance, Incident Response).",
-      "Hochdurchsatz-, idempotentes, fehlertolerantes Job-System (~1 M aktive Jobs/Tag); Race Conditions und Engpässe beseitigt.",
-      "Risikoarmes Auslaufen von Locked Savings ohne Nutzerstörung, volle Datenintegrität.",
-      "Security und Incident Response End-to-End: 0 Betrugsfälle; Kundenprobleme <2 h gelöst.",
-      "Ereignisgesteuerte Sparverarbeitung auf Zahlungsereignissen, idempotente Ausführung, ~10 M Anfragen/Monat.",
-      "Zuverlässige Benachrichtigungen mit Redundanz und kontrolliertem Degradation; Fixed-Savings-Benachrichtigungen ~99 % erfolgreich."
-    ]
+    "summary": "Die Runde, die ich gerade fahre: Target Savings in Produktionsgröße—APIs, die nicht schwinden, wenn Pläne zunehmen, eine Job-Schicht mit Millionen idempotenter Ausführungen täglich, ereignisgesteuertes Sparen, sauberes Auslaufen alter Produkte, Betrug bei null und Incidents, die geschlossen werden, bevor sie zur Legende werden."
   },
   {
     "title": "Senior Backend Engineer",
     "org": "GetStac",
     "dates": "2025",
-    "bullets": [
-      "Matching-Plattform: End-to-End Zuweisung Agent→Store, Latenz <300 ms, ausfallsichere Architektur.",
-      "Zuverlässigkeitsarbeit: 70 % weniger Kundenissues in unter einem Monat.",
-      "Starke Datenkonsistenz und Lifecycle; ~60 % weniger kundensichtbare Fehler."
-    ]
+    "summary": "Bei GetStac den Matching-Kern End-to-End gezogen: schnelle Zuweisungen, stabilere Datenlebenszyklen und spürbar weniger Kunden-Eskalationen innerhalb weniger Wochen."
   },
   {
     "title": "Backend Engineer",
     "org": "Moniepoint, Cash Management",
     "dates": "2024 bis 2025",
-    "bullets": [
-      "Backend für Hochvolumen-Cashflows; ~40 % weniger Reibung bei Cash-Beschaffung.",
-      "Security-Kontrollen bei 0 % Fraud-Rate.",
-      "ML-Pipelines für Bild-/Textvalidierung; 30 bis 40 % niedrigere Abfrage- und Validierungslatenz bei großen Datenmengen."
-    ]
+    "summary": "Cash Management: regulierte Hochvolumen-Cashflows, weniger Reibung bei der Beschaffung, Betrug bei null und ML-Validierung, die auch bei großen Lasten nicht erstickt."
   },
   {
     "title": "Full-Stack-Engineer",
     "org": "IX Note Service Limited",
     "dates": "2022 bis 2024",
-    "bullets": [
-      "Firebase-Integration für Benachrichtigungen Web & Mobile.",
-      "Security-Hardening PXN-Wallet: ~+60 % Zufriedenheit, ~−80 % Schwachstellen.",
-      "Analytics-Event-Framework für 10.000+ Nutzer.",
-      "Slack-Chatbot für Dev-Tasks und Events, höhere Teamproduktivität."
-    ]
+    "summary": "Bei IX Note zwischen Produkt und Plattform gewechselt—PXN-Wallet und Firebase-Benachrichtigungen, Security-Hardening, Analytics für Zehntausende Nutzer und ein Slack-Bot, der Team-Rauschen senkte."
   },
   {
     "title": "Backend-Entwickler",
     "org": "Cargle",
     "dates": "2022 bis 2024",
-    "bullets": [
-      "Security-Patches: ~−90 % Security-Themen.",
-      "Multi-Cloud (AWS, Firebase, Heroku, DigitalOcean): ~−35 % monatliche Kosten.",
-      "Dispatch-System mit >90 % Abschlussquote.",
-      "Spikk Deliveries Architektur & UX; ~+15 % Jahresumsatz."
-    ]
+    "summary": "Cargle: Security und Multi-Cloud mit besser beherrschten Kosten, zuverlässiger Dispatch und Produktentscheidungen wie Spikk, die sich im Umsatz zeigten."
   },
   {
     "title": "Full-Stack-Entwickler",
     "org": "ITF",
     "dates": "2021 bis 2022",
-    "bullets": [
-      "ITF Board Meeting Software; ~600 $/Monat eingespart.",
-      "Mentoring von Junior-Entwicklern zu Tools und Sprachen."
-    ]
+    "summary": "ITF: Board-Software, die jeden Monat Geld sparte, und Juniors in Stacks führen, die sie später selbst tragen würden."
   },
   {
     "title": "Praktikum Softwareentwicklung",
     "org": "IX Note Service Limited",
     "dates": "2020 bis 2021",
-    "bullets": [
-      "Backend Krakenhaus-Krankenhaus-App; deutlicher Zuwachs bei Kundenzufriedenheit.",
-      "Verbesserungen bei Dokumentation und Projektmanagement.",
-      "Strenge Testdisziplin und Qualitätsgates."
-    ]
+    "summary": "Praktikums-Level: Klinik-Backend, klarere Docs und eine Testkultur, die nach dem Ausweis blieb."
   }
 ];
 })(typeof window !== 'undefined' ? window : globalThis);

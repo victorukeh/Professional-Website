@@ -10,28 +10,52 @@
     en: {
       nav: {
         skip: "Skip to content",
+        home: "Home",
+        work: "Work",
+        services: "Services",
+        contact: "Contact",
         experience: "Experience",
         video: "Intro",
-        services: "Services",
         pricing: "Pricing",
         intake: "Project brief",
         checklist: "Free checklist",
         skills: "Skills",
-        contact: "Contact",
         book: "Book a call",
         langAria: "Language",
         menuOpen: "Open menu",
         menuClose: "Close menu",
       },
+      home: {
+        heroLead:
+          "Production backends for fintech and fast-moving teams: reliable APIs, event-driven flows, and systems built to scale.",
+        hubWorkTitle: "Work",
+        hubWorkDesc: "Case studies, metrics, and experience.",
+        hubServicesTitle: "Services",
+        hubServicesDesc: "Offerings, rates, and stack.",
+        hubContactTitle: "Contact",
+        hubContactDesc: "Book a call or send a note.",
+        hubSectionTitle: "Explore",
+      },
+      pages: {
+        docTitle: "Victor Ukeh · Backend engineer",
+        docWork: "Work · Victor Ukeh",
+        docServices: "Services · Victor Ukeh",
+        docContact: "Contact · Victor Ukeh",
+        docChecklist: "Checklist · Victor Ukeh",
+      },
+      servicesPage: {
+        lead: "Engagement options, rates, and technical stack.",
+        checklistCta: "Free one-page backend checklist",
+      },
       mailto: {
-        subject: "Inquiry — Victor Ukeh (portfolio site)",
+        subject: "Inquiry: Victor Ukeh (portfolio site)",
         body:
-          "Hi Victor,\n\nI am reaching out about the following.\n\nWhat I am reaching out about:\n\nWhat I need help with:\n\nTimeline:\n\nBudget or ballpark:\n\nLinks, repo, or docs:\n\n—\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
+          "Hi Victor,\n\nI am reaching out about the following.\n\nWhat I am reaching out about:\n\nWhat I need help with:\n\nTimeline:\n\nBudget or ballpark:\n\nLinks, repo, or docs:\n\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
         cardSubjectPrefix: "Engagement",
         pricingBodies: [
-          "Hi Victor,\n\nI am interested in the Sprint & integrations engagement.\n\nContext:\n\nWhat I need:\n\nTimeline:\n\nBudget or range:\n\nLinks:\n\n—\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
-          "Hi Victor,\n\nI am interested in the Product backend engagement.\n\nContext:\n\nWhat I need:\n\nTimeline:\n\nBudget or range:\n\nLinks:\n\n—\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
-          "Hi Victor,\n\nI am interested in the Partner retainer engagement.\n\nContext:\n\nWhat I need:\n\nTimeline:\n\nBudget or range:\n\nLinks:\n\n—\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
+          "Hi Victor,\n\nI am interested in the Sprint & integrations engagement.\n\nContext:\n\nWhat I need:\n\nTimeline:\n\nBudget or range:\n\nLinks:\n\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
+          "Hi Victor,\n\nI am interested in the Product backend engagement.\n\nContext:\n\nWhat I need:\n\nTimeline:\n\nBudget or range:\n\nLinks:\n\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
+          "Hi Victor,\n\nI am interested in the Partner retainer engagement.\n\nContext:\n\nWhat I need:\n\nTimeline:\n\nBudget or range:\n\nLinks:\n\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
         ],
       },
       hero: {
@@ -144,18 +168,19 @@
         ],
       },
       intake: {
-        title: "Tell me what you are building",
-        intro:
-          "Wide rate ranges rarely help before we understand context. Share a short brief. I will reply with a considered view, usually by email, once I understand the problem.",
+        title: "Say hello",
+        intro: "A short note is enough. I usually reply within a few business days.",
+        labelMessage: "Message",
+        placeholderMessage: "What you need, links, timeline…",
         labelProject: "What are you building or fixing?",
         labelAudience: "Who is it for (users, internal teams, regulators if relevant)?",
         labelTimeline: "Target timeline or constraints",
         labelBudget: "Budget band or engagement style (optional)",
         labelLinks: "Links (deck, repo, docs)",
-        submit: "Open email with this brief",
-        emailSubject: "Project brief from your website",
-        emailHeading: "Project brief details",
-        emailFooter: "\n\n—\nSent via victorukeh.com project brief form",
+        submit: "Send by email",
+        emailSubject: "Note from your website",
+        emailHeading: "Message",
+        emailFooter: "\n\nSent via victorukeh.com contact form",
       },
       checklist: {
         title: "Free one page backend checklist",
@@ -168,7 +193,8 @@
       },
       caseStudies: {
         title: "Selected work",
-        intro: "Short, named context. The experience section lists full roles and metrics.",
+        intro: "Named projects and outcomes.",
+        expandLabel: "Open to read full case study",
         items: [
           {
             company: "Moniepoint",
@@ -248,48 +274,71 @@
         },
       },
       exp: {
-        title: "Experience",
-        intro: "Selected roles focused on backend ownership, scale, and reliability.",
+        title: "The track",
+        intro:
+          "Think of it as one long run: early levels were tickets and tests; later ones are regulated money, job systems at seven figures of daily executions, and the quiet work of sunsetting products without drama. Each waypoint is a chapter, not a checklist.",
+        checkpoint: "Waypoint",
+        activeLeg: "Active sector",
       },
       contact: {
         title: "Contact",
-        lead:
-          "Senior backend role, contract build, or architecture review: send a brief with context. I respond within a few business days.",
+        lead: "Hiring, contracts, or advisory. I usually reply within a few business days.",
         email: "Email me",
         cv: "Download CV",
         book: "Book a call",
         linkedin: "LinkedIn",
         github: "GitHub",
       },
-      footer: {
-        note: "Static site, fast to load and easy to host.",
-      },
     },
     pcm: {
       nav: {
         skip: "Skip go main content",
+        home: "Home",
+        work: "Work",
+        services: "Services",
+        contact: "Contact",
         experience: "Experience",
         video: "Intro",
-        services: "Services",
         pricing: "Pricing",
         intake: "Project brief",
         checklist: "Free checklist",
         skills: "Skills",
-        contact: "Contact",
         book: "Book call",
         langAria: "Language",
         menuOpen: "Open menu",
         menuClose: "Close menu",
       },
+      home: {
+        heroLead:
+          "Production backend for fintech and fast team: reliable API, event flow, system wey fit scale.",
+        hubWorkTitle: "Work",
+        hubWorkDesc: "Case study, metric, and experience.",
+        hubServicesTitle: "Services",
+        hubServicesDesc: "Offerings, rates, and stack.",
+        hubContactTitle: "Contact",
+        hubContactDesc: "Book call or send note.",
+        hubSectionTitle: "Explore",
+      },
+      pages: {
+        docTitle: "Victor Ukeh · Backend engineer",
+        docWork: "Work · Victor Ukeh",
+        docServices: "Services · Victor Ukeh",
+        docContact: "Contact · Victor Ukeh",
+        docChecklist: "Checklist · Victor Ukeh",
+      },
+      servicesPage: {
+        lead: "How we go work together, money, and tools.",
+        checklistCta: "Free one-page backend checklist",
+      },
       mailto: {
         subject: "Inquiry, Victor Ukeh portfolio site",
         body:
-          "Hi Victor,\n\nWetin I dey reach you for:\n\nWetin I need help with:\n\nTimeline:\n\nBudget or ballpark:\n\nLinks, repo, or docs:\n\n—\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
+          "Hi Victor,\n\nWetin I dey reach you for:\n\nWetin I need help with:\n\nTimeline:\n\nBudget or ballpark:\n\nLinks, repo, or docs:\n\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
         cardSubjectPrefix: "Engagement",
         pricingBodies: [
-          "Hi Victor,\n\nI dey interested in Sprint & integrations engagement.\n\nContext:\n\nWetin I need:\n\nTimeline:\n\nBudget or range:\n\nLinks:\n\n—\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
-          "Hi Victor,\n\nI dey interested in Product backend engagement.\n\nContext:\n\nWetin I need:\n\nTimeline:\n\nBudget or range:\n\nLinks:\n\n—\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
-          "Hi Victor,\n\nI dey interested in Partner retainer engagement.\n\nContext:\n\nWetin I need:\n\nTimeline:\n\nBudget or range:\n\nLinks:\n\n—\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
+          "Hi Victor,\n\nI dey interested in Sprint & integrations engagement.\n\nContext:\n\nWetin I need:\n\nTimeline:\n\nBudget or range:\n\nLinks:\n\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
+          "Hi Victor,\n\nI dey interested in Product backend engagement.\n\nContext:\n\nWetin I need:\n\nTimeline:\n\nBudget or range:\n\nLinks:\n\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
+          "Hi Victor,\n\nI dey interested in Partner retainer engagement.\n\nContext:\n\nWetin I need:\n\nTimeline:\n\nBudget or range:\n\nLinks:\n\nVictor Ukeh · Senior backend engineer\nvictorukeh1@gmail.com",
         ],
       },
       hero: {
@@ -402,18 +451,19 @@
         ],
       },
       intake: {
-        title: "Tell me wetin you dey build",
-        intro:
-          "Wide rate range no too help before we understand context. Send short brief. I go reply with better view, usually by email, after I understand the problem.",
+        title: "Say hello",
+        intro: "Short note dey enough. I go usually reply inside few business days.",
+        labelMessage: "Message",
+        placeholderMessage: "Wetin you need, link, timeline…",
         labelProject: "Wetin you dey build or fix?",
         labelAudience: "Who e be for (users, internal team, regulator if e matter)?",
         labelTimeline: "Target timeline or constraint",
         labelBudget: "Budget band or engagement style (optional)",
         labelLinks: "Links (deck, repo, docs)",
-        submit: "Open email with this brief",
-        emailSubject: "Project brief from your website",
-        emailHeading: "Project brief details",
-        emailFooter: "\n\n—\nSent via victorukeh.com project brief form",
+        submit: "Send by email",
+        emailSubject: "Note from your website",
+        emailHeading: "Message",
+        emailFooter: "\n\nSent via victorukeh.com contact form",
       },
       checklist: {
         title: "Free one page backend checklist",
@@ -426,7 +476,8 @@
       },
       caseStudies: {
         title: "Selected work",
-        intro: "Short example with name. Experience section get full role and metric.",
+        intro: "Named project and outcome.",
+        expandLabel: "Open to read full case study",
         items: [
           {
             company: "Moniepoint",
@@ -506,21 +557,20 @@
         },
       },
       exp: {
-        title: "Experience",
-        intro: "Selected roles wey focus on backend ownership, scale, and reliability.",
+        title: "The track",
+        intro:
+          "Na one long run: early level na ticket and test; later level na regulated money, job system wey run millions daily, and quiet work to sunset product without drama. Each waypoint na chapter, no be checklist.",
+        checkpoint: "Waypoint",
+        activeLeg: "Where you dey now",
       },
       contact: {
         title: "Contact",
-        lead:
-          "Senior backend role, contract build, or architecture review: send brief with context. I go reply inside few business days.",
+        lead: "Hiring, contract, or advisory. I go usually reply inside few business days.",
         email: "Email me",
         cv: "Download CV",
         book: "Book call",
         linkedin: "LinkedIn",
         github: "GitHub",
-      },
-      footer: {
-        note: "Static site, fast to load and easy to host.",
       },
     },
   };
@@ -531,76 +581,50 @@
         title: "Backend Engineer (Senior Scope)",
         org: "Moniepoint, Savings and Deposits",
         dates: "2025 to present",
-        bullets: [
-          "Led backend for Target Savings, scaling to roughly 5,000 new savings plans per day with sub 250 ms API responses, alongside strong deposit growth in the first six months.",
-          "Cut customer-reported issues by 90% post-launch via monitoring, performance tuning, and fast incident response.",
-          "Built a high-throughput, idempotent, fault-tolerant job system for ~1M active jobs daily; removed race conditions and bottlenecks.",
-          "Ran risk-free sunset of Locked Savings with zero user disruption and full data integrity.",
-          "End-to-end security and incident response: no fraud cases; <2h resolution for customer issues.",
-          "Event-driven savings processing on payment events, idempotent execution, ~10M monthly requests.",
-          "Reliable notifications with redundancy and graceful degradation; Fixed Savings notification success ~99%.",
-        ],
+        summary:
+          "This is the lap I am on now: Target Savings at real scale, APIs that stay honest while plans pile on, a job layer built for roughly a million daily executions without races, savings flows that stay idempotent on payment events, and the unglamorous sequel work: sunsetting legacy savings cleanly, holding fraud at zero, and closing incidents before they become campfire stories.",
       },
       {
         title: "Senior Backend Engineer",
         org: "GetStac",
         dates: "2025",
-        bullets: [
-          "Core matching platform: end-to-end agent-to-store assignment, sub-300ms latency, fault-tolerant architecture.",
-          "Reliability work cut customer-reported issues by 70% in under a month.",
-          "Strong data consistency and lifecycle management; ~60% fewer customer-facing errors.",
-        ],
+        summary:
+          "At GetStac I threaded the matching core end to end: tight agent-to-store assignment, data lifecycles that behaved under pressure, and reliability gains that showed up fast as fewer customer-raised fires in the first weeks.",
       },
       {
         title: "Backend Engineer",
         org: "Moniepoint, Cash Management",
         dates: "2024 to 2025",
-        bullets: [
-          "Backend for high volume cash movement workflows; roughly 40% reduction in cash sourcing pain for customers.",
-          "Security controls maintaining 0% fraud rate.",
-          "ML based image and text validation pipelines; roughly 30 to 40% lower query and validation latency on large datasets.",
-        ],
+        summary:
+          "Cash Management meant regulated, high-volume movement of money: shaving real friction from sourcing, keeping fraud pinned at zero, and tuning ML validation so heavy payloads did not become heavy latency.",
       },
       {
         title: "Full Stack Engineer",
         org: "IX Note Service Limited",
         dates: "2022 to 2024",
-        bullets: [
-          "Firebase integration for notifications across web and mobile.",
-          "Security hardening on PXN wallet: ~60% higher satisfaction, ~80% fewer security vulnerabilities.",
-          "Analytics event framework for 10,000+ users’ interactions.",
-          "Slack chatbot for dev tasks and events, improving team productivity.",
-        ],
+        summary:
+          "Earlier at IX Note I lived across product and platform: PXN wallet and Firebase-backed notifications, security work that moved satisfaction scores, analytics for tens of thousands of users, and a Slack bot that turned team noise into signal.",
       },
       {
         title: "Backend Developer",
         org: "Cargle",
         dates: "2022 to 2024",
-        bullets: [
-          "Security patches: ~90% reduction in security issues.",
-          "Multi-cloud (AWS, Firebase, Heroku, DigitalOcean): ~35% monthly cost savings via optimization.",
-          "Dispatch system with >90% completion rate.",
-          "Spikk Deliveries architecture and UX improvements; ~15% annual revenue lift.",
-        ],
+        summary:
+          "Cargle was a patch-and-optimize arc: security posture up across clouds, monthly burn down, dispatch routes that finished what they started, and product bets like Spikk that showed up on the revenue line.",
       },
       {
         title: "Full Stack Developer",
         org: "ITF",
         dates: "2021 to 2022",
-        bullets: [
-          "ITF Board Meeting Software; ~$600/month cost savings.",
-          "Mentored junior developers on tools and languages.",
-        ],
+        summary:
+          "ITF was shipping board-meeting software that actually saved money every month, and walking juniors through stacks they would later own.",
       },
       {
         title: "Software Developer Intern",
         org: "IX Note Service Limited",
         dates: "2020 to 2021",
-        bullets: [
-          "Krakenhaus hospital app backend; strong lift in customer satisfaction.",
-          "Documentation and project management improvements.",
-          "Rigorous testing discipline and quality gates.",
-        ],
+        summary:
+          "The internship level was where production stuck: hospital backend, tighter docs, and a testing habit that outlasted the badge.",
       },
     ],
     pcm: [
@@ -608,76 +632,50 @@
         title: "Backend Engineer (Senior Scope)",
         org: "Moniepoint, Savings and Deposits",
         dates: "2025 to present",
-        bullets: [
-          "I lead backend for Target Savings; e scale reach roughly 5,000 new savings plans daily with sub 250 ms API, with strong deposit growth inside first six months.",
-          "Customer-reported issue drop by 90% after launch through monitoring, performance tuning, and quick incident response.",
-          "I build high-throughput, idempotent, fault-tolerant job system for ~1M active jobs daily; race condition and bottleneck comot.",
-          "We sunset Locked Savings without wahala for users and data still clean.",
-          "Security and incident response end-to-end: no fraud case; customer issue <2 hours to resolve.",
-          "Event-driven savings processing on payment events, idempotent execution, ~10M requests per month.",
-          "Notification system wey get redundancy; Fixed Savings notification success ~99%.",
-        ],
+        summary:
+          "Na the lap I dey run now: Target Savings for real scale, API wey no lie when plans pile up, job layer wey fit ~1M daily run without race, savings flow wey stay idempotent, plus sunset old product clean, fraud zero, incident close sharp sharp.",
       },
       {
         title: "Senior Backend Engineer",
         org: "GetStac",
         dates: "2025",
-        bullets: [
-          "Core matching platform: agent-to-store assignment end-to-end, sub-300ms latency, architecture wey fit withstand fault.",
-          "Reliability work cut customer issues by 70% in less than one month.",
-          "Data consistency and lifecycle management strong; customer-facing error drop ~60%.",
-        ],
+        summary:
+          "For GetStac I run the matching core end to end: assignment fast, data lifecycle behave, customer fire drop quick inside first weeks.",
       },
       {
         title: "Backend Engineer",
         org: "Moniepoint, Cash Management",
         dates: "2024 to 2025",
-        bullets: [
-          "Backend for high volume cash movement; cash sourcing pain for customers drop ~40%.",
-          "Security control dey show 0% fraud rate.",
-          "ML image and text validation pipeline; query and validation latency drop roughly 30 to 40% on big data.",
-        ],
+        summary:
+          "Cash Management na regulated big-volume money move: reduce wahala for sourcing, fraud stay for zero, ML validation no slow down for heavy load.",
       },
       {
         title: "Full Stack Engineer",
         org: "IX Note Service Limited",
         dates: "2022 to 2024",
-        bullets: [
-          "Firebase integration for notification across web and mobile.",
-          "PXN wallet security hardening: satisfaction ~60% up, security vulnerability ~80% down.",
-          "Analytics event framework for 10,000+ users.",
-          "Slack chatbot for dev task and event; productivity improve for team.",
-        ],
+        summary:
+          "IX Note time I dey bounce product and platform: PXN wallet, Firebase notify, security work, analytics for plenty users, Slack bot wey reduce team noise.",
       },
       {
         title: "Backend Developer",
         org: "Cargle",
         dates: "2022 to 2024",
-        bullets: [
-          "Security patch: security issue drop ~90%.",
-          "Multi-cloud (AWS, Firebase, Heroku, DigitalOcean): ~35% monthly cost savings.",
-          "Dispatch system with >90% completion rate.",
-          "Spikk Deliveries architecture and UX; ~15% annual revenue increase.",
-        ],
+        summary:
+          "Cargle na patch and optimize level: security up, cloud bill down, dispatch finish wetin e start, Spikk kind move show for revenue.",
       },
       {
         title: "Full Stack Developer",
         org: "ITF",
         dates: "2021 to 2022",
-        bullets: [
-          "ITF Board Meeting Software; ~$600/month cost savings.",
-          "I mentor junior dev on tools and languages.",
-        ],
+        summary:
+          "ITF na ship board software wey save money every month, come carry junior hand for stack matter.",
       },
       {
         title: "Software Developer Intern",
         org: "IX Note Service Limited",
         dates: "2020 to 2021",
-        bullets: [
-          "Krakenhaus hospital app backend; customer satisfaction climb well well.",
-          "Documentation and project management better.",
-          "Testing discipline tight; quality gate dey respected.",
-        ],
+        summary:
+          "Intern level na where production stick: hospital backend, doc better, testing habit wey no leave after internship.",
       },
     ],
   };

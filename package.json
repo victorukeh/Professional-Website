@@ -5,8 +5,9 @@
     "node": ">=18"
   },
   "scripts": {
-    "start": "serve -s . -l ${PORT:-3000}",
-    "dev": "serve -s . -l 3000"
+    "start": "serve . -l ${PORT:-3000}",
+    "dev": "node dev-server.mjs",
+    "dev:serve": "serve . -l 3000"
   },
   "dependencies": {
     "serve": "^14.2.4"

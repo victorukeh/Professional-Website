@@ -47,6 +47,7 @@
     localStorage.setItem(LOCALE_KEY, code);
     root.setAttribute("lang", HTML_LANG_BY_LOCALE[code] || "en");
     applyI18n(code);
+    applyPageTitle(code);
     renderServices(code);
     renderPricing(code);
     renderExperience(code);
@@ -78,6 +79,27 @@
       const val = t(lang, key);
       if (val != null) el.textContent = val;
     });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+      const key = el.getAttribute("data-i18n-placeholder");
+      if (!key) return;
+      const val = t(lang, key);
+      if (val != null) el.setAttribute("placeholder", val);
+    });
+  }
+
+  const PAGE_DOC_KEYS = {
+    home: "docTitle",
+    work: "docWork",
+    services: "docServices",
+    contact: "docContact",
+    checklist: "docChecklist",
+  };
+
+  function applyPageTitle(lang) {
+    const page = document.body?.getAttribute("data-page") || "home";
+    const sub = PAGE_DOC_KEYS[page] || "docTitle";
+    const title = t(lang, "pages." + sub);
+    if (title) document.title = title;
   }
 
   function applyMailtoGuidedLinks(lang) {
@@ -199,16 +221,30 @@
       globalThis.EXPERIENCE_BY_LANG?.[lang] || globalThis.EXPERIENCE_BY_LANG?.en;
     if (!container || !roles) return;
     container.replaceChildren();
-    roles.forEach(function (role) {
+    container.className = "game-board";
+    roles.forEach(function (role, i) {
       const li = document.createElement("li");
-      li.className = "timeline-item";
-      const marker = document.createElement("div");
-      marker.className = "timeline-marker";
-      marker.setAttribute("aria-hidden", "true");
-      const body = document.createElement("div");
-      body.className = "timeline-body";
+      li.className = "game-board__stop" + (i === 0 ? " game-board__stop--current" : "");
+      li.setAttribute("role", "listitem");
+
+      const card = document.createElement("article");
+      card.className = "game-stop-card" + (i === 0 ? " game-stop-card--current" : "");
+      card.tabIndex = 0;
+
+      const dot = document.createElement("div");
+      dot.className = "game-stop-card__dot" + (i === 0 ? " game-stop-card__dot--pulse" : "");
+      dot.setAttribute("aria-hidden", "true");
+
+      const stage = String(i + 1).padStart(2, "0");
+      const waypoint = document.createElement("p");
+      waypoint.className = "track-waypoint";
+      waypoint.setAttribute("data-stage", stage);
+      const ck = t(lang, "exp.checkpoint") || "Waypoint";
+      const active = t(lang, "exp.activeLeg") || "Active sector";
+      waypoint.textContent = ck + " " + stage + (i === 0 ? " · " + active : "");
+
       const head = document.createElement("header");
-      head.className = "timeline-head";
+      head.className = "game-stop-card__head";
       const h3 = document.createElement("h3");
       h3.textContent = role.title;
       const org = document.createElement("p");
@@ -220,17 +256,45 @@
       head.appendChild(h3);
       head.appendChild(org);
       head.appendChild(dates);
-      const ul = document.createElement("ul");
-      ul.className = "bullet-list";
-      role.bullets.forEach(function (b) {
-        const bullet = document.createElement("li");
-        bullet.textContent = b;
-        ul.appendChild(bullet);
-      });
-      body.appendChild(head);
-      body.appendChild(ul);
-      li.appendChild(marker);
-      li.appendChild(body);
+
+      const reveal = document.createElement("div");
+      reveal.className = "game-stop-card__reveal";
+      if (role.summary) {
+        const narrative = document.createElement("p");
+        narrative.className = "track-summary";
+        narrative.textContent = role.summary;
+        reveal.appendChild(narrative);
+      } else if (role.bullets && role.bullets.length) {
+        const ul = document.createElement("ul");
+        ul.className = "bullet-list";
+        role.bullets.forEach(function (b) {
+          const bullet = document.createElement("li");
+          bullet.textContent = b;
+          ul.appendChild(bullet);
+        });
+        reveal.appendChild(ul);
+      }
+
+      card.appendChild(dot);
+      card.appendChild(waypoint);
+      card.appendChild(head);
+      card.appendChild(reveal);
+
+      li.appendChild(card);
+
+      if (i < roles.length - 1) {
+        const runway = document.createElement("div");
+        runway.className = "game-board__runway";
+        runway.setAttribute("aria-hidden", "true");
+        const shimmer = document.createElement("span");
+        shimmer.className = "game-board__shimmer";
+        const runner = document.createElement("span");
+        runner.className = "game-board__runner";
+        runway.appendChild(shimmer);
+        runway.appendChild(runner);
+        li.appendChild(runway);
+      }
+
       container.appendChild(li);
     });
   }
@@ -240,23 +304,42 @@
     const cs =
       globalThis.PORTFOLIO_I18N?.[lang]?.caseStudies || globalThis.PORTFOLIO_I18N?.en?.caseStudies;
     if (!container || !cs?.items) return;
+    const expandHint = t(lang, "caseStudies.expandLabel") || t("en", "caseStudies.expandLabel") || "";
     container.replaceChildren();
     cs.items.forEach(function (item) {
-      const art = document.createElement("article");
-      art.className = "case-study-card";
+      const details = document.createElement("details");
+      details.className = "case-study-card";
+      const summary = document.createElement("summary");
+      summary.className = "case-study-summary";
+      if (expandHint) {
+        summary.setAttribute("aria-label", expandHint + ": " + item.headline);
+      }
+      const summaryText = document.createElement("div");
+      summaryText.className = "case-study-summary-text";
       const company = document.createElement("p");
       company.className = "case-study-company";
       company.textContent = item.company;
       const h3 = document.createElement("h3");
       h3.className = "case-study-title";
       h3.textContent = item.headline;
+      summaryText.appendChild(company);
+      summaryText.appendChild(h3);
+      const chevron = document.createElement("span");
+      chevron.className = "case-study-chevron";
+      chevron.setAttribute("aria-hidden", "true");
+      chevron.innerHTML =
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
+      summary.appendChild(summaryText);
+      summary.appendChild(chevron);
+      const expand = document.createElement("div");
+      expand.className = "case-study-expand";
       const p = document.createElement("p");
       p.className = "case-study-body";
       p.textContent = item.body;
-      art.appendChild(company);
-      art.appendChild(h3);
-      art.appendChild(p);
-      container.appendChild(art);
+      expand.appendChild(p);
+      details.appendChild(summary);
+      details.appendChild(expand);
+      container.appendChild(details);
     });
   }
 
@@ -318,6 +401,22 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       const lang = getLocale();
+      const messageField = form.elements.message;
+      if (messageField) {
+        const message = messageField.value.trim();
+        if (!message) return;
+        const footer = t(lang, "intake.emailFooter") || "";
+        const body = message + footer;
+        const subject = t(lang, "intake.emailSubject");
+        window.location.href =
+          "mailto:" +
+          BUSINESS_EMAIL +
+          "?subject=" +
+          encodeURIComponent(subject || "Contact") +
+          "&body=" +
+          encodeURIComponent(body);
+        return;
+      }
       const project = form.elements.project.value.trim();
       if (!project) return;
       const audience = form.elements.audience.value.trim();
@@ -344,20 +443,6 @@
         encodeURIComponent(subject || "Project brief") +
         "&body=" +
         encodeURIComponent(body);
-    });
-  }
-
-  function initCookieSettingsButton() {
-    const btn = document.getElementById("cookie-settings-btn");
-    if (!btn) return;
-    btn.addEventListener("click", function () {
-      if (window.Cookiebot && typeof window.Cookiebot.renew === "function") {
-        window.Cookiebot.renew();
-        return;
-      }
-      if (window.CookieYes && typeof window.CookieYes.openSettings === "function") {
-        window.CookieYes.openSettings();
-      }
     });
   }
 
@@ -429,7 +514,7 @@
       setNavMenuOpen(!navMenuOpen);
     });
 
-    nav.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    nav.querySelectorAll("a").forEach(function (a) {
       a.addEventListener("click", function () {
         setNavMenuOpen(false);
       });
@@ -499,6 +584,7 @@
   const locale = getLocale();
   root.setAttribute("lang", HTML_LANG_BY_LOCALE[locale] || "en");
   applyI18n(locale);
+  applyPageTitle(locale);
   syncNavToggleA11y();
   applyMailtoGuidedLinks(locale);
   renderServices(locale);
@@ -508,7 +594,6 @@
   renderRightFit(locale);
   renderReferences(locale);
   initIntakeForm();
-  initCookieSettingsButton();
   initHeroLottie();
 
   document.querySelector(".theme-toggle")?.addEventListener("click", function () {

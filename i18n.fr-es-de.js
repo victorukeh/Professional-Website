@@ -202,7 +202,7 @@
     "item2": "Base d’observabilité pour APIs, jobs et incidents",
     "item3": "Points de contrôle fraude et sécurité",
     "item4": "Vérifications de sécurité pour migrations et cutovers",
-    "download": "Ouvrir la checklist dans Google Docs"
+    "download": "Ouvrir la checklist dans Notion"
   },
   "caseStudies": {
     "title": "Réalisations ciblées",
@@ -515,7 +515,7 @@
     "item2": "Base de observabilidad para APIs, jobs e incidentes",
     "item3": "Puntos de control de fraude y seguridad",
     "item4": "Verificaciones de seguridad para migraciones y cutovers",
-    "download": "Abrir checklist en Google Docs"
+    "download": "Abrir checklist en Notion"
   },
   "caseStudies": {
     "title": "Trabajos destacados",
@@ -828,7 +828,7 @@
     "item2": "Observability-Baseline für APIs, Jobs und Incidents",
     "item3": "Prüfpunkte für Betrug und Sicherheit",
     "item4": "Sicherheitschecks für Migrationen und Cutovers",
-    "download": "Checkliste in Google Docs öffnen"
+    "download": "Checkliste in Notion öffnen"
   },
   "caseStudies": {
     "title": "Ausgewählte Arbeiten",

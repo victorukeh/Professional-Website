@@ -224,7 +224,7 @@
         item2: "Observability baseline for APIs, jobs, and incidents",
         item3: "Fraud and security control checkpoints",
         item4: "Release safety checks for migrations and cutovers",
-        download: "Open checklist in Google Docs",
+        download: "Open checklist in Notion",
       },
       caseStudies: {
         title: "Selected work",
@@ -570,7 +570,7 @@
         item2: "Observability baseline for API, jobs, and incidents",
         item3: "Fraud and security control checkpoints",
         item4: "Release safety checks for migration and cutover",
-        download: "Open checklist in Google Docs",
+        download: "Open checklist in Notion",
       },
       caseStudies: {
         title: "Selected work",

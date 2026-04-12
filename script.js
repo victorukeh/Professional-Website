@@ -154,11 +154,10 @@
     const bundle =
       globalThis.PORTFOLIO_I18N?.[lang]?.pricing || globalThis.PORTFOLIO_I18N?.en?.pricing;
     const numbers = globalThis.PRICING_NUMBERS;
-    if (!container || !bundle?.tiers || !numbers) return;
+    if (!container || !bundle?.tiers) return;
     container.replaceChildren();
     bundle.tiers.forEach(function (tier, i) {
-      const prices = numbers[i];
-      if (!prices) return;
+      const priceUsd = Array.isArray(numbers) && numbers[i]?.usd;
       const art = document.createElement("article");
       art.className = "pricing-card";
       if (i === 1) art.classList.add("pricing-card--featured");
@@ -183,12 +182,15 @@
         scope.textContent = tier.scopeAnchor;
         art.appendChild(scope);
       }
-      const priceRow = document.createElement("div");
-      priceRow.className = "pricing-prices pricing-prices--usd-only";
-      const usd = document.createElement("span");
-      usd.className = "pricing-usd";
-      usd.textContent = prices.usd;
-      priceRow.appendChild(usd);
+      if (priceUsd) {
+        const priceRow = document.createElement("div");
+        priceRow.className = "pricing-prices pricing-prices--usd-only";
+        const usd = document.createElement("span");
+        usd.className = "pricing-usd";
+        usd.textContent = priceUsd;
+        priceRow.appendChild(usd);
+        art.appendChild(priceRow);
+      }
       const ul = document.createElement("ul");
       ul.className = "pricing-features";
       tier.features.forEach(function (f) {
@@ -214,7 +216,6 @@
         encodeURIComponent(subj) +
         (body ? "&body=" + encodeURIComponent(body) : "");
       cta.textContent = bundle.cta;
-      art.appendChild(priceRow);
       art.appendChild(ul);
       art.appendChild(cta);
       container.appendChild(art);

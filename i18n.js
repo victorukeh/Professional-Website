@@ -1,10 +1,10 @@
 /**
  * UI copy + experience timeline per locale (en, pcm).
  * French, Spanish, German: see i18n.fr-es-de.js (loaded after this file).
- * Swap pricing numbers in PRICING_NUMBERS if your rates change.
+ * Optional per-tier amounts: `[{ usd: "From $X" }, …]` aligned with `pricing.tiers`. Omit or set `null` to hide.
  */
 (function (global) {
-  global.PRICING_NUMBERS = [{ usd: "From $4,500" }, { usd: "From $18,000" }, { usd: "From $6,500 / mo" }];
+  global.PRICING_NUMBERS = null;
 
   global.PORTFOLIO_I18N = {
     en: {
@@ -158,7 +158,7 @@
       pricing: {
         title: "Engagement and rates",
         intro:
-          "Indicative USD starting points. Final fees depend on scope, integrations, compliance, and risk.",
+          "Final fees depend on scope, integrations, compliance, and risk.",
         fx: "Invoices are in USD unless we agree otherwise in writing.",
         popular: "Popular",
         cta: "Discuss scope by email",
@@ -188,7 +188,7 @@
           {
             name: "Partner retainer",
             forWho:
-              "When you want continuity—not a one-off—someone who already knows your system for roadmap, reviews, and incidents.",
+              "When you want continuity and not a one-off projecct. You are looking for someone who already knows your system for roadmap, reviews, and incidents.",
             scopeAnchor: "Monthly hours and on-call by agreement; quarterly architecture review.",
             features: [
               "Monthly hours aligned to your needs",
@@ -504,7 +504,7 @@
       pricing: {
         title: "Engagement and rates",
         intro:
-          "Na indicative USD starting point. Final money go depend on scope, integration, compliance, and risk.",
+          "Final money go depend on scope, integration, compliance, and risk.",
         fx: "Invoice dey USD unless we agree another thing for writing.",
         popular: "Popular",
         cta: "Talk scope by email",

@@ -142,7 +142,7 @@
   },
   "pricing": {
     "title": "Engagement & tarifs",
-    "intro": "Points de départ indicatifs en USD. Les honoraires finaux dépendent du périmètre, des intégrations, de la conformité et du risque.",
+    "intro": "Les honoraires finaux dépendent du périmètre, des intégrations, de la conformité et du risque.",
     "fx": "Facturation en USD sauf accord écrit contraire.",
     "popular": "Populaire",
     "cta": "Discuter du périmètre par e-mail",
@@ -455,7 +455,7 @@
   },
   "pricing": {
     "title": "Compromiso y tarifas",
-    "intro": "Puntos de partida indicativos en USD. Los honorarios finales dependen del alcance, integraciones, cumplimiento y riesgo.",
+    "intro": "Los honorarios finales dependen del alcance, integraciones, cumplimiento y riesgo.",
     "fx": "Facturación en USD salvo acuerdo escrito distinto.",
     "popular": "Popular",
     "cta": "Hablar del alcance por correo",
@@ -768,7 +768,7 @@
   },
   "pricing": {
     "title": "Engagement & Sätze",
-    "intro": "Indikative USD-Richtwerte. Endhonorar hängt von Umfang, Integrationen, Compliance und Risiko ab.",
+    "intro": "Endhonorar hängt von Umfang, Integrationen, Compliance und Risiko ab.",
     "fx": "Rechnungen in USD, sofern nichts anderes schriftlich vereinbart ist.",
     "popular": "Beliebt",
     "cta": "Umfang per E-Mail besprechen",

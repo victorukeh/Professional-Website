@@ -20,7 +20,14 @@
     "menuClose": "Fermer le menu"
   },
   "home": {
-    "heroLead": "Backends de production pour la fintech et la croissance — APIs fiables, flux événementiels, systèmes pensés pour l’échelle.",
+    "heroHeadline": "Je conçois des backends qui restent fiables sous le trafic réel, les données réelles et les contraintes produit.",
+    "heroName": "Victor Ukeh",
+    "heroAvailability": "En général 1–2 missions par trimestre. Afrique de l’Ouest (WAT), recouvrement matinal EU et US.",
+    "heroLead": "Flux événementiels, jobs résilients, APIs rapides sous charge — SaaS, B2B, marketplaces, plateformes, outils internes et autres backends où la fiabilité compte.",
+    "heroMetaWork": "Réalisations et études de cas",
+    "employersLabel": "J’ai travaillé avec",
+    "employer1": "Moniepoint",
+    "employer2": "GetStac",
     "hubWorkTitle": "Réalisations",
     "hubWorkDesc": "Études de cas, métriques et parcours.",
     "hubServicesTitle": "Services",
@@ -34,10 +41,24 @@
     "docWork": "Réalisations · Victor Ukeh",
     "docServices": "Services · Victor Ukeh",
     "docContact": "Contact · Victor Ukeh",
-    "docChecklist": "Checklist · Victor Ukeh"
+    "docChecklist": "Checklist · Victor Ukeh",
+    "docIntro": "Vidéo d’intro · Victor Ukeh"
+  },
+  "workPage": {
+    "breadcrumbCurrent": "Réalisations",
+    "onThisPage": "Sur cette page",
+    "jumpCases": "Réalisations",
+    "jumpMetrics": "Indicateurs",
+    "jumpRefs": "Références",
+    "jumpTrack": "Le parcours"
   },
   "servicesPage": {
-    "lead": "Modalités, tarifs et stack technique.",
+    "breadcrumbCurrent": "Services",
+    "onThisPage": "Sur cette page",
+    "jumpOfferings": "Prestations",
+    "jumpRates": "Engagements & tarifs",
+    "jumpStack": "Stack principal",
+    "jumpChecklist": "Checklist",
     "checklistCta": "Checklist backend gratuite (une page)"
   },
   "mailto": {
@@ -51,9 +72,9 @@
     ]
   },
   "hero": {
-    "positioning": "J’aide les fintech et les startups en forte croissance à bâtir des backends qui restent fiables quand tout se joue.",
+    "positioning": "J’aide les équipes produit à livrer des backends de production qui tiennent la charge — APIs, files, jobs et flux événementiels, dans tous secteurs.",
     "kicker": "Ingénieur backend senior et systèmes distribués",
-    "lead": "Je conçois et livre des backends de production : flux d’épargne et de paiement événementiels, systèmes de jobs à haut débit et APIs qui restent rapides sous charge, avec sécurité, idempotence et observabilité dès le départ.",
+    "lead": "Je conçois et livre des backends de production : flux événementiels, systèmes de jobs à haut débit et APIs rapides sous charge, avec sécurité, idempotence et observabilité dès le départ.",
     "availability": "Basé en Afrique de l’Ouest (WAT). Disponibilité avec recouvrement matinal EU et US.",
     "ctaBook": "Réserver un appel de cadrage (30 minutes)",
     "ctaEmail": "Envoyer un brief par e-mail"
@@ -91,9 +112,11 @@
   },
   "video": {
     "title": "Vidéo de présentation",
-    "intro": "Une courte vidéo de présentation sera publiée ici lorsqu’elle sera disponible.",
+    "intro": "Une courte présentation, de vive voix.",
     "placeholder": "Intégrez YouTube, Vimeo ou un fichier auto-hébergé dans ce cadre.",
-    "transcript": "La transcription sera publiée avec la vidéo."
+    "transcript": "La transcription sera publiée avec la vidéo.",
+    "watchCta": "Ouvrir sur YouTube",
+    "watchHint": "Ouvre YouTube dans un nouvel onglet."
   },
   "services": {
     "title": "Ce que je fais concrètement pour les clients",
@@ -126,7 +149,8 @@
     "tiers": [
       {
         "name": "Sprint & intégrations",
-        "forWho": "Audits, spikes, APIs, ou réparer ce qui « ne casse qu’en prod ».",
+        "forWho": "Quand la prod brûle, qu’un fournisseur a glissé, ou qu’il vous faut un spike avant d’engager un recrutement.",
+        "scopeAnchor": "En général des engagements de 1 à 3 semaines.",
         "features": [
           "Tranche ciblée sur 1 à 3 semaines",
           "Compte-rendu écrit + prochaines étapes",
@@ -135,7 +159,8 @@
       },
       {
         "name": "Backend produit",
-        "forWho": "Nouveau module, migration ou fonctionnalité multi-services avec jalons clairs.",
+        "forWho": "Quand vous livrez un nouveau module ou une migration à de vrais utilisateurs et qu’il faut porter le fil jusqu’au staging et à la prod.",
+        "scopeAnchor": "Idéal pour une codebase existante et des jalons définis.",
         "features": [
           "Specs, implémentation, tests, passation",
           "Support montée staging + prod",
@@ -144,7 +169,8 @@
       },
       {
         "name": "Partenaire au forfait",
-        "forWho": "Ownership continu : roadmap, revues, incidents, ciment d’équipe.",
+        "forWho": "Quand vous voulez de la continuité — pas un one-shot — quelqu’un qui connaît déjà votre système pour la roadmap, les revues et les incidents.",
+        "scopeAnchor": "Heures mensuelles et astreinte selon accord ; bilan d’architecture trimestriel.",
         "features": [
           "Volume d’heures mensuel (aligné ensemble)",
           "Astreinte possible selon accord",
@@ -155,7 +181,7 @@
   },
   "intake": {
     "title": "Écrivez-moi",
-    "intro": "Quelques lignes suffisent. Je réponds en général sous quelques jours ouvrés.",
+    "intro": "Restez léger : le problème, le calendrier approximatif et les liens utiles. L’envoi ouvre votre messagerie avec un brouillon modifiable avant envoi.",
     "labelMessage": "Message",
     "placeholderMessage": "Besoin, liens, délais…",
     "labelProject": "Que construisez-vous ou corrigez-vous ?",
@@ -164,13 +190,14 @@
     "labelBudget": "Budget ou mode d’engagement (facultatif)",
     "labelLinks": "Liens (deck, dépôt, docs)",
     "submit": "Envoyer par e-mail",
+    "mailtoNote": "Ouvre votre application e-mail par défaut. Si rien ne se passe, vous n’avez peut-être pas de client mail — utilisez Prendre rendez-vous ou le bouton M’écrire ci-dessus.",
     "emailSubject": "Message depuis le site",
     "emailHeading": "Message",
     "emailFooter": "\n\n—\nEnvoyé via le formulaire de contact sur victorukeh.com"
   },
   "checklist": {
     "title": "Checklist backend gratuite sur une page",
-    "intro": "Une checklist autonome sur une page pour les équipes fintech et en forte croissance. Aucun appel requis.",
+    "intro": "Checklist autonome sur une page pour les équipes fintech et en forte croissance — pas d’appel commercial, pas d’e-mail obligatoire pour télécharger.",
     "item1": "Idempotence et retries pour les flux de mouvement d’argent",
     "item2": "Base d’observabilité pour APIs, jobs et incidents",
     "item3": "Points de contrôle fraude et sécurité",
@@ -179,28 +206,32 @@
   },
   "caseStudies": {
     "title": "Réalisations ciblées",
-    "intro": "Projets nommés et résultats.",
-    "expandLabel": "Ouvrir pour lire l’étude complète",
+    "intro": "Une ligne de contexte par ligne ; ouvrez pour un bref résumé d’impact (versions longues sur demande lors du contact).",
+    "expandLabel": "Ouvrir le résumé",
     "items": [
       {
         "company": "Moniepoint",
         "headline": "Target Savings : fiabilité sous croissance",
-        "body": "Le flux d’épargne présentait des conditions de course qui provoquaient des jobs en échec sous charge. J’ai basculé l’exécution vers un traitement idempotent et événementiel et renforcé la couche jobs vers environ un million de jobs actifs par jour. Les API de création de plans sont restées sous 250 ms pendant que l’onboarding montait à environ cinq mille nouveaux plans par jour."
+        "teaser": "Épargne événementielle idempotente à l’échelle : ~1M jobs actifs/jour, API sous 250 ms pendant la montée en charge de l’onboarding.",
+        "body": "Des courses critiques faisaient échouer les jobs sous charge. J’ai basculé vers un traitement idempotent et événementiel et renforcé la couche jobs. Les API sont restées sous 250 ms avec environ cinq mille nouveaux plans par jour."
       },
       {
         "company": "Moniepoint",
         "headline": "Cash Management : flux de trésorerie sûrs et efficaces",
-        "body": "J’ai piloté la livraison backend des flux de trésorerie à fort volume et renforcé les contrôles opérationnels dans un contexte réglementé. Ce travail a réduit d’environ 40 % la friction d’approvisionnement cash, maintenu la fraude à 0 %, et amélioré les performances de validation ML d’environ 30 à 40 % sur de gros volumes."
+        "teaser": "Flux cash réglementés à fort volume : moins de friction à l’approvisionnement, fraude à 0 %, contrôles renforcés sur les données sensibles.",
+        "body": "J’ai piloté la livraison backend et resserré les contrôles opérationnels. La friction d’approvisionnement a fortement baissé ; la fraude est restée à zéro sur les chemins critiques."
       },
       {
         "company": "GetStac",
         "headline": "Stabilité de la plateforme d’appariement",
-        "body": "J’ai porté les chemins d’appariement critiques de bout en bout. Le travail de fiabilité a fortement réduit les incidents signalés par les clients dès le premier mois, avec une latence d’affectation sous 300 ms."
+        "teaser": "Chemins d’appariement critiques de bout en bout : moins d’incidents clients au premier mois, latence d’affectation sous 300 ms.",
+        "body": "J’ai porté les chemins critiques. Le travail de fiabilité a fortement réduit les signalements clients au premier mois sans sacrifier la latence."
       },
       {
         "company": "IX Note",
         "headline": "Service e-wallet PXN",
-        "body": "J’ai piloté le travail backend du portefeuille électronique PXN : notifications basées sur Firebase sur le web et le mobile, durcissement de la sécurité ayant augmenté la satisfaction d’environ 60 % et réduit les problèmes de sécurité d’environ 80 %, cadre d’événements analytiques pour plus de 10 000 utilisateurs, et un chatbot Slack pour une meilleure visibilité des flux de travail des développeurs."
+        "teaser": "Backend e-wallet : notifications, durcissement sécurité, événements analytiques, bot Slack pour la visibilité dev.",
+        "body": "Périmètre : notifications Firebase, sécurité, couche d’événements analytiques pour 10 000+ utilisateurs, et outillage interne pour réduire le bruit d’équipe."
       }
     ]
   },
@@ -208,7 +239,7 @@
     "title": "Pour qui c’est fait",
     "intro": "Un cadrage clair accélère la décision des deux côtés.",
     "bullets": [
-      "Équipes fintech et startups qui traitent de l’argent réel ou des flux proches de la réglementation",
+      "Équipes produit qui livrent des backends de production — SaaS, marketplaces, plateformes, outils internes ou tout domaine avec charge sérieuse et exigences de fiabilité",
       "Responsables engineering qui ont besoin d’un senior autonome, sans micro-management",
       "Fondateurs et produits qui veulent des décisions écrites et des compromis explicites",
       "Organisations qui valorisent l’async, la documentation et une livraison prévisible"
@@ -223,24 +254,28 @@
         "role": "Engineering Manager, Moniepoint",
         "message": "Victor a apporté une structure claire sur un domaine backend complexe et a renforcé la fiabilité sous pression de production.",
         "linkLabel": "Voir le profil LinkedIn",
-        "linkedin": "https://www.linkedin.com/"
+        "linkedin": ""
       },
       {
         "name": "Daniel Okafor",
         "role": "Product and Engineering Lead, GetStac",
         "message": "Il livre vite, documente les décisions clairement, et augmente la confiance produit et engineering sur la livraison.",
         "linkLabel": "Voir le profil LinkedIn",
-        "linkedin": "https://www.linkedin.com/"
+        "linkedin": ""
       }
     ],
     "attribution": "Demandez lors de votre e-mail ou de votre appel."
   },
   "personality": {
     "title": "Façon de travailler",
+    "toggleHint": "Optionnel : ouvrir pour le détail",
+    "inline": "Je travaille d’abord en asynchrone, avec des décisions écrites et des changements découpés en PR — pour que votre équipe relise et possède ce qui part en prod. Chevauchement matinal EU/US pour les calls ; déploiements et bascules planifiés et communiqués, pas des releases surprise le vendredi.",
     "body": "Priorité à l’asynchrone et à la documentation. J’évite les correctifs temporaires qui deviennent permanents. Mon travail s’aligne sur les matinées EU et US et les plannings de travail. Déploiements et bascules planifiés, communiqués et testés."
   },
   "skills": {
-    "title": "Stack technique",
+    "title": "Stack principal",
+    "coreIntro": "Ce que j’utilise dès le premier jour sur un backend réglementé ou des paiements — pas un inventaire exhaustif.",
+    "toggleHint": "Ouvrir pour la liste complète",
     "intro": "Regroupé pour un scan rapide par recruteurs et clients.",
     "cards": {
       "lang": "Langages",
@@ -254,18 +289,29 @@
   "exp": {
     "title": "Le parcours",
     "intro": "Une trajectoire en une ligne droite qui s’élargit : premiers tickets, puis backends réglementés et systèmes de jobs à très grande échelle. Chaque point de passage raconte un chapitre, pas une liste de specs.",
+    "introShort": "Trois étapes : le fintech réglementé actuel, une mission livraison à forte croissance, et le chapitre d’avant qui montre le parcours.",
     "checkpoint": "Point de passage",
     "activeLeg": "Secteur actif",
     "hint": "Survolez ou focus un point de passage pour lire le chapitre. La ligne suit la course."
   },
   "contact": {
     "title": "Contact",
-    "lead": "Embauche, mission ou conseil : un message suffit. Réponse en quelques jours ouvrés.",
+    "bio1": "Je m’appelle Victor Ukeh. Je construis des backends pour des équipes où l’indisponibilité a un coût.",
+    "bio2": "Je travaille sur des systèmes distribués, des APIs à fort débit, des pipelines de jobs tolérants aux pannes, et bien plus encore.",
+    "bio3": "L’observabilité et la conformité sont intégrées dès le départ, pas ajoutées après coup.",
+    "bio4": "Mon travail récent porte sur de la fintech régulée à grande échelle.",
+    "bio5": "Si le backend doit tenir la route, parlons-en.",
+    "watchIntro": "Voir la vidéo d’intro",
+    "detailsHeading": "Comment me joindre",
+    "practicalities": "J’accompagne 1–2 clients par trimestre pour garder du focus sur chaque mission. Je réponds en quelques jours ouvrés.",
+    "lead": "Prenez rendez-vous, écrivez-moi ou passez par les liens ci-dessous — selon ce qui vous convient.",
+    "secondaryIntro": "Ou contact direct :",
     "email": "M’écrire",
     "cv": "Télécharger le CV",
     "book": "Prendre rendez-vous",
     "linkedin": "LinkedIn",
-    "github": "GitHub"
+    "github": "GitHub",
+    "photoFallback": "Emplacement photo"
   }
 };
   global.PORTFOLIO_I18N.es = {
@@ -287,7 +333,14 @@
     "menuClose": "Cerrar menú"
   },
   "home": {
-    "heroLead": "Backends de producción para fintech y equipos en crecimiento: APIs fiables, flujos por eventos y sistemas preparados para escalar.",
+    "heroHeadline": "Construyo backends que siguen siendo fiables con tráfico real, datos reales y restricciones de producto.",
+    "heroName": "Victor Ukeh",
+    "heroAvailability": "Normalmente 1–2 encargos por trimestre. África Occidental (WAT), solapamiento con mañanas UE y EE. UU.",
+    "heroLead": "Flujos orientados a eventos, jobs resilientes y APIs rápidas bajo carga: SaaS, B2B, marketplaces, plataformas, herramientas internas y otros backends donde importa la fiabilidad.",
+    "heroMetaWork": "Trabajos y casos",
+    "employersLabel": "Anteriormente en",
+    "employer1": "Moniepoint",
+    "employer2": "GetStac",
     "hubWorkTitle": "Trabajos",
     "hubWorkDesc": "Casos de uso, métricas y experiencia.",
     "hubServicesTitle": "Servicios",
@@ -301,10 +354,24 @@
     "docWork": "Trabajos · Victor Ukeh",
     "docServices": "Servicios · Victor Ukeh",
     "docContact": "Contacto · Victor Ukeh",
-    "docChecklist": "Checklist · Victor Ukeh"
+    "docChecklist": "Checklist · Victor Ukeh",
+    "docIntro": "Vídeo de intro · Victor Ukeh"
+  },
+  "workPage": {
+    "breadcrumbCurrent": "Trabajos",
+    "onThisPage": "En esta página",
+    "jumpCases": "Trabajos",
+    "jumpMetrics": "Métricas",
+    "jumpRefs": "Referencias",
+    "jumpTrack": "La pista"
   },
   "servicesPage": {
-    "lead": "Modalidades, tarifas y stack técnico.",
+    "breadcrumbCurrent": "Servicios",
+    "onThisPage": "En esta página",
+    "jumpOfferings": "Qué hago",
+    "jumpRates": "Encargos y tarifas",
+    "jumpStack": "Stack principal",
+    "jumpChecklist": "Checklist",
     "checklistCta": "Checklist backend gratis (una página)"
   },
   "mailto": {
@@ -318,9 +385,9 @@
     ]
   },
   "hero": {
-    "positioning": "Ayudo a fintechs y startups de alto crecimiento a construir backends que sigan siendo fiables cuando más importa.",
+    "positioning": "Ayudo a equipos de producto a entregar backends de producción que aguanten la carga: APIs, colas, jobs y flujos orientados a eventos, en cualquier sector.",
     "kicker": "Ingeniero backend senior y sistemas distribuidos",
-    "lead": "Diseño y entrego backends de producción: flujos de ahorro y pagos orientados a eventos, sistemas de jobs de alto rendimiento y APIs que siguen rápidas bajo carga, con seguridad, idempotencia y observabilidad desde el inicio.",
+    "lead": "Diseño y entrego backends de producción: flujos orientados a eventos, sistemas de jobs de alto rendimiento y APIs rápidas bajo carga, con seguridad, idempotencia y observabilidad desde el inicio.",
     "availability": "Basado en África Occidental (WAT). Disponibilidad con solapamiento en las mañanas de la UE y EE. UU.",
     "ctaBook": "Reservar llamada de alcance (30 minutos)",
     "ctaEmail": "Enviar brief por correo"
@@ -358,9 +425,11 @@
   },
   "video": {
     "title": "Vídeo de presentación",
-    "intro": "Aquí habrá un vídeo breve cuando esté disponible.",
+    "intro": "Una breve presentación en primera persona.",
     "placeholder": "Incrusta YouTube, Vimeo o un archivo propio en este marco.",
-    "transcript": "La transcripción se publicará con el vídeo."
+    "transcript": "La transcripción se publicará con el vídeo.",
+    "watchCta": "Abrir en YouTube",
+    "watchHint": "Abre YouTube en una pestaña nueva."
   },
   "services": {
     "title": "Lo que hago de verdad para clientes",
@@ -393,7 +462,8 @@
     "tiers": [
       {
         "name": "Sprint e integraciones",
-        "forWho": "Auditorías, spikes, APIs o arreglar lo que «solo falla en prod».",
+        "forWho": "Cuando prod arde, un proveedor falla el plazo o necesitas un spike antes de contratar a tiempo completo.",
+        "scopeAnchor": "Normalmente encargos de 1 a 3 semanas.",
         "features": [
           "Tramo enfocado de 1 a 3 semanas",
           "Informe escrito + siguientes pasos",
@@ -402,7 +472,8 @@
       },
       {
         "name": "Backend de producto",
-        "forWho": "Nuevo módulo, migración o feature multi-servicio con hitos claros.",
+        "forWho": "Cuando entregas un módulo nuevo o migración a usuarios reales y necesitas a alguien que lo lleve hasta staging y prod.",
+        "scopeAnchor": "Ideal para equipos con codebase existente e hitos definidos.",
         "features": [
           "Diseño, implementación, tests, traspaso",
           "Soporte despliegue staging + prod",
@@ -411,7 +482,8 @@
       },
       {
         "name": "Socio por retainer",
-        "forWho": "Propiedad continua: roadmap, revisiones, incidentes, pegamento de equipo.",
+        "forWho": "Cuando quieres continuidad — no un proyecto puntual — alguien que ya conozca tu sistema para roadmap, revisiones e incidentes.",
+        "scopeAnchor": "Horas mensuales y guardia según acuerdo; revisión trimestral de arquitectura.",
         "features": [
           "Bolsa de horas mensual (alineamos tamaño)",
           "Guardia opcional por acuerdo",
@@ -422,7 +494,7 @@
   },
   "intake": {
     "title": "Escríbeme",
-    "intro": "Unas líneas bastan. Respondo en unos días laborables.",
+    "intro": "Con poco basta: qué estás resolviendo, calendario aproximado y enlaces. Al enviar se abre tu correo con un borrador que puedes editar antes de mandarlo.",
     "labelMessage": "Mensaje",
     "placeholderMessage": "Qué necesitas, enlaces, plazos…",
     "labelProject": "¿Qué construyes o corriges?",
@@ -431,13 +503,14 @@
     "labelBudget": "Presupuesto o modalidad de engagement (opcional)",
     "labelLinks": "Enlaces (deck, repo, docs)",
     "submit": "Enviar por correo",
+    "mailtoNote": "Abre tu aplicación de correo predeterminada. Si no ocurre nada, puede que no tengas cliente de correo — usa Reservar llamada o el botón Escríbeme más arriba.",
     "emailSubject": "Mensaje desde la web",
     "emailHeading": "Mensaje",
     "emailFooter": "\n\n—\nEnviado desde el formulario de contacto en victorukeh.com"
   },
   "checklist": {
     "title": "Checklist backend gratis de una página",
-    "intro": "Una checklist autoservicio de una página para equipos fintech y de alto crecimiento. No requiere llamada.",
+    "intro": "Checklist autoservicio de una página para equipos fintech y de alto crecimiento — sin llamada comercial ni correo obligatorio para descargar.",
     "item1": "Idempotencia y reintentos para flujos de movimiento de dinero",
     "item2": "Base de observabilidad para APIs, jobs e incidentes",
     "item3": "Puntos de control de fraude y seguridad",
@@ -446,28 +519,32 @@
   },
   "caseStudies": {
     "title": "Trabajos destacados",
-    "intro": "Proyectos con nombre y resultados.",
-    "expandLabel": "Abrir para leer el caso completo",
+    "intro": "Una línea de contexto por fila; expande para un breve resumen de impacto (textos largos bajo petición al contactar).",
+    "expandLabel": "Abrir resumen",
     "items": [
       {
         "company": "Moniepoint",
         "headline": "Target Savings: fiabilidad bajo crecimiento",
-        "body": "El flujo de ahorro tenía condiciones de carrera que provocaban jobs fallidos bajo carga. Moví la ejecución a procesamiento idempotente y orientado a eventos y reforcé la capa de jobs hacia alrededor de un millón de jobs activos al día. Las APIs de creación de planes se mantuvieron bajo 250 ms mientras el alta escalaba a unos cinco mil planes nuevos al día."
+        "teaser": "Ahorro idempotente orientado a eventos: ~1M jobs activos/día, APIs bajo 250 ms mientras crece el alta.",
+        "body": "Había carreras que rompían jobs bajo carga. Pasé a procesamiento idempotente y reforcé la capa de jobs. Las APIs se mantuvieron bajo 250 ms con unos cinco mil planes nuevos al día."
       },
       {
         "company": "Moniepoint",
         "headline": "Cash Management: flujos de efectivo seguros y eficientes",
-        "body": "Lideré la entrega backend de flujos de efectivo de alto volumen y reforcé controles operativos en un entorno regulado. Este trabajo redujo en torno al 40 % la fricción en el abastecimiento de efectivo, mantuvo el fraude en 0 %, y mejoró el rendimiento de validación ML en torno al 30 a 40 % sobre grandes volúmenes."
+        "teaser": "Efectivo regulado a gran volumen: menos fricción de abastecimiento, fraude en 0 %, controles más fuertes sobre datos sensibles.",
+        "body": "Lideré la entrega y reforcé controles operativos. Bajó la fricción de abastecimiento; el fraude se mantuvo en cero en rutas críticas."
       },
       {
         "company": "GetStac",
         "headline": "Estabilidad de la plataforma de emparejamiento",
-        "body": "Asumí los caminos críticos de emparejamiento de extremo a extremo. El trabajo de fiabilidad redujo fuertemente los problemas reportados por clientes en el primer mes, con latencia de asignación bajo 300 ms."
+        "teaser": "Caminos críticos de emparejamiento de punta a punta: menos incidencias de clientes en el primer mes, asignación bajo 300 ms.",
+        "body": "Asumí caminos críticos. La fiabilidad redujo fuerte los reportes en el primer mes sin sacrificar latencia de asignación."
       },
       {
         "company": "IX Note",
         "headline": "Servicio e-wallet PXN",
-        "body": "Lideré el trabajo backend del monedero electrónico PXN: notificaciones basadas en Firebase en web y móvil, endurecimiento de seguridad que elevó la satisfacción en torno al 60 % y redujo los problemas de seguridad en torno al 80 %, marco de eventos de analítica para más de 10.000 usuarios, y un chatbot de Slack para mejorar la visibilidad del flujo de trabajo de desarrollo."
+        "teaser": "Backend e-wallet: notificaciones, seguridad, analítica por eventos, bot Slack para visibilidad de desarrollo.",
+        "body": "Alcance: notificaciones Firebase, trabajo de seguridad, capa de eventos analíticos para 10.000+ usuarios, herramientas internas para bajar ruido de equipo."
       }
     ]
   },
@@ -475,7 +552,7 @@
     "title": "Para quién es",
     "intro": "Un encaje claro acelera la decisión para ambas partes.",
     "bullets": [
-      "Equipos fintech y startups que mueven dinero real o flujos cercanos a regulación",
+      "Equipos de producto que entregan backends de producción — SaaS, marketplaces, plataformas, herramientas internas o cualquier dominio con tráfico serio y requisitos de corrección",
       "Responsables de ingeniería que necesitan un senior autónomo, sin microgestión",
       "Fundadores y producto que quieren decisiones por escrito y trade-offs claros",
       "Organizaciones que valoran comunicación asíncrona, documentación y entrega predecible"
@@ -490,24 +567,28 @@
         "role": "Engineering Manager, Moniepoint",
         "message": "Victor aportó estructura clara en un dominio backend complejo y mejoró la fiabilidad bajo presión de producción.",
         "linkLabel": "Ver perfil de LinkedIn",
-        "linkedin": "https://www.linkedin.com/"
+        "linkedin": ""
       },
       {
         "name": "Daniel Okafor",
         "role": "Product and Engineering Lead, GetStac",
         "message": "Entrega rápido, documenta decisiones con claridad, y elevó la confianza de producto e ingeniería en la ejecución.",
         "linkLabel": "Ver perfil de LinkedIn",
-        "linkedin": "https://www.linkedin.com/"
+        "linkedin": ""
       }
     ],
     "attribution": "Pídelas al escribir o al reservar llamada."
   },
   "personality": {
     "title": "Forma de trabajar",
+    "toggleHint": "Opcional: abrir para el detalle",
+    "inline": "Trabajo primero en async, con decisiones por escrito y cambios en tamaño de PR — para que tu equipo revise y sea dueño de lo que sale a prod. Solapamiento por las mañanas UE/EE. UU. para llamadas; despliegues y cortes planificados y comunicados, no releases sorpresa el viernes.",
     "body": "Prioridad al trabajo asíncrono y a la documentación. Evito parches temporales que se quedan. Mi trabajo se solapa con las mañanas de la UE y EE. UU. y los horarios laborales. Despliegues y cortes planificados, comunicados y probados."
   },
   "skills": {
-    "title": "Stack técnico",
+    "title": "Stack principal",
+    "coreIntro": "Lo que uso desde el día uno en backend regulado o pagos — no un inventario completo.",
+    "toggleHint": "Abrir para la lista completa",
     "intro": "Agrupado para que reclutadores y clientes escaneen rápido.",
     "cards": {
       "lang": "Lenguajes",
@@ -521,18 +602,29 @@
   "exp": {
     "title": "La pista",
     "intro": "Una carrera que va de los primeros tickets a backends regulados y sistemas de jobs a escala real. Cada punto es un capítulo, no un listado de tareas.",
+    "introShort": "Tres paradas: fintech regulado actual, un rol de entrega en alta velocidad, y el capítulo anterior que muestra el recorrido.",
     "checkpoint": "Punto",
     "activeLeg": "Tramo activo",
     "hint": "Pasa el cursor o enfoca un punto para leer el capítulo. La línea marca el recorrido."
   },
   "contact": {
     "title": "Contacto",
-    "lead": "Contratación, proyecto o asesoría: un mensaje basta. Respondo en unos días laborables.",
+    "bio1": "Me llamo Victor Ukeh. Construyo backends para equipos donde el tiempo de inactividad tiene un coste.",
+    "bio2": "Trabajo en sistemas distribuidos, APIs de alto rendimiento, pipelines de jobs tolerantes a fallos y mucho más.",
+    "bio3": "Observabilidad y cumplimiento van integrados desde el diseño, no pegados después.",
+    "bio4": "Mi trabajo reciente es fintech regulada a escala.",
+    "bio5": "Si el backend tiene que funcionar, hablemos.",
+    "watchIntro": "Ver vídeo de intro",
+    "detailsHeading": "Cómo localizarme",
+    "practicalities": "Tomo 1–2 clientes por trimestre para que cada proyecto tenga foco. Respondo en unos días laborables.",
+    "lead": "Reserva llamada, escribe por correo o usa los enlaces de abajo: lo que te encaje.",
+    "secondaryIntro": "O contacto directo:",
     "email": "Escríbeme",
     "cv": "Descargar CV",
     "book": "Reservar llamada",
     "linkedin": "LinkedIn",
-    "github": "GitHub"
+    "github": "GitHub",
+    "photoFallback": "Marcador de foto"
   }
 };
   global.PORTFOLIO_I18N.de = {
@@ -554,7 +646,14 @@
     "menuClose": "Menü schließen"
   },
   "home": {
-    "heroLead": "Produktions-Backends für Fintech und schnell wachsende Teams — zuverlässige APIs, event-getriebene Flüsse, skalierbare Systeme.",
+    "heroHeadline": "Ich baue Backends, die unter echtem Traffic, echten Daten und echten Produktanforderungen zuverlässig bleiben.",
+    "heroName": "Victor Ukeh",
+    "heroAvailability": "In der Regel 1–2 neue Aufträge pro Quartal. Westafrika (WAT), Überlappung mit EU- und US-Vormittagen.",
+    "heroLead": "Event-getriebene Workflows, belastbare Jobs, APIs unter Last – für SaaS, B2B, Marktplätze, Plattformen, interne Tools und andere Backends, bei denen Zuverlässigkeit zählt.",
+    "heroMetaWork": "Arbeiten & Fallstudien",
+    "employersLabel": "Zuvor bei",
+    "employer1": "Moniepoint",
+    "employer2": "GetStac",
     "hubWorkTitle": "Arbeiten",
     "hubWorkDesc": "Fallstudien, Kennzahlen und Erfahrung.",
     "hubServicesTitle": "Leistungen",
@@ -568,10 +667,24 @@
     "docWork": "Arbeiten · Victor Ukeh",
     "docServices": "Leistungen · Victor Ukeh",
     "docContact": "Kontakt · Victor Ukeh",
-    "docChecklist": "Checkliste · Victor Ukeh"
+    "docChecklist": "Checkliste · Victor Ukeh",
+    "docIntro": "Intro-Video · Victor Ukeh"
+  },
+  "workPage": {
+    "breadcrumbCurrent": "Arbeiten",
+    "onThisPage": "Auf dieser Seite",
+    "jumpCases": "Ausgewählte Arbeiten",
+    "jumpMetrics": "Kennzahlen",
+    "jumpRefs": "Referenzen",
+    "jumpTrack": "Die Strecke"
   },
   "servicesPage": {
-    "lead": "Engagement-Modelle, Honorare und Tech-Stack.",
+    "breadcrumbCurrent": "Leistungen",
+    "onThisPage": "Auf dieser Seite",
+    "jumpOfferings": "Angebot",
+    "jumpRates": "Engagements & Honorare",
+    "jumpStack": "Kern-Stack",
+    "jumpChecklist": "Checkliste",
     "checklistCta": "Kostenlose einseitige Backend-Checkliste"
   },
   "mailto": {
@@ -585,9 +698,9 @@
     ]
   },
   "hero": {
-    "positioning": "Ich helfe Fintechs und schnell wachsenden Startups, Backends zu bauen, die in kritischen Momenten zuverlässig bleiben.",
+    "positioning": "Ich helfe Produktteams, Produktions-Backends zu liefern, die unter Last halten – APIs, Queues, Jobs und event-getriebene Workflows branchenübergreifend.",
     "kicker": "Senior Backend- und Verteilte-Systeme-Engineer",
-    "lead": "Ich entwerfe und liefere Produktions-Backends: event-getriebene Spar- und Zahlungsflüsse, Hochdurchsatz-Job-Systeme und APIs, die unter Last schnell bleiben, mit Security, Idempotenz und Observability von Anfang an.",
+    "lead": "Ich entwerfe und liefere Produktions-Backends: event-getriebene Workflows, Hochdurchsatz-Job-Systeme und APIs, die unter Last schnell bleiben, mit Security, Idempotenz und Observability von Anfang an.",
     "availability": "Standort Westafrika (WAT). Verfügbar mit Überlappung zu EU- und US-Vormittagen.",
     "ctaBook": "30-Minuten-Scoping-Call buchen",
     "ctaEmail": "Brief per E-Mail senden"
@@ -625,9 +738,11 @@
   },
   "video": {
     "title": "Intro-Video",
-    "intro": "Hier erscheint ein kurzes Intro-Video, sobald es verfügbar ist.",
+    "intro": "Eine kurze persönliche Vorstellung.",
     "placeholder": "YouTube, Vimeo oder selbst gehostete Datei in diesen Rahmen einbetten.",
-    "transcript": "Das Transkript erscheint mit dem Video."
+    "transcript": "Das Transkript erscheint mit dem Video.",
+    "watchCta": "Auf YouTube öffnen",
+    "watchHint": "Öffnet YouTube in einem neuen Tab."
   },
   "services": {
     "title": "Was ich konkret für Kund:innen tue",
@@ -660,7 +775,8 @@
     "tiers": [
       {
         "name": "Sprint & Integrationen",
-        "forWho": "Audits, Spikes, APIs oder das Ding, das „nur in Prod“ bricht.",
+        "forWho": "Wenn Produktion brennt, ein Lieferant verzögert oder Sie vor einer Einstellung einen Spike brauchen.",
+        "scopeAnchor": "In der Regel Engagements von 1–3 Wochen.",
         "features": [
           "1 bis 3 Wochen fokussierter Arbeitspaket",
           "Schriftliche Erkenntnisse + nächste Schritte",
@@ -669,7 +785,8 @@
       },
       {
         "name": "Produkt-Backend",
-        "forWho": "Neues Modul, Migration oder Multi-Service-Feature mit klaren Meilensteinen.",
+        "forWho": "Wenn Sie ein neues Modul oder eine Migration zu echten Nutzer:innen ausliefern und jemanden brauchen, der bis Staging und Prod begleitet.",
+        "scopeAnchor": "Am besten für Teams mit bestehender Codebasis und klaren Meilensteinen.",
         "features": [
           "Design, Implementierung, Tests, Übergabe",
           "Staging- + Produktions-Rollout-Support",
@@ -678,7 +795,8 @@
       },
       {
         "name": "Partner-Retainer",
-        "forWho": "Laufende Verantwortung: Roadmap, Reviews, Incidents, Team-Kleber.",
+        "forWho": "Wenn Sie Kontinuität wollen — nicht nur ein Projekt — jemand, der Ihr System schon kennt für Roadmap, Reviews und Incidents.",
+        "scopeAnchor": "Monatliche Stunden und Bereitschaft nach Vereinbarung; vierteljährlicher Architektur-Check.",
         "features": [
           "Monatliches Stundenkontingent (Größe stimmen wir ab)",
           "Bereitschaft nach Vereinbarung",
@@ -689,7 +807,7 @@
   },
   "intake": {
     "title": "Schreiben Sie mir",
-    "intro": "Ein paar Zeilen reichen. Ich antworte in der Regel innerhalb weniger Werktage.",
+    "intro": "Halten Sie es leicht: Problem, grober Zeitrahmen und Links. Beim Senden öffnet sich Ihr Mailprogramm mit einem Entwurf, den Sie vor dem Absenden noch anpassen können.",
     "labelMessage": "Nachricht",
     "placeholderMessage": "Bedarf, Links, Zeitrahmen…",
     "labelProject": "Was bauen oder beheben Sie?",
@@ -698,13 +816,14 @@
     "labelBudget": "Budgetrahmen oder Engagement-Modell (optional)",
     "labelLinks": "Links (Deck, Repo, Docs)",
     "submit": "Per E-Mail senden",
+    "mailtoNote": "Öffnet Ihre Standard-E-Mail-App. Wenn nichts passiert, ist möglicherweise kein Mail-Client eingerichtet — nutzen Sie „Termin buchen“ oder den E-Mail-Button weiter oben.",
     "emailSubject": "Nachricht von der Website",
     "emailHeading": "Nachricht",
     "emailFooter": "\n\n—\nGesendet über das Kontaktformular auf victorukeh.com"
   },
   "checklist": {
     "title": "Kostenlose einseitige Backend-Checkliste",
-    "intro": "Eine selbst bedienbare einseitige Checkliste für Fintech- und High-Growth-Teams. Kein Anruf erforderlich.",
+    "intro": "Selbstbedienbare einseitige Checkliste für Fintech- und High-Growth-Teams — kein Sales-Call, keine E-Mail-Pflicht zum Herunterladen.",
     "item1": "Idempotenz und Retries für Geldbewegungsflüsse",
     "item2": "Observability-Baseline für APIs, Jobs und Incidents",
     "item3": "Prüfpunkte für Betrug und Sicherheit",
@@ -713,28 +832,32 @@
   },
   "caseStudies": {
     "title": "Ausgewählte Arbeiten",
-    "intro": "Benannte Projekte und Ergebnisse.",
-    "expandLabel": "Öffnen für die vollständige Fallstudie",
+    "intro": "Eine Kontextzeile pro Zeile; aufklappen für eine kurze Ergebniszusammenfassung (ausführlichere Texte auf Anfrage bei Kontakt).",
+    "expandLabel": "Kurzfassung öffnen",
     "items": [
       {
         "company": "Moniepoint",
         "headline": "Target Savings: Zuverlässigkeit bei Wachstum",
-        "body": "Der Sparfluss hatte Race Conditions, die unter Last fehlschlagende Jobs verursachten. Ich verlagerte die Ausführung auf idempotente, event-getriebene Verarbeitung und verstärkte die Job-Plattform auf etwa eine Million aktive Jobs pro Tag. APIs zur Plananlage blieben unter 250 ms, während das Onboarding auf etwa fünftausend neue Pläne pro Tag skalierte."
+        "teaser": "Event-getriebenes, idempotentes Sparen im großen Maßstab: ~1M aktive Jobs/Tag, Plan-APIs unter 250 ms beim Onboarding-Wachstum.",
+        "body": "Race Conditions ließen Jobs unter Last scheitern. Ich verlagerte auf idempotente, event-getriebene Verarbeitung und verstärkte die Job-Schicht. APIs blieben unter 250 ms bei etwa fünftausend neuen Plänen pro Tag."
       },
       {
         "company": "Moniepoint",
         "headline": "Cash Management: sichere und effiziente Cashflows",
-        "body": "Ich leitete die Backend-Lieferung für Cash-Management-Flows mit hohem Volumen und stärkte operative Kontrollen in einem regulierten Umfeld. Diese Arbeit reduzierte die Reibung bei der Cash-Beschaffung um etwa 40 %, hielt Betrug bei 0 %, und verbesserte die ML-Validierungsleistung bei großen Datenmengen um rund 30 bis 40 %."
+        "teaser": "Regulierte Hochvolumen-Cashflows: weniger Reibung bei der Beschaffung, Betrug bei 0 %, schärfere Kontrollen für sensible Daten.",
+        "body": "Ich leitete die Backend-Lieferung und schärfte operative Kontrollen. Die Beschaffungsreibung sank; Betrug blieb auf kritischen Pfaden bei null."
       },
       {
         "company": "GetStac",
         "headline": "Stabilität der Matching-Plattform",
-        "body": "Ich verantwortete kritische Matching-Pfade end-to-end. Zuverlässigkeitsarbeit reduzierte gemeldete Kundenprobleme im ersten Monat deutlich bei Zuweisungslatenz unter 300 ms."
+        "teaser": "Kritische Matching-Pfade End-to-End: deutlich weniger Kundenmeldungen im ersten Monat, Zuweisung unter 300 ms.",
+        "body": "Ich verantwortete kritische Pfade. Zuverlässigkeitsarbeit reduzierte Meldungen im ersten Monat stark, ohne Latenz zu opfern."
       },
       {
         "company": "IX Note",
         "headline": "PXN E-Wallet-Service",
-        "body": "Ich verantwortete das Backend für den PXN E-Wallet: Firebase-basierte Benachrichtigungen für Web und Mobile, Security-Hardening, das die Zufriedenheit um etwa 60 % erhöhte und Sicherheitsprobleme um etwa 80 % verringerte, ein Analytics-Event-Framework für über 10.000 Nutzer und einen Slack-Chatbot für bessere Sichtbarkeit der Entwickler-Workflows."
+        "teaser": "E-Wallet-Backend: Benachrichtigungen, Security, Analytics-Events, Slack-Bot für Dev-Sichtbarkeit.",
+        "body": "Umfang: Firebase-Benachrichtigungen, Security-Arbeit, Analytics-Events für 10.000+ Nutzer, interne Tools für weniger Team-Rauschen."
       }
     ]
   },
@@ -742,7 +865,7 @@
     "title": "Für wen das gedacht ist",
     "intro": "Klare Passform beschleunigt die Entscheidung auf beiden Seiten.",
     "bullets": [
-      "Fintech-Teams und Startups mit echtem Geldfluss oder regulierungsnahen Prozessen",
+      "Produktteams, die Produktions-Backends liefern – SaaS, Marktplätze, Plattformen, interne Tools oder Domains mit hohem Traffic und strengen Korrektheitsanforderungen",
       "Engineering-Leads, die einen autonomen Senior-Contractor ohne viel Handhalten brauchen",
       "Gründer und Produkt, die schriftliche Entscheidungen und ehrliche Trade-offs wollen",
       "Organisationen, die Async, Dokumentation und planbare Lieferung schätzen"
@@ -757,24 +880,28 @@
         "role": "Engineering Manager, Moniepoint",
         "message": "Victor brachte klare Struktur in ein komplexes Backend-Umfeld und verbesserte die Zuverlässigkeit unter Produktionsdruck.",
         "linkLabel": "LinkedIn-Profil ansehen",
-        "linkedin": "https://www.linkedin.com/"
+        "linkedin": ""
       },
       {
         "name": "Daniel Okafor",
         "role": "Product and Engineering Lead, GetStac",
         "message": "Er liefert schnell, dokumentiert Entscheidungen klar, und stärkt das Vertrauen von Produkt und Engineering in die Umsetzung.",
         "linkLabel": "LinkedIn-Profil ansehen",
-        "linkedin": "https://www.linkedin.com/"
+        "linkedin": ""
       }
     ],
     "attribution": "Einfach bei E-Mail oder Termin anfragen."
   },
   "personality": {
     "title": "Arbeitsweise",
+    "toggleHint": "Optional: für Details aufklappen",
+    "inline": "Ich arbeite async-first mit schriftlichen Entscheidungen und PR-großen Schnitten — damit Ihr Team reviewen und besitzen kann, was live geht. Überlappung mit EU-/US-Vormittagen für Calls; Deployments und Cutovers sind geplant und kommuniziert — keine Überraschungs-Releases am Freitag.",
     "body": "Async-first und stark dokumentiert. Ich vermeide temporäre Fixes, die dauerhaft bleiben. Meine Arbeit überlappt mit EU- und US-Vormittagen und Arbeitszeiten. Deployments und Cutovers sind geplant, kommuniziert und getestet."
   },
   "skills": {
-    "title": "Technischer Stack",
+    "title": "Kern-Stack",
+    "coreIntro": "Was ich ab Tag eins bei reguliertem Backend oder Zahlungsflüssen einsetze — kein vollständiges Inventar.",
+    "toggleHint": "Aufklappen für die vollständige Liste",
     "intro": "Gruppiert für schnelles Scannen durch Recruiter:innen und Kund:innen.",
     "cards": {
       "lang": "Sprachen",
@@ -788,18 +915,29 @@
   "exp": {
     "title": "Die Strecke",
     "intro": "Ein Lauf von ersten Tickets bis zu regulierten Fintech-Backends und Job-Systemen mit Millionen Ausführungen pro Tag. Jeder Wegpunkt ist ein Kapitel, keine Spezifikationsliste.",
+    "introShort": "Drei Stationen: aktuelles reguliertes Fintech, eine Rolle mit schneller Lieferung, und das frühere Kapitel, das den Werdegang zeigt.",
     "checkpoint": "Wegpunkt",
     "activeLeg": "Aktives Segment",
     "hint": "Wegpunkt mit Maus oder Tastatur fokussieren, um das Kapitel zu lesen. Die Linie zeigt den Lauf."
   },
   "contact": {
     "title": "Kontakt",
-    "lead": "Anstellung, Projekt oder Beratung: eine kurze Nachricht reicht. Antwort in wenigen Werktagen.",
+    "bio1": "Ich heiße Victor Ukeh. Ich baue Backends für Teams, bei denen Ausfallzeiten etwas kosten.",
+    "bio2": "Ich arbeite an verteilten Systemen, Hochlast-APIs, fehlertoleranten Job-Pipelines und mehr.",
+    "bio3": "Observability und Compliance sind von Anfang an eingebaut — nicht nachträglich draufgepatcht.",
+    "bio4": "Meine jüngste Arbeit betrifft reguliertes Fintech in großem Maßstab.",
+    "bio5": "Wenn das Backend zuverlässig laufen muss, reden wir.",
+    "watchIntro": "Intro-Video ansehen",
+    "detailsHeading": "So erreichen Sie mich",
+    "practicalities": "Ich nehme 1–2 Kund:innen pro Quartal an, damit jedes Engagement Fokus bekommt. Ich antworte innerhalb weniger Werktage.",
+    "lead": "Termin buchen, E-Mail schicken oder die Links unten nutzen — wie es Ihnen liegt.",
+    "secondaryIntro": "Oder direkt:",
     "email": "E-Mail",
     "cv": "CV herunterladen",
     "book": "Termin buchen",
     "linkedin": "LinkedIn",
-    "github": "GitHub"
+    "github": "GitHub",
+    "photoFallback": "Platzhalter Foto"
   }
 };
   global.EXPERIENCE_BY_LANG = global.EXPERIENCE_BY_LANG || {};
@@ -808,19 +946,19 @@
     "title": "Ingénieur backend (niveau senior)",
     "org": "Moniepoint, épargne et dépôts",
     "dates": "2025, en cours",
-    "summary": "Le tour que je pilote aujourd’hui : Target Savings à très grande échelle—API qui tiennent la route quand les plans s’empilent, couche de jobs idempotents vers un million d’exécutions quotidiennes, flux d’épargne sur événements de paiement, couchers de produits sans casse, fraude à zéro et incidents refermés avant qu’on en fasse une légende."
+    "summary": "Target Savings : épargne idempotente sur événements, couche jobs vers un million d’exécutions/jour, API stables sous charge d’onboarding. Fraude à zéro ; retrait de l’ancien produit sans casse client."
   },
   {
     "title": "Ingénieur backend senior",
     "org": "GetStac",
     "dates": "2025",
-    "summary": "Chez GetStac, le fil critique du matching agent→magasin de bout en bout : latence maîtrisée, cycles de données plus sains, et une fiabilité qui s’est vue vite en moins d’escalades clients."
+    "summary": "Matching critique agent→magasin de bout en bout : affectations fiables, données plus saines, nettement moins d’escalades clients les premières semaines."
   },
   {
     "title": "Ingénieur backend",
     "org": "Moniepoint, gestion de trésorerie",
     "dates": "2024 à 2025",
-    "summary": "Cash Management : flux réglementés à gros volume, friction d’approvisionnement réduite, fraude maintenue à zéro, pipelines ML de validation qui restent respirants sur de gros volumes."
+    "summary": "Trésorerie réglementée à gros volume : friction d’approvisionnement réduite, fraude à zéro sur les chemins critiques, validation ML tenue sur grosses charges."
   },
   {
     "title": "Ingénieur full stack",
@@ -852,19 +990,19 @@
     "title": "Ingeniero backend (alcance senior)",
     "org": "Moniepoint, ahorros y depósitos",
     "dates": "2025 a la fecha",
-    "summary": "La vuelta que piloto ahora: Target Savings a escala real—APIs que aguantan cuando los planes se acumulan, una capa de jobs idempotente hacia millones de ejecuciones diarias, ahorro orientado a eventos de pago, retirada limpia de productos viejos, fraude en cero e incidentes cerrados antes de que cuenten la historia."
+    "summary": "Target Savings: ahorro idempotente, capa de jobs hacia millones de ejecuciones diarias, APIs estables con el alta. Fraude en cero; retirada de producto antiguo sin romper clientes."
   },
   {
     "title": "Ingeniero backend senior",
     "org": "GetStac",
     "dates": "2025",
-    "summary": "En GetStac enhebré el matching de punta a punta: asignaciones rápidas, ciclos de datos más sanos y menos escaladas de clientes en las primeras semanas."
+    "summary": "Matching de punta a punta: asignaciones fiables, datos más sanos, muchas menos escaladas de clientes en las primeras semanas."
   },
   {
     "title": "Ingeniero backend",
     "org": "Moniepoint, gestión de efectivo",
     "dates": "2024 a 2025",
-    "summary": "Cash Management: flujos regulados a gran volumen, menos fricción al abastecer efectivo, fraude en cero y pipelines ML que no se ahogan con cargas grandes."
+    "summary": "Efectivo regulado a gran volumen: menos fricción de abastecimiento, fraude en cero en rutas críticas, validación ML que aguanta cargas grandes."
   },
   {
     "title": "Ingeniero full stack",
@@ -896,19 +1034,19 @@
     "title": "Backend Engineer (Senior Scope)",
     "org": "Moniepoint, Sparen und Einlagen",
     "dates": "2025 bis heute",
-    "summary": "Die Runde, die ich gerade fahre: Target Savings in Produktionsgröße—APIs, die nicht schwinden, wenn Pläne zunehmen, eine Job-Schicht mit Millionen idempotenter Ausführungen täglich, ereignisgesteuertes Sparen, sauberes Auslaufen alter Produkte, Betrug bei null und Incidents, die geschlossen werden, bevor sie zur Legende werden."
+    "summary": "Target Savings: idempotentes Sparen auf Zahlungsereignissen, Job-Schicht für Millionen Ausführungen/Tag, APIs stabil unter Onboarding-Last. Betrug bei null; Legacy-Sunset ohne Kundenbruch."
   },
   {
     "title": "Senior Backend Engineer",
     "org": "GetStac",
     "dates": "2025",
-    "summary": "Bei GetStac den Matching-Kern End-to-End gezogen: schnelle Zuweisungen, stabilere Datenlebenszyklen und spürbar weniger Kunden-Eskalationen innerhalb weniger Wochen."
+    "summary": "Matching-Kern End-to-End: zuverlässige Zuweisungen, stabilere Datenpfade, deutlich weniger Kunden-Eskalationen in den ersten Wochen."
   },
   {
     "title": "Backend Engineer",
     "org": "Moniepoint, Cash Management",
     "dates": "2024 bis 2025",
-    "summary": "Cash Management: regulierte Hochvolumen-Cashflows, weniger Reibung bei der Beschaffung, Betrug bei null und ML-Validierung, die auch bei großen Lasten nicht erstickt."
+    "summary": "Regulierte Hochvolumen-Cashflows: weniger Reibung bei der Beschaffung, Betrug bei null auf kritischen Pfaden, ML-Validierung bleibt bei großen Lasten nutzbar."
   },
   {
     "title": "Full-Stack-Engineer",

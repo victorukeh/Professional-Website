@@ -8,10 +8,7 @@
     }
   } catch (e) {}
   try {
-    document.documentElement.setAttribute(
-      "data-theme",
-      window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-    );
+    document.documentElement.setAttribute("data-theme", "dark");
   } catch (e2) {
     document.documentElement.setAttribute("data-theme", "dark");
   }

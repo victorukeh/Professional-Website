@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Free one-page backend checklist for fintech and high-growth teams." />
-    <title>Checklist · Victor Ukeh</title>
+    <meta name="description" content="Short intro video — Victor Ukeh, backend engineer." />
+    <title>Intro video · Victor Ukeh</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231c1c1e'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='15' font-weight='600' fill='%232997ff' font-family='system-ui,sans-serif'%3EU%3C/text%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +15,7 @@
     <script src="theme-boot.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body data-page="checklist">
+  <body data-page="intro">
     <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
     <header class="site-header" id="site-header">
       <div class="container header-inner">
@@ -32,7 +32,7 @@
         </button>
         <nav class="nav" id="primary-nav" aria-label="Primary">
           <a href="index.html" data-i18n="nav.home">Home</a>
-          <a href="intro.html" data-i18n="nav.video">Intro</a>
+          <a href="intro.html" aria-current="page" data-i18n="nav.video">Intro</a>
           <a href="work.html" data-i18n="nav.work">Work</a>
           <a href="services.html" data-i18n="nav.services">Services</a>
           <a href="contact.html" class="nav-cta" data-i18n="nav.contact">Contact</a>
@@ -50,28 +50,43 @@
     </header>
 
     <main id="main">
-      <section id="free-checklist" class="section checklist-section checklist-section--page">
+      <section id="intro-video" class="section video-section video-section--page" aria-label="Intro video">
         <div class="container">
           <h1 class="section-title">
             <span class="section-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </span>
-            <span data-i18n="checklist.title">Free one page backend checklist</span>
+            <span data-i18n="video.title">Intro video</span>
           </h1>
-          <p class="section-intro" data-i18n="checklist.intro">
-            A self serve one page checklist for fintech and high growth teams. No call required.
+          <p class="section-intro" data-i18n="video.intro">
+            A short introduction in my own words.
           </p>
-          <ul class="checklist-points" role="list">
-            <li data-i18n="checklist.item1">Idempotency and retries for money movement flows</li>
-            <li data-i18n="checklist.item2">Observability baseline for APIs, jobs, and incidents</li>
-            <li data-i18n="checklist.item3">Fraud and security control checkpoints</li>
-            <li data-i18n="checklist.item4">Release safety checks for migrations and cutovers</li>
-          </ul>
-          <p class="checklist-cta-wrap">
-            <a class="btn btn-primary" href="https://docs.google.com/document/d/REPLACE_WITH_YOUR_DOC_ID/edit?usp=sharing" target="_blank" rel="noopener noreferrer" data-i18n="checklist.download">Open checklist in Google Docs</a>
+          <div class="video-shell">
+            <div class="video-frame video-frame--embed">
+              <iframe
+                class="video-embed"
+                src="https://www.youtube.com/embed/DbtiUaWiie4?rel=0"
+                title="Intro video — Victor Ukeh"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="eager"
+              ></iframe>
+            </div>
+          </div>
+          <p class="video-page-actions">
+            <a
+              class="btn btn-ghost"
+              href="https://www.youtube.com/watch?v=DbtiUaWiie4"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="video.watchCta"
+              >Open on YouTube</a
+            >
           </p>
-          <p class="checklist-back">
-            <a href="services.html" data-i18n="nav.services">Services</a>
+          <p class="video-transcript-note">
+            <span class="video-transcript-link is-disabled" data-i18n="video.transcript"
+              >Transcript will publish with the video.</span
+            >
           </p>
         </div>
       </section>

@@ -28,7 +28,7 @@
   function getPreferredTheme() {
     const stored = localStorage.getItem(THEME_KEY);
     if (stored === "light" || stored === "dark") return stored;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return "dark";
   }
 
   function applyTheme(theme) {
@@ -52,7 +52,6 @@
     renderPricing(code);
     renderExperience(code);
     renderCaseStudies(code);
-    renderRightFit(code);
     renderReferences(code);
     const sel = document.getElementById("lang-select");
     if (sel) sel.value = code;
@@ -93,6 +92,7 @@
     services: "docServices",
     contact: "docContact",
     checklist: "docChecklist",
+    intro: "docIntro",
   };
 
   function applyPageTitle(lang) {
@@ -175,6 +175,14 @@
       const tag = document.createElement("p");
       tag.className = "pricing-card-for";
       tag.textContent = tier.forWho;
+      art.appendChild(h3);
+      art.appendChild(tag);
+      if (tier.scopeAnchor) {
+        const scope = document.createElement("p");
+        scope.className = "pricing-scope";
+        scope.textContent = tier.scopeAnchor;
+        art.appendChild(scope);
+      }
       const priceRow = document.createElement("div");
       priceRow.className = "pricing-prices pricing-prices--usd-only";
       const usd = document.createElement("span");
@@ -206,8 +214,6 @@
         encodeURIComponent(subj) +
         (body ? "&body=" + encodeURIComponent(body) : "");
       cta.textContent = bundle.cta;
-      art.appendChild(h3);
-      art.appendChild(tag);
       art.appendChild(priceRow);
       art.appendChild(ul);
       art.appendChild(cta);
@@ -217,11 +223,12 @@
 
   function renderExperience(lang) {
     const container = document.getElementById("experience-timeline");
-    const roles =
+    const allRoles =
       globalThis.EXPERIENCE_BY_LANG?.[lang] || globalThis.EXPERIENCE_BY_LANG?.en;
-    if (!container || !roles) return;
+    if (!container || !allRoles) return;
+    const roles = allRoles.slice(0, 3);
     container.replaceChildren();
-    container.className = "game-board";
+    container.className = "game-board game-board--rails";
     roles.forEach(function (role, i) {
       const li = document.createElement("li");
       li.className = "game-board__stop" + (i === 0 ? " game-board__stop--current" : "");
@@ -324,6 +331,13 @@
       h3.textContent = item.headline;
       summaryText.appendChild(company);
       summaryText.appendChild(h3);
+      const teaserText = item.teaser || "";
+      if (teaserText) {
+        const teaserEl = document.createElement("p");
+        teaserEl.className = "case-study-teaser";
+        teaserEl.textContent = teaserText;
+        summaryText.appendChild(teaserEl);
+      }
       const chevron = document.createElement("span");
       chevron.className = "case-study-chevron";
       chevron.setAttribute("aria-hidden", "true");
@@ -343,16 +357,8 @@
     });
   }
 
-  function renderRightFit(lang) {
-    const ul = document.getElementById("right-fit-list");
-    const rf = globalThis.PORTFOLIO_I18N?.[lang]?.rightFit || globalThis.PORTFOLIO_I18N?.en?.rightFit;
-    if (!ul || !rf?.bullets) return;
-    ul.replaceChildren();
-    rf.bullets.forEach(function (text) {
-      const li = document.createElement("li");
-      li.textContent = text;
-      ul.appendChild(li);
-    });
+  function linkedinProfileLooksValid(href) {
+    return /^https?:\/\/(www\.)?linkedin\.com\/(in|pub|company)\//i.test(String(href || ""));
   }
 
   function renderReferences(lang) {
@@ -380,19 +386,63 @@
       msg.className = "reference-message";
       msg.textContent = ref.message;
 
-      const link = document.createElement("a");
-      link.className = "reference-link";
-      link.textContent = ref.linkLabel || "LinkedIn profile";
-      link.href = ref.linkedin || "#";
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-
       card.appendChild(name);
       card.appendChild(role);
       card.appendChild(msg);
-      card.appendChild(link);
+      if (linkedinProfileLooksValid(ref.linkedin)) {
+        const link = document.createElement("a");
+        link.className = "reference-link";
+        link.textContent = ref.linkLabel || "LinkedIn profile";
+        link.href = ref.linkedin;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        card.appendChild(link);
+      }
       container.appendChild(card);
     });
+  }
+
+  let heroLottieInstance = null;
+
+  function initHeroLottie() {
+    const container = document.getElementById("hero-lottie");
+    const wrap = document.querySelector(".hero-art");
+    if (!container || !wrap) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      wrap.classList.add("hero-art--static");
+      return;
+    }
+
+    const Lottie = globalThis.lottie || globalThis.bodymovin;
+    if (!Lottie || typeof Lottie.loadAnimation !== "function") {
+      wrap.classList.add("hero-art--static");
+      return;
+    }
+
+    const jsonUrl = new URL("images/hero-lottie.json", document.baseURI).href;
+    fetch(jsonUrl)
+      .then(function (r) {
+        if (!r.ok) throw new Error("hero-lottie fetch");
+        return r.json();
+      })
+      .then(function (data) {
+        heroLottieInstance = Lottie.loadAnimation({
+          container: container,
+          renderer: "svg",
+          loop: true,
+          autoplay: true,
+          animationData: data,
+          rendererSettings: {
+            preserveAspectRatio: "xMidYMid meet",
+            className: "hero-lottie-svg",
+          },
+        });
+      })
+      .catch(function () {
+        wrap.classList.add("hero-art--static");
+      });
   }
 
   function initIntakeForm() {
@@ -444,45 +494,6 @@
         "&body=" +
         encodeURIComponent(body);
     });
-  }
-
-  let heroLottieInstance = null;
-
-  function initHeroLottie() {
-    const container = document.getElementById("hero-lottie");
-    const wrap = document.querySelector(".hero-art");
-    if (!container || !wrap) return;
-
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) {
-      wrap.classList.add("hero-art--static");
-      return;
-    }
-
-    const Lottie = globalThis.lottie || globalThis.bodymovin;
-    if (!Lottie || typeof Lottie.loadAnimation !== "function") {
-      wrap.classList.add("hero-art--static");
-      return;
-    }
-
-    const jsonUrl = new URL("images/hero-lottie.json", document.baseURI).href;
-    fetch(jsonUrl)
-      .then(function (r) {
-        if (!r.ok) throw new Error("hero-lottie fetch");
-        return r.json();
-      })
-      .then(function (data) {
-        heroLottieInstance = Lottie.loadAnimation({
-          container: container,
-          renderer: "svg",
-          loop: true,
-          autoplay: true,
-          animationData: data,
-        });
-      })
-      .catch(function () {
-        wrap.classList.add("hero-art--static");
-      });
   }
 
   let navMenuOpen = false;
@@ -591,7 +602,6 @@
   renderPricing(locale);
   renderExperience(locale);
   renderCaseStudies(locale);
-  renderRightFit(locale);
   renderReferences(locale);
   initIntakeForm();
   initHeroLottie();
@@ -601,14 +611,18 @@
     applyTheme(next);
   });
 
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
-    if (!localStorage.getItem(THEME_KEY)) {
-      applyTheme(e.matches ? "dark" : "light");
-    }
-  });
-
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  function openServicesSkillsFromHash() {
+    if (document.body.getAttribute("data-page") !== "services") return;
+    if (window.location.hash !== "#skills") return;
+    const section = document.getElementById("skills");
+    const det = section && section.querySelector("details.page-disclosure");
+    if (det) det.open = true;
+  }
+  openServicesSkillsFromHash();
+  window.addEventListener("hashchange", openServicesSkillsFromHash);
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initReveal);

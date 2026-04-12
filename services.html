@@ -35,6 +35,7 @@
         </button>
         <nav class="nav" id="primary-nav" aria-label="Primary">
           <a href="index.html" data-i18n="nav.home">Home</a>
+          <a href="intro.html" data-i18n="nav.video">Intro</a>
           <a href="work.html" data-i18n="nav.work">Work</a>
           <a href="services.html" aria-current="page" data-i18n="nav.services">Services</a>
           <a href="contact.html" class="nav-cta" data-i18n="nav.contact">Contact</a>
@@ -52,9 +53,23 @@
     </header>
 
     <main id="main">
-      <section class="section page-lead">
-        <div class="container">
-          <p class="page-lead-text" data-i18n="servicesPage.lead">Engagement options, rates, and technical stack.</p>
+      <section class="section page-cross page-cross--top" aria-label="Page">
+        <div class="container page-cross-inner">
+          <nav class="page-cross-breadcrumb" aria-label="Breadcrumb">
+            <ol class="page-cross-breadcrumb-list">
+              <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+              <li aria-current="page"><span data-i18n="servicesPage.breadcrumbCurrent">Services</span></li>
+            </ol>
+          </nav>
+          <div class="page-cross-local-wrap">
+            <p class="page-cross-onpage-label" id="services-local-nav-label" data-i18n="servicesPage.onThisPage">On this page</p>
+            <nav class="page-cross-local" aria-labelledby="services-local-nav-label">
+              <a href="#services" data-i18n="servicesPage.jumpOfferings">What I do</a>
+              <a href="#pricing" data-i18n="servicesPage.jumpRates">Engagement &amp; rates</a>
+              <a href="#skills" data-i18n="servicesPage.jumpStack">Core stack</a>
+              <a href="#checklist-teaser" data-i18n="servicesPage.jumpChecklist">Checklist</a>
+            </nav>
+          </div>
         </div>
       </section>
 
@@ -92,102 +107,41 @@
         </div>
       </section>
 
-      <section class="section personality-section">
+      <section class="section personality-inline-section" aria-label="Working style">
         <div class="container">
-          <div class="personality-card">
-            <h2 class="personality-title" data-i18n="personality.title">How I work</h2>
-            <p class="personality-body" data-i18n="personality.body">
-              Async first and documentation heavy. I avoid temporary fixes that become permanent. My work overlaps EU and US morning calls and working schedules. Deployments and cutovers are planned, communicated, and tested.
-            </p>
-          </div>
+          <p class="personality-inline" data-i18n="personality.inline">
+            I work async-first with written decisions and PR-sized slices—so your team can review and own what ships. EU and US morning overlap for calls; deployments and cutovers are planned and communicated, not surprise Friday pushes.
+          </p>
         </div>
       </section>
 
-      <section id="skills" class="section skills-section">
+      <section id="skills" class="section skills-section skills-section--core">
         <div class="container">
           <h2 class="section-title">
             <span class="section-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
             </span>
-            <span data-i18n="skills.title">Technical stack</span>
+            <span data-i18n="skills.title">Core stack</span>
           </h2>
-          <p class="section-intro" data-i18n="skills.intro">
-            Grouped for recruiters and clients who need to scan quickly.
+          <p class="section-intro" data-i18n="skills.coreIntro">
+            What I reach for on day one of a regulated backend or payments engagement—not an exhaustive inventory.
           </p>
-          <div class="skill-bento">
-            <article class="skill-card skill-span-2">
-              <h3 data-i18n="skills.cards.lang">Languages</h3>
-              <ul class="skill-tags">
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>Java</li>
-                <li>Go</li>
-                <li>Python</li>
-              </ul>
-            </article>
-            <article class="skill-card">
-              <h3 data-i18n="skills.cards.backend">Backend &amp; messaging</h3>
-              <ul class="skill-tags">
-                <li>RabbitMQ</li>
-                <li>gRPC</li>
-                <li>Kafka</li>
-                <li>REST</li>
-                <li>Event-driven design</li>
-              </ul>
-            </article>
-            <article class="skill-card">
-              <h3 data-i18n="skills.cards.frameworks">Frameworks</h3>
-              <ul class="skill-tags">
-                <li>NestJS</li>
-                <li>Next.js</li>
-                <li>Express</li>
-                <li>Spring Boot</li>
-                <li>Svelte</li>
-                <li>Vite</li>
-                <li>Gin</li>
-              </ul>
-            </article>
-            <article class="skill-card skill-span-2">
-              <h3 data-i18n="skills.cards.data">Data stores</h3>
-              <ul class="skill-tags">
-                <li>MongoDB</li>
-                <li>PostgreSQL</li>
-                <li>MySQL</li>
-                <li>DynamoDB</li>
-                <li>Redis</li>
-                <li>Clickhouse</li>
-                <li>Aurora</li>
-                <li>Elasticsearch</li>
-              </ul>
-            </article>
-            <article class="skill-card skill-span-2">
-              <h3 data-i18n="skills.cards.cloud">Cloud &amp; DevOps</h3>
-              <ul class="skill-tags">
-                <li>AWS</li>
-                <li>GCP</li>
-                <li>Firebase</li>
-                <li>DigitalOcean</li>
-                <li>Heroku</li>
-                <li>Docker</li>
-                <li>Kubernetes</li>
-                <li>Jenkins</li>
-                <li>GitHub Actions</li>
-                <li>CI/CD</li>
-              </ul>
-            </article>
-            <article class="skill-card">
-              <h3 data-i18n="skills.cards.test">Testing</h3>
-              <ul class="skill-tags">
-                <li>Jest</li>
-                <li>Mocha</li>
-                <li>Cypress</li>
-              </ul>
-            </article>
-          </div>
+          <ul class="skill-core-list" role="list">
+            <li>TypeScript</li>
+            <li>Go</li>
+            <li>PostgreSQL</li>
+            <li>Redis</li>
+            <li>Kafka</li>
+            <li>NestJS</li>
+            <li>gRPC</li>
+            <li>AWS</li>
+            <li>Docker</li>
+            <li>Kubernetes</li>
+          </ul>
         </div>
       </section>
 
-      <section class="section checklist-teaser" aria-labelledby="checklist-teaser-heading">
+      <section id="checklist-teaser" class="section checklist-teaser" aria-labelledby="checklist-teaser-heading">
         <div class="container">
           <h2 id="checklist-teaser-heading" class="section-title">
             <span class="section-icon" aria-hidden="true">
@@ -207,7 +161,7 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Ukeh Victor</p>
+        <p>© <span id="year"></span> Victor Ukeh</p>
         <p class="footer-legal">
           <a href="index.html">Home</a>
           <span aria-hidden="true">·</span>

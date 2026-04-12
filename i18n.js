@@ -189,7 +189,7 @@
             name: "Partner retainer",
             forWho:
               "When you want continuity and not a one-off projecct. You are looking for someone who already knows your system for roadmap, reviews, and incidents.",
-            scopeAnchor: "Monthly hours and on-call by agreement; quarterly architecture review.",
+            scopeAnchor: "Monthly hours and on call by agreement; quarterly architecture review.",
             features: [
               "Monthly hours aligned to your needs",
               "On call by agreement",
@@ -535,7 +535,7 @@
             name: "Partner retainer",
             forWho:
               "When you want continuity — person wey don sabi your system for roadmap, review, and incident, no be one-off.",
-            scopeAnchor: "Monthly hours and on-call by agreement; quarterly architecture review.",
+            scopeAnchor: "Monthly hours and on call by agreement; quarterly architecture review.",
             features: [
               "Monthly hours we go align together",
               "On call by agreement",

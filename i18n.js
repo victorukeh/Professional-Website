@@ -304,7 +304,7 @@
         title: "How I work",
         toggleHint: "Optional: expand for detail",
         inline:
-          "I work async-first with written decisions and PR-sized slices—so your team can review and own what ships. EU and US morning overlap for calls; deployments and cutovers are planned and communicated, not surprise Friday pushes.",
+          "I work in ways your team can actually follow. Async, documented, and shipped in slices small enough to review. EU and US morning overlap for calls; deployments and cutovers are planned and communicated, not surprise Friday pushes.",
         body:
           "Async first and documentation heavy. I avoid temporary fixes that become permanent. My work overlaps EU and US morning calls and working schedules. Deployments and cutovers are planned, communicated, and tested.",
       },

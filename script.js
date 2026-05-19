@@ -161,13 +161,17 @@
       const art = document.createElement("article");
       art.className = "pricing-card";
       if (i === 1) art.classList.add("pricing-card--featured");
+      const ribbon = document.createElement("div");
+      ribbon.className = "pricing-card-ribbon";
       if (i === 1 && bundle.popular) {
+        ribbon.classList.add("pricing-card-ribbon--has-badge");
         const badge = document.createElement("span");
         badge.className = "pricing-badge";
         badge.setAttribute("aria-hidden", "true");
         badge.textContent = bundle.popular;
-        art.appendChild(badge);
+        ribbon.appendChild(badge);
       }
+      art.appendChild(ribbon);
       const h3 = document.createElement("h3");
       h3.className = "pricing-card-title";
       h3.textContent = tier.name;
@@ -635,5 +639,87 @@
     document.addEventListener("DOMContentLoaded", initReveal);
   } else {
     initReveal();
+  }
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Mouse spotlight on cards
+  if (!reducedMotion) {
+    function initSpotlight() {
+      document.querySelectorAll(".hub-card, .stat-card, .pricing-card").forEach(function (card) {
+        card.addEventListener("mousemove", function (e) {
+          var rect = card.getBoundingClientRect();
+          var x = ((e.clientX - rect.left) / rect.width) * 100;
+          var y = ((e.clientY - rect.top) / rect.height) * 100;
+          card.style.setProperty("--mouse-x", x + "%");
+          card.style.setProperty("--mouse-y", y + "%");
+        }, { passive: true });
+        card.addEventListener("mouseleave", function () {
+          card.style.removeProperty("--mouse-x");
+          card.style.removeProperty("--mouse-y");
+        });
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initSpotlight);
+    } else {
+      initSpotlight();
+    }
+  }
+
+  // Custom cursor ring
+  if (!reducedMotion && window.matchMedia("(hover: hover)").matches) {
+    var cursorRing = document.createElement("div");
+    cursorRing.className = "cursor-ring";
+    document.body.appendChild(cursorRing);
+
+    var cx = -100, cy = -100;
+    document.addEventListener("mousemove", function (e) {
+      cx = e.clientX;
+      cy = e.clientY;
+      cursorRing.style.transform = "translate(" + cx + "px, " + cy + "px)";
+    }, { passive: true });
+
+    function attachCursorHover(selector) {
+      document.querySelectorAll(selector).forEach(function (el) {
+        el.addEventListener("mouseenter", function () {
+          cursorRing.classList.add("cursor-ring--active");
+        });
+        el.addEventListener("mouseleave", function () {
+          cursorRing.classList.remove("cursor-ring--active");
+        });
+      });
+    }
+
+    function initCursor() {
+      attachCursorHover("a, button, [role='button'], .hub-card, .stat-card, .pricing-card, .service-card");
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initCursor);
+    } else {
+      initCursor();
+    }
+  }
+
+  // Trust strip marquee — re-duplicate after i18n rewrites content
+  function initMarquee() {
+    var strips = document.querySelectorAll(".trust-text");
+    strips.forEach(function (strip) {
+      var spans = strip.querySelectorAll("span");
+      if (spans.length >= 2) return; // already set up
+      var first = strip.querySelector("span");
+      if (!first) return;
+      var clone = first.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      strip.appendChild(clone);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMarquee);
+  } else {
+    initMarquee();
   }
 })();

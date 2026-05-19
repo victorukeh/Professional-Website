@@ -5,6 +5,7 @@
 :root {
   color-scheme: dark light;
   --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Syne", "Inter", system-ui, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", "Menlo", monospace;
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -28,7 +29,12 @@
   --accent: #2997ff;
   --accent-press: #147ce5;
   --accent-dim: rgba(41, 151, 255, 0.14);
-  --grid-line: rgba(255, 255, 255, 0.035);
+  --accent-warm: #f97316;
+  --accent-warm-dim: rgba(249, 115, 22, 0.12);
+  --grid-line: rgba(255, 255, 255, 0.065);
+  --aurora-a: rgba(41, 151, 255, 0.28);
+  --aurora-b: rgba(99, 88, 255, 0.18);
+  --aurora-c: rgba(20, 200, 180, 0.10);
   --shadow: 0 2px 12px rgba(0, 0, 0, 0.35), 0 24px 48px rgba(0, 0, 0, 0.45);
   --shadow-soft: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
   --btn-primary-fg: #ffffff;
@@ -49,7 +55,12 @@
   --accent: #0066cc;
   --accent-press: #004d99;
   --accent-dim: rgba(0, 102, 204, 0.09);
-  --grid-line: rgba(0, 0, 0, 0.04);
+  --accent-warm: #ea6c00;
+  --accent-warm-dim: rgba(234, 108, 0, 0.08);
+  --grid-line: rgba(0, 0, 0, 0.055);
+  --aurora-a: rgba(0, 102, 204, 0.16);
+  --aurora-b: rgba(99, 88, 255, 0.10);
+  --aurora-c: rgba(0, 170, 150, 0.07);
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
   --shadow-soft: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
   --btn-primary-fg: #ffffff;
@@ -486,15 +497,19 @@ body {
 }
 
 .hero-value {
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.15rem);
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.06;
   margin: 0 0 var(--space-sm);
   padding: 0;
   width: 100%;
   overflow-wrap: anywhere;
+  background: linear-gradient(160deg, var(--text) 0%, color-mix(in srgb, var(--text) 70%, var(--accent)) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-byline {
@@ -674,13 +689,13 @@ body {
   background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 85% 65% at 18% 8%, black 18%, transparent 68%);
+  mask-image: radial-gradient(ellipse 90% 70% at 18% 8%, black 20%, transparent 70%);
   pointer-events: none;
   opacity: 0.65;
 }
 
 .hero--home .hero-grid-bg {
-  opacity: 0.38;
+  opacity: 0.55;
 }
 
 /* Sections */
@@ -722,7 +737,8 @@ body {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: var(--radius-sm);
-  background: var(--accent-dim);
+  background: linear-gradient(135deg, var(--accent-dim) 0%, color-mix(in srgb, var(--accent-dim) 40%, transparent) 100%);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
   color: var(--accent);
 }
 
@@ -757,7 +773,11 @@ body {
 }
 
 .skill-card:hover {
-  box-shadow: var(--shadow), 0 0 0 1px color-mix(in srgb, var(--border) 50%, transparent);
+  transform: translateY(-2px);
+  box-shadow:
+    var(--shadow),
+    0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent),
+    0 0 20px color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
 .skill-card h3 {
@@ -1342,8 +1362,18 @@ body {
 
 .btn-primary:hover {
   background: var(--accent-press);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 35%, transparent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent) 55%, transparent), 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 30%, transparent);
+  transition-duration: 0.08s;
+}
+
+[data-theme="light"] .btn-primary:hover {
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent) 40%, transparent), 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
 .btn-large {
@@ -1359,7 +1389,9 @@ body {
 
 .btn-ghost:hover {
   background: var(--accent-dim);
-  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  border-color: color-mix(in srgb, var(--accent) 65%, var(--border));
+  color: var(--accent);
+  transform: translateY(-1px);
 }
 
 /* Footer */
@@ -1444,20 +1476,26 @@ body {
   position: absolute;
   inset: -35% -25% auto -15%;
   height: 90%;
-  background: radial-gradient(ellipse 65% 50% at 12% 5%, var(--accent-dim), transparent 58%),
-    radial-gradient(ellipse 45% 38% at 85% 25%, color-mix(in srgb, var(--accent-dim) 35%, transparent), transparent 52%);
+  background:
+    radial-gradient(ellipse 70% 55% at 8% -5%, var(--aurora-a), transparent 62%),
+    radial-gradient(ellipse 50% 45% at 88% 30%, var(--aurora-b), transparent 55%),
+    radial-gradient(ellipse 38% 40% at 45% 85%, var(--aurora-c), transparent 60%);
   pointer-events: none;
   animation: aurora-shift 22s ease-in-out infinite alternate;
 }
 
 @keyframes aurora-shift {
   0% {
-    opacity: 0.85;
+    opacity: 0.8;
     transform: translate(0, 0) scale(1);
   }
-  100% {
+  50% {
     opacity: 1;
-    transform: translate(4%, 2%) scale(1.05);
+    transform: translate(-3%, 3%) scale(1.04);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translate(6%, -2%) scale(1.07);
   }
 }
 
@@ -1490,8 +1528,8 @@ body {
 
 .reveal {
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.is-visible {
@@ -1527,6 +1565,7 @@ body {
   border-bottom: none;
   padding: var(--space-md) 0;
   background: var(--bg-elevated);
+  overflow: hidden;
 }
 
 .trust-text {
@@ -1535,10 +1574,34 @@ body {
   font-size: clamp(0.75rem, 2vw, 0.8125rem);
   font-weight: 500;
   letter-spacing: 0.01em;
-  text-align: left;
   color: var(--text-muted);
   line-height: 1.55;
   max-width: none;
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+  animation: trust-marquee 32s linear infinite;
+}
+
+.trust-text span {
+  display: inline-block;
+  padding-right: 5rem;
+}
+
+@keyframes trust-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trust-text {
+    animation: none;
+    width: auto;
+    white-space: normal;
+  }
+  .trust-text span + span {
+    display: none;
+  }
 }
 
 /* Stats bento */
@@ -1569,6 +1632,7 @@ body {
 }
 
 .stat-card {
+  position: relative;
   padding: var(--space-xl);
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -1581,7 +1645,10 @@ body {
 }
 
 .stat-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow:
+    var(--shadow),
+    0 0 0 1px color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
 .stat-value {
@@ -1771,8 +1838,11 @@ body {
 }
 
 .service-card:hover {
-  border-color: color-mix(in srgb, var(--accent) 22%, var(--border));
+  border-color: color-mix(in srgb, var(--accent-warm) 30%, var(--border));
   transform: translateY(-3px);
+  box-shadow:
+    var(--shadow),
+    0 0 0 1px color-mix(in srgb, var(--accent-warm) 15%, transparent);
 }
 
 .service-card-icon {
@@ -1837,27 +1907,45 @@ body {
 }
 
 .pricing-card--featured {
-  border-color: color-mix(in srgb, var(--accent) 28%, var(--border));
-  box-shadow: var(--shadow), 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  box-shadow:
+    var(--shadow),
+    0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent),
+    0 0 40px color-mix(in srgb, var(--accent) 12%, transparent);
   position: relative;
 }
 
+/* Reserved ribbon row on every card so titles and prices stay aligned across the grid */
+.pricing-card-ribbon {
+  flex: 0 0 auto;
+  min-height: 1.625rem;
+  margin: 0 0 var(--space-sm);
+  display: flex;
+  align-items: center;
+}
+
+.pricing-card-ribbon--has-badge {
+  justify-content: flex-end;
+}
+
 .pricing-badge {
-  position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
+  display: inline-block;
+  margin: 0;
   font-family: var(--font-sans);
   font-size: 0.6875rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--accent);
+  color: var(--accent-warm);
+  background: var(--accent-warm-dim);
+  padding: 0.25em 0.65em;
+  border-radius: var(--radius-pill);
+  border: 1px solid color-mix(in srgb, var(--accent-warm) 25%, transparent);
 }
 
 .pricing-card-title {
   margin: 0 0 var(--space-sm);
   font-size: 1.15rem;
-  padding-right: 4rem;
 }
 
 .pricing-card-for {
@@ -2512,6 +2600,22 @@ body {
   color: var(--text-muted);
   margin: 0 0 var(--space-lg);
   max-width: 28rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.hero-availability-foot::before {
+  content: "●";
+  color: var(--accent-warm);
+  font-size: 0.55em;
+  flex-shrink: 0;
+  animation: avail-pulse 2s ease-in-out infinite;
+}
+
+@keyframes avail-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 
 .hero-meta--compact {
@@ -2570,9 +2674,12 @@ body {
 }
 
 .hub-card:hover {
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+  transform: translateY(-4px);
+  box-shadow:
+    var(--shadow),
+    0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent),
+    0 8px 32px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 
 .hub-card-title {
@@ -2594,6 +2701,11 @@ body {
   margin-top: auto;
   font-size: 1.25rem;
   color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.hub-card:hover .hub-card-arrow {
+  transform: translateX(5px);
 }
 
 .hub-card--cta {
@@ -2881,4 +2993,88 @@ body {
 
 .checklist-back a:hover {
   text-decoration: underline;
+}
+
+/* ─── Scroll-driven parallax on hero visual (Chrome 115+, Safari 18+) ─────── */
+
+@supports (animation-timeline: scroll()) {
+  @media (min-width: 960px) and (prefers-reduced-motion: no-preference) {
+    .hero-visual-col {
+      animation: hero-parallax linear both;
+      animation-timeline: scroll(root);
+      animation-range: entry 0% exit 60%;
+    }
+    @keyframes hero-parallax {
+      from { transform: translateY(0) translateX(clamp(0.35rem, 1.25vw, 1rem)); }
+      to   { transform: translateY(-40px) translateX(clamp(0.35rem, 1.25vw, 1rem)); }
+    }
+  }
+}
+
+/* ─── Mouse spotlight on cards ─────────────────────────────────────────────── */
+
+.hub-card::before,
+.stat-card::before,
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    280px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    color-mix(in srgb, var(--accent) 8%, transparent),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hub-card:hover::before,
+.stat-card:hover::before,
+.pricing-card:hover::before {
+  opacity: 1;
+}
+
+/* Ensure card content sits above the spotlight pseudo-element */
+.hub-card > *,
+.stat-card > *,
+.pricing-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Custom cursor ring ────────────────────────────────────────────────────── */
+
+.cursor-ring {
+  position: fixed;
+  top: -12px;
+  left: -12px;
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 70%, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    top 0.2s ease,
+    left 0.2s ease,
+    opacity 0.2s ease;
+  mix-blend-mode: difference;
+  will-change: transform;
+}
+
+.cursor-ring--active {
+  width: 44px;
+  height: 44px;
+  top: -22px;
+  left: -22px;
+  opacity: 0.5;
+}
+
+@media (hover: none) {
+  .cursor-ring { display: none; }
 }

@@ -30,7 +30,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@800&display=swap"
       rel="stylesheet"
     />
     <script src="theme-boot.js"></script>
@@ -136,10 +136,9 @@
       </section>
 
       <section class="trust-strip" aria-label="Domains">
-        <div class="container">
-          <p class="trust-text" data-i18n="trust.line">
-            REST & gRPC APIs · Event-driven systems · PostgreSQL, MongoDB & Redis · Kafka & message queues · Docker & Kubernetes · Observability & reliability
-          </p>
+        <div class="trust-text" role="marquee" aria-live="off">
+          <span data-i18n="trust.line">REST &amp; gRPC APIs · Event-driven systems · PostgreSQL, MongoDB &amp; Redis · Kafka &amp; message queues · Docker &amp; Kubernetes · Observability &amp; reliability</span>
+          <span aria-hidden="true" data-i18n="trust.line">REST &amp; gRPC APIs · Event-driven systems · PostgreSQL, MongoDB &amp; Redis · Kafka &amp; message queues · Docker &amp; Kubernetes · Observability &amp; reliability</span>
         </div>
       </section>
 

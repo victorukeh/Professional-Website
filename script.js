@@ -52,7 +52,7 @@
     renderPricing(code);
     renderExperience(code);
     renderCaseStudies(code);
-    renderReferences(code);
+    // renderReferences(code);
     const sel = document.getElementById("lang-select");
     if (sel) sel.value = code;
     syncNavToggleA11y();
@@ -227,7 +227,7 @@
     const allRoles =
       globalThis.EXPERIENCE_BY_LANG?.[lang] || globalThis.EXPERIENCE_BY_LANG?.en;
     if (!container || !allRoles) return;
-    const roles = allRoles.slice(0, 3);
+    const roles = allRoles.slice(0, 4);
     container.replaceChildren();
     container.className = "game-board game-board--rails";
     roles.forEach(function (role, i) {
@@ -289,8 +289,13 @@
       card.appendChild(reveal);
 
       li.appendChild(card);
+      container.appendChild(li);
 
       if (i < roles.length - 1) {
+        const connector = document.createElement("li");
+        connector.className = "game-board__connector";
+        connector.setAttribute("role", "presentation");
+        connector.setAttribute("aria-hidden", "true");
         const runway = document.createElement("div");
         runway.className = "game-board__runway";
         runway.setAttribute("aria-hidden", "true");
@@ -300,10 +305,9 @@
         runner.className = "game-board__runner";
         runway.appendChild(shimmer);
         runway.appendChild(runner);
-        li.appendChild(runway);
+        connector.appendChild(runway);
+        container.appendChild(connector);
       }
-
-      container.appendChild(li);
     });
   }
 
@@ -362,6 +366,7 @@
     return /^https?:\/\/(www\.)?linkedin\.com\/(in|pub|company)\//i.test(String(href || ""));
   }
 
+  /* References section hidden — uncomment with work.html testimonial block
   function renderReferences(lang) {
     const container = document.getElementById("reference-cards");
     const bundle =
@@ -402,6 +407,7 @@
       container.appendChild(card);
     });
   }
+  */
 
   let heroLottieInstance = null;
 
@@ -603,7 +609,7 @@
   renderPricing(locale);
   renderExperience(locale);
   renderCaseStudies(locale);
-  renderReferences(locale);
+  // renderReferences(locale);
   initIntakeForm();
   initHeroLottie();
 

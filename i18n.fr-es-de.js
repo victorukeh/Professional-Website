@@ -142,7 +142,7 @@
   },
   "pricing": {
     "title": "Engagement & tarifs",
-    "intro": "Les honoraires finaux dépendent du périmètre, des intégrations, de la conformité et du risque.",
+    "intro": "Repères indicatifs en USD. Les honoraires finaux dépendent du périmètre, des intégrations, de la conformité et du risque.",
     "fx": "Facturation en USD sauf accord écrit contraire.",
     "popular": "Populaire",
     "cta": "Discuter du périmètre par e-mail",
@@ -197,11 +197,11 @@
   },
   "checklist": {
     "title": "Checklist backend gratuite sur une page",
-    "intro": "Checklist autonome sur une page pour les équipes fintech et en forte croissance — pas d’appel commercial, pas d’e-mail obligatoire pour télécharger.",
+    "intro": "Checklist d’une page en libre service pour les équipes qui livrent des backends de production.  Pas d’appel commercial, aucune adresse e-mail requise pour y accéder.",
     "item1": "Idempotence et retries pour les flux de mouvement d’argent",
     "item2": "Base d’observabilité pour APIs, jobs et incidents",
     "item3": "Points de contrôle fraude et sécurité",
-    "item4": "Vérifications de sécurité pour migrations et cutovers",
+    "item4": "Contrôles de sûreté de mise en production pour migrations et bascules",
     "download": "Ouvrir la checklist dans Notion"
   },
   "caseStudies": {
@@ -289,7 +289,7 @@
   "exp": {
     "title": "Le parcours",
     "intro": "Une trajectoire en une ligne droite qui s’élargit : premiers tickets, puis backends réglementés et systèmes de jobs à très grande échelle. Chaque point de passage raconte un chapitre, pas une liste de specs.",
-    "introShort": "Trois étapes : le fintech réglementé actuel, une mission livraison à forte croissance, et le chapitre d’avant qui montre le parcours.",
+    "introShort": "Quatre étapes : l’épargne actuelle, une mission marketplace à forte croissance, le Cash Back Moniepoint, puis la trésorerie réglementée d’avant.",
     "checkpoint": "Point de passage",
     "activeLeg": "Secteur actif",
     "hint": "Survolez ou focus un point de passage pour lire le chapitre. La ligne suit la course."
@@ -455,7 +455,7 @@
   },
   "pricing": {
     "title": "Compromiso y tarifas",
-    "intro": "Los honorarios finales dependen del alcance, integraciones, cumplimiento y riesgo.",
+    "intro": "Referencias indicativas en USD. Los honorarios finales dependen del alcance, integraciones, cumplimiento y riesgo.",
     "fx": "Facturación en USD salvo acuerdo escrito distinto.",
     "popular": "Popular",
     "cta": "Hablar del alcance por correo",
@@ -510,11 +510,11 @@
   },
   "checklist": {
     "title": "Checklist backend gratis de una página",
-    "intro": "Checklist autoservicio de una página para equipos fintech y de alto crecimiento — sin llamada comercial ni correo obligatorio para descargar.",
+    "intro": "Checklist de una página en autoservicio para equipos que llevan backends a producción.  Sin llamada comercial ni correo obligatorio para acceder.",
     "item1": "Idempotencia y reintentos para flujos de movimiento de dinero",
     "item2": "Base de observabilidad para APIs, jobs e incidentes",
     "item3": "Puntos de control de fraude y seguridad",
-    "item4": "Verificaciones de seguridad para migraciones y cutovers",
+    "item4": "Controles de seguridad en el despliegue para migraciones y cutovers",
     "download": "Abrir checklist en Notion"
   },
   "caseStudies": {
@@ -602,7 +602,7 @@
   "exp": {
     "title": "La pista",
     "intro": "Una carrera que va de los primeros tickets a backends regulados y sistemas de jobs a escala real. Cada punto es un capítulo, no un listado de tareas.",
-    "introShort": "Tres paradas: fintech regulado actual, un rol de entrega en alta velocidad, y el capítulo anterior que muestra el recorrido.",
+    "introShort": "Cuatro paradas: ahorros actuales, rol marketplace de alto crecimiento, Cash Back en Moniepoint, y el capítulo de efectivo regulado anterior.",
     "checkpoint": "Punto",
     "activeLeg": "Tramo activo",
     "hint": "Pasa el cursor o enfoca un punto para leer el capítulo. La línea marca el recorrido."
@@ -768,7 +768,7 @@
   },
   "pricing": {
     "title": "Engagement & Sätze",
-    "intro": "Endhonorar hängt von Umfang, Integrationen, Compliance und Risiko ab.",
+    "intro": "Indikative USD-Richtwerte. Endhonorar hängt von Umfang, Integrationen, Compliance und Risiko ab.",
     "fx": "Rechnungen in USD, sofern nichts anderes schriftlich vereinbart ist.",
     "popular": "Beliebt",
     "cta": "Umfang per E-Mail besprechen",
@@ -823,11 +823,11 @@
   },
   "checklist": {
     "title": "Kostenlose einseitige Backend-Checkliste",
-    "intro": "Selbstbedienbare einseitige Checkliste für Fintech- und High-Growth-Teams — kein Sales-Call, keine E-Mail-Pflicht zum Herunterladen.",
+    "intro": "Selbstbedienbare einseitige Checkliste für Teams, die Produktions-Backends ausliefern.  Kein Sales-Call, keine E-Mail für den Zugriff erforderlich.",
     "item1": "Idempotenz und Retries für Geldbewegungsflüsse",
     "item2": "Observability-Baseline für APIs, Jobs und Incidents",
-    "item3": "Prüfpunkte für Betrug und Sicherheit",
-    "item4": "Sicherheitschecks für Migrationen und Cutovers",
+    "item3": "Prüfpunkte für Betrugs- und Sicherheitskontrollen",
+    "item4": "Release-Checks für Migrationen und Cutovers",
     "download": "Checkliste in Notion öffnen"
   },
   "caseStudies": {
@@ -915,7 +915,7 @@
   "exp": {
     "title": "Die Strecke",
     "intro": "Ein Lauf von ersten Tickets bis zu regulierten Fintech-Backends und Job-Systemen mit Millionen Ausführungen pro Tag. Jeder Wegpunkt ist ein Kapitel, keine Spezifikationsliste.",
-    "introShort": "Drei Stationen: aktuelles reguliertes Fintech, eine Rolle mit schneller Lieferung, und das frühere Kapitel, das den Werdegang zeigt.",
+    "introShort": "Vier Stationen: aktuelle Sparprodukte, schnell wachsende Marketplace-Rolle, Moniepoint Cashback, und das frühere Cash-Management-Kapitel.",
     "checkpoint": "Wegpunkt",
     "activeLeg": "Aktives Segment",
     "hint": "Wegpunkt mit Maus oder Tastatur fokussieren, um das Kapitel zu lesen. Die Linie zeigt den Lauf."
@@ -953,6 +953,12 @@
     "org": "GetStac",
     "dates": "2025",
     "summary": "Matching critique agent→magasin de bout en bout : affectations fiables, données plus saines, nettement moins d’escalades clients les premières semaines."
+  },
+  {
+    "title": "Ingénieur backend",
+    "org": "Moniepoint, Cash back",
+    "dates": "2025",
+    "summary": "Cash back : crédits fiables, tenue de compte claire, pipelines qui restent justes quand le volume promotionnel monte."
   },
   {
     "title": "Ingénieur backend",
@@ -1000,6 +1006,12 @@
   },
   {
     "title": "Ingeniero backend",
+    "org": "Moniepoint, Cash back",
+    "dates": "2025",
+    "summary": "Cash back: recompensas acreditadas con fiabilidad, contabilidad clara y pipelines correctos cuando sube el volumen promocional."
+  },
+  {
+    "title": "Ingeniero backend",
     "org": "Moniepoint, gestión de efectivo",
     "dates": "2024 a 2025",
     "summary": "Efectivo regulado a gran volumen: menos fricción de abastecimiento, fraude en cero en rutas críticas, validación ML que aguanta cargas grandes."
@@ -1041,6 +1053,12 @@
     "org": "GetStac",
     "dates": "2025",
     "summary": "Matching-Kern End-to-End: zuverlässige Zuweisungen, stabilere Datenpfade, deutlich weniger Kunden-Eskalationen in den ersten Wochen."
+  },
+  {
+    "title": "Backend Engineer",
+    "org": "Moniepoint, Cashback",
+    "dates": "2025",
+    "summary": "Cashback-Prämien mit verlässlichen Gutschriften, klarer Verbuchung und Pipelines, die bei Aktionsvolumen korrekt bleiben."
   },
   {
     "title": "Backend Engineer",

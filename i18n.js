@@ -4,7 +4,11 @@
  * Optional per-tier amounts: `[{ usd: "From $X" }, …]` aligned with `pricing.tiers`. Omit or set `null` to hide.
  */
 (function (global) {
-  global.PRICING_NUMBERS = null;
+  global.PRICING_NUMBERS = [
+    { usd: "From $12,000" },
+    { usd: "From $18,000/mo" },
+    { usd: "From $14,000/mo" },
+  ];
 
   global.PORTFOLIO_I18N = {
     en: {
@@ -158,7 +162,7 @@
       pricing: {
         title: "Engagement and rates",
         intro:
-          "Final fees depend on scope, integrations, compliance, and risk.",
+          "Indicative USD starting points. Final fees depend on scope, integrations, compliance, and risk.",
         fx: "Invoices are in USD unless we agree otherwise in writing.",
         popular: "Popular",
         cta: "Discuss scope by email",
@@ -188,7 +192,7 @@
           {
             name: "Partner retainer",
             forWho:
-              "When you want continuity and not a one-off projecct. You are looking for someone who already knows your system for roadmap, reviews, and incidents.",
+              "When you want continuity and not a one-off project. You are looking for someone who already knows your system for roadmap, reviews, and incidents.",
             scopeAnchor: "Monthly hours and on call by agreement; quarterly architecture review.",
             features: [
               "Monthly hours aligned to your needs",
@@ -219,7 +223,7 @@
       checklist: {
         title: "Free one page backend checklist",
         intro:
-          "A self-serve one-page checklist for teams shipping production backends — no sales call, no email required to download.",
+          "A self serve one page checklist for teams shipping production backends.  No sales call, no email required to access.",
         item1: "Idempotency and retries for money movement flows",
         item2: "Observability baseline for APIs, jobs, and incidents",
         item3: "Fraud and security control checkpoints",
@@ -327,7 +331,7 @@
         intro:
           "Think of it as one long run: early levels were tickets and tests; later ones are money and compliance-heavy flows, job systems at seven figures of daily executions, and the quiet work of sunsetting products without drama. Each waypoint is a chapter, not a checklist.",
         introShort:
-          "Three stops: current production backend work, a high-growth delivery role, and the earlier chapter that shows how I got here.",
+          "Four stops: current savings work, a high-growth marketplace role, Moniepoint Cash Back, and the regulated cash chapter before that.",
         checkpoint: "Waypoint",
         activeLeg: "Active sector",
       },
@@ -504,7 +508,7 @@
       pricing: {
         title: "Engagement and rates",
         intro:
-          "Final money go depend on scope, integration, compliance, and risk.",
+          "Na indicative USD starting point. Final money still go depend on scope, integration, compliance, and risk.",
         fx: "Invoice dey USD unless we agree another thing for writing.",
         popular: "Popular",
         cta: "Talk scope by email",
@@ -565,11 +569,11 @@
       checklist: {
         title: "Free one page backend checklist",
         intro:
-          "Self-serve one-page checklist for team wey dey ship production backend — no sales call, no email required to download.",
-        item1: "Idempotency and retry check for money movement flow",
-        item2: "Observability baseline for API, jobs, and incidents",
+          "Self serve one page checklist for team wey dey ship production backends.  No sales call, no email required before you fit use am.",
+        item1: "Idempotency and retries for money movement flows",
+        item2: "Observability baseline for APIs, jobs, and incidents",
         item3: "Fraud and security control checkpoints",
-        item4: "Release safety checks for migration and cutover",
+        item4: "Release safety checks for migrations and cutovers",
         download: "Open checklist in Notion",
       },
       caseStudies: {
@@ -670,7 +674,7 @@
         intro:
           "Na one long run: early level na ticket and test; later level na money and compliance-heavy flow, job system wey run millions daily, and quiet work to sunset product without drama. Each waypoint na chapter, no be checklist.",
         introShort:
-          "Three stop: current production backend work, high-growth delivery role, and earlier chapter wey show how I reach here.",
+          "Four stop: current savings work, marketplace role wey grow fast, Moniepoint Cash Back, and regulated cash chapter before that.",
         checkpoint: "Waypoint",
         activeLeg: "Where you dey now",
       },
@@ -713,6 +717,13 @@
         dates: "2025",
         summary:
           "Owned the matching core end to end: reliable agent-to-store assignment, healthier data paths, noticeably fewer customer escalations in the first weeks.",
+      },
+      {
+        title: "Backend Engineer",
+        org: "Moniepoint, Cash Back",
+        dates: "2025",
+        summary:
+          "Cash Back rewards with dependable crediting, clear ledgering, and pipelines that stayed correct when promotional volume spiked.",
       },
       {
         title: "Backend Engineer",
@@ -764,6 +775,13 @@
         dates: "2025",
         summary:
           "Matching core end to end: fast assignment, data path behave, customer fire drop quick for first weeks.",
+      },
+      {
+        title: "Backend Engineer",
+        org: "Moniepoint, Cash Back",
+        dates: "2025",
+        summary:
+          "Cash Back reward: credit wey dey reliable, ledger clear, pipeline still correct when promo volume jump.",
       },
       {
         title: "Backend Engineer",

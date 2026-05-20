@@ -157,7 +157,6 @@
     if (!container || !bundle?.tiers) return;
     container.replaceChildren();
     bundle.tiers.forEach(function (tier, i) {
-      const priceUsd = Array.isArray(numbers) && numbers[i]?.usd;
       const art = document.createElement("article");
       art.className = "pricing-card";
       if (i === 1) art.classList.add("pricing-card--featured");
@@ -186,15 +185,21 @@
         scope.textContent = tier.scopeAnchor;
         art.appendChild(scope);
       }
+      /* Price row + divider (uncomment when showing amounts again)
+      const priceUsd = Array.isArray(numbers) && numbers[i]?.usd;
+      const priceRow = document.createElement("div");
+      priceRow.className = "pricing-prices pricing-prices--usd-only";
       if (priceUsd) {
-        const priceRow = document.createElement("div");
-        priceRow.className = "pricing-prices pricing-prices--usd-only";
         const usd = document.createElement("span");
         usd.className = "pricing-usd";
         usd.textContent = priceUsd;
         priceRow.appendChild(usd);
-        art.appendChild(priceRow);
+      } else {
+        priceRow.classList.add("pricing-prices--no-rate");
       }
+      art.appendChild(priceRow);
+      */
+      void numbers;
       const ul = document.createElement("ul");
       ul.className = "pricing-features";
       tier.features.forEach(function (f) {

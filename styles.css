@@ -1017,6 +1017,11 @@ body {
   pointer-events: none;
 }
 
+/* Hide runner on the work-page rails; it often reads as a random blue circle in the gutter */
+.game-board--rails .game-board__runner {
+  display: none;
+}
+
 .game-board__stop:hover .game-board__runner,
 .game-board__stop:focus-within .game-board__runner {
   opacity: 1;
@@ -1956,7 +1961,7 @@ body {
 }
 
 .pricing-scope {
-  margin: 0 0 var(--space-lg);
+  margin: 0 0 var(--space-md);
   font-size: 0.8125rem;
   font-style: italic;
   color: color-mix(in srgb, var(--text-muted) 92%, var(--accent) 8%);
@@ -1970,6 +1975,13 @@ body {
   margin-bottom: var(--space-lg);
   padding-bottom: var(--space-lg);
   border-bottom: 1px solid var(--border);
+}
+
+.pricing-prices--no-rate {
+  /* Keeps the same vertical rhythm as “From $X” so the rule doesn’t collapse */
+  min-height: 3.25rem;
+  padding-top: var(--space-xs);
+  border-bottom-color: color-mix(in srgb, var(--border) 100%, var(--text) 18%);
 }
 
 .pricing-usd {

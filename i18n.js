@@ -4,11 +4,12 @@
  * Optional per-tier amounts: `[{ usd: "From $X" }, …]` aligned with `pricing.tiers`. Omit or set `null` to hide.
  */
 (function (global) {
-  global.PRICING_NUMBERS = [
-    { usd: "From $12,000" },
-    { usd: "From $18,000/mo" },
-    { usd: "From $14,000/mo" },
-  ];
+  /* Amounts: set PRICING_NUMBERS to hide dollar text; cards still use the same divider row.
+   * Example: [
+   *   { usd: "From $12,000" }, { usd: "From $18,000/mo" }, { usd: "From $14,000/mo" },
+   * ];
+   */
+  global.PRICING_NUMBERS = null;
 
   global.PORTFOLIO_I18N = {
     en: {

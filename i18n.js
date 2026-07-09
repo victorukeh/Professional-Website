@@ -35,7 +35,7 @@
           "The engineer you bring in when the system has to work.",
         heroName: "Victor Ukeh",
         heroAvailability:
-          "1–2 engagements per quarter. EU and US morning overlap.",
+          "1 – 2 engagements per quarter. EU and US morning overlap.",
         heroLead:
           "The backend work that keeps products running: resilient queues, idempotent flows, and APIs that don't need babysitting at 2am.",
         heroMetaWork: "Work & case studies",
@@ -239,7 +239,7 @@
         items: [
           {
             company: "Moniepoint",
-            headline: "Target Savings Backend Service",
+            headline: "Target Savings Service",
             teaser:
               "Idempotent event-driven savings at scale: ~1M active jobs/day, plan APIs under 250ms as onboarding grew fast.",
             body:
@@ -585,7 +585,7 @@
         items: [
           {
             company: "Moniepoint",
-            headline: "Target Savings Backend Service",
+            headline: "Target Savings Service",
             teaser:
               "Idempotent event-driven savings: ~1M active job/day, plan API under 250 ms as onboarding grow.",
             body:

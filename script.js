@@ -129,23 +129,29 @@
     const bundle =
       globalThis.PORTFOLIO_I18N?.[lang]?.services || globalThis.PORTFOLIO_I18N?.en?.services;
     if (!container || !bundle?.items) return;
-    const glyphs = ["◇", "◆", "▣", "◎"];
     container.replaceChildren();
     bundle.items.forEach(function (item, i) {
-      const art = document.createElement("article");
-      art.className = "service-card";
-      const icon = document.createElement("span");
-      icon.className = "service-card-icon";
-      icon.setAttribute("aria-hidden", "true");
-      icon.textContent = glyphs[i % glyphs.length];
+      const li = document.createElement("li");
+      li.className = "service-stanza reveal reveal-blur" + (i > 0 ? " reveal-delay-" + Math.min(i, 3) : "");
+
+      const num = document.createElement("span");
+      num.className = "service-stanza__num";
+      num.textContent = String(i + 1).padStart(2, "0");
+
+      const body = document.createElement("div");
+      body.className = "service-stanza__body";
       const h3 = document.createElement("h3");
+      h3.className = "service-stanza__title";
       h3.textContent = item.title;
       const p = document.createElement("p");
+      p.className = "service-stanza__desc";
       p.textContent = item.body;
-      art.appendChild(icon);
-      art.appendChild(h3);
-      art.appendChild(p);
-      container.appendChild(art);
+      body.appendChild(h3);
+      body.appendChild(p);
+
+      li.appendChild(num);
+      li.appendChild(body);
+      container.appendChild(li);
     });
   }
 
@@ -153,68 +159,60 @@
     const container = document.getElementById("pricing-root");
     const bundle =
       globalThis.PORTFOLIO_I18N?.[lang]?.pricing || globalThis.PORTFOLIO_I18N?.en?.pricing;
-    const numbers = globalThis.PRICING_NUMBERS;
     if (!container || !bundle?.tiers) return;
     container.replaceChildren();
     bundle.tiers.forEach(function (tier, i) {
-      const art = document.createElement("article");
-      art.className = "pricing-card";
-      if (i === 1) art.classList.add("pricing-card--featured");
-      const ribbon = document.createElement("div");
-      ribbon.className = "pricing-card-ribbon";
-      if (i === 1 && bundle.popular) {
-        ribbon.classList.add("pricing-card-ribbon--has-badge");
-        const badge = document.createElement("span");
-        badge.className = "pricing-badge";
-        badge.setAttribute("aria-hidden", "true");
-        badge.textContent = bundle.popular;
-        ribbon.appendChild(badge);
-      }
-      art.appendChild(ribbon);
+      const li = document.createElement("li");
+      li.className = "engagement-stanza reveal reveal-blur" + (i === 1 ? " engagement-stanza--featured" : "") + (i > 0 ? " reveal-delay-" + Math.min(i, 3) : "");
+
+      const head = document.createElement("div");
+      head.className = "engagement-stanza__head";
+      const num = document.createElement("span");
+      num.className = "engagement-stanza__num";
+      num.textContent = String(i + 1).padStart(2, "0");
       const h3 = document.createElement("h3");
-      h3.className = "pricing-card-title";
+      h3.className = "engagement-stanza__title";
       h3.textContent = tier.name;
-      const tag = document.createElement("p");
-      tag.className = "pricing-card-for";
-      tag.textContent = tier.forWho;
-      art.appendChild(h3);
-      art.appendChild(tag);
+      head.appendChild(num);
+      head.appendChild(h3);
+      if (i === 1 && bundle.popular) {
+        const badge = document.createElement("span");
+        badge.className = "engagement-stanza__badge";
+        badge.textContent = bundle.popular;
+        head.appendChild(badge);
+      }
+
+      const forWho = document.createElement("p");
+      forWho.className = "engagement-stanza__for";
+      forWho.textContent = tier.forWho;
+
+      const body = document.createElement("div");
+      body.className = "engagement-stanza__body";
+      body.appendChild(head);
+      body.appendChild(forWho);
       if (tier.scopeAnchor) {
         const scope = document.createElement("p");
-        scope.className = "pricing-scope";
+        scope.className = "engagement-stanza__scope";
         scope.textContent = tier.scopeAnchor;
-        art.appendChild(scope);
+        body.appendChild(scope);
       }
-      /* Price row + divider (uncomment when showing amounts again)
-      const priceUsd = Array.isArray(numbers) && numbers[i]?.usd;
-      const priceRow = document.createElement("div");
-      priceRow.className = "pricing-prices pricing-prices--usd-only";
-      if (priceUsd) {
-        const usd = document.createElement("span");
-        usd.className = "pricing-usd";
-        usd.textContent = priceUsd;
-        priceRow.appendChild(usd);
-      } else {
-        priceRow.classList.add("pricing-prices--no-rate");
-      }
-      art.appendChild(priceRow);
-      */
-      void numbers;
       const ul = document.createElement("ul");
-      ul.className = "pricing-features";
+      ul.className = "engagement-stanza__features";
       tier.features.forEach(function (f) {
-        const li = document.createElement("li");
-        li.textContent = f;
-        ul.appendChild(li);
+        const featLi = document.createElement("li");
+        featLi.textContent = f;
+        ul.appendChild(featLi);
       });
+      body.appendChild(ul);
+
       const cta = document.createElement("a");
-      cta.className = "btn btn-ghost pricing-card-btn";
+      cta.className = "engagement-stanza__cta";
       const prefix = t(lang, "mailto.cardSubjectPrefix") || "Engagement";
       const subj = prefix + ": " + tier.name;
       const mailtoBundle =
         globalThis.PORTFOLIO_I18N?.[lang]?.mailto || globalThis.PORTFOLIO_I18N?.en?.mailto;
       const tierBodies = mailtoBundle?.pricingBodies;
-      const body =
+      const mailBody =
         (Array.isArray(tierBodies) && tierBodies[i] != null ? tierBodies[i] : null) ||
         mailtoBundle?.body ||
         "";
@@ -223,11 +221,16 @@
         BUSINESS_EMAIL +
         "?subject=" +
         encodeURIComponent(subj) +
-        (body ? "&body=" + encodeURIComponent(body) : "");
-      cta.textContent = bundle.cta;
-      art.appendChild(ul);
-      art.appendChild(cta);
-      container.appendChild(art);
+        (mailBody ? "&body=" + encodeURIComponent(mailBody) : "");
+      const arrow = document.createElement("span");
+      arrow.setAttribute("aria-hidden", "true");
+      arrow.textContent = " →";
+      cta.appendChild(document.createTextNode(bundle.cta));
+      cta.appendChild(arrow);
+      body.appendChild(cta);
+
+      li.appendChild(body);
+      container.appendChild(li);
     });
   }
 
@@ -238,85 +241,61 @@
     if (!container || !allRoles) return;
     const roles = allRoles.slice(0, 4);
     container.replaceChildren();
-    container.className = "game-board game-board--rails";
+    container.className = "track-stanzas";
     roles.forEach(function (role, i) {
       const li = document.createElement("li");
-      li.className = "game-board__stop" + (i === 0 ? " game-board__stop--current" : "");
+      li.className = "track-stanza reveal reveal-blur" + (i > 0 ? " reveal-delay-" + Math.min(i, 3) : "");
       li.setAttribute("role", "listitem");
 
-      const card = document.createElement("article");
-      card.className = "game-stop-card" + (i === 0 ? " game-stop-card--current" : "");
-      card.tabIndex = 0;
+      const num = document.createElement("span");
+      num.className = "track-stanza__num";
+      num.textContent = String(i + 1).padStart(2, "0");
 
-      const dot = document.createElement("div");
-      dot.className = "game-stop-card__dot" + (i === 0 ? " game-stop-card__dot--pulse" : "");
-      dot.setAttribute("aria-hidden", "true");
+      const body = document.createElement("div");
+      body.className = "track-stanza__body";
 
-      const stage = String(i + 1).padStart(2, "0");
-      const waypoint = document.createElement("p");
-      waypoint.className = "track-waypoint";
-      waypoint.setAttribute("data-stage", stage);
-      const ck = t(lang, "exp.checkpoint") || "Waypoint";
-      const active = t(lang, "exp.activeLeg") || "Active sector";
-      waypoint.textContent = ck + " " + stage + (i === 0 ? " · " + active : "");
-
-      const head = document.createElement("header");
-      head.className = "game-stop-card__head";
       const h3 = document.createElement("h3");
+      h3.className = "track-stanza__title";
       h3.textContent = role.title;
-      const org = document.createElement("p");
-      org.className = "timeline-org";
-      org.textContent = role.org;
-      const dates = document.createElement("p");
-      dates.className = "timeline-dates";
-      dates.textContent = role.dates;
-      head.appendChild(h3);
-      head.appendChild(org);
-      head.appendChild(dates);
 
-      const reveal = document.createElement("div");
-      reveal.className = "game-stop-card__reveal";
+      const meta = document.createElement("p");
+      meta.className = "track-stanza__meta";
+      const orgSpan = document.createElement("span");
+      orgSpan.className = "track-stanza__org";
+      orgSpan.textContent = role.org;
+      const sep = document.createElement("span");
+      sep.className = "track-stanza__sep";
+      sep.setAttribute("aria-hidden", "true");
+      sep.textContent = "·";
+      const dates = document.createElement("span");
+      dates.className = "track-stanza__dates";
+      dates.textContent = role.dates;
+      meta.appendChild(orgSpan);
+      meta.appendChild(sep);
+      meta.appendChild(dates);
+
+      body.appendChild(h3);
+      body.appendChild(meta);
+
       if (role.summary) {
-        const narrative = document.createElement("p");
-        narrative.className = "track-summary";
-        narrative.textContent = role.summary;
-        reveal.appendChild(narrative);
+        const p = document.createElement("p");
+        p.className = "track-stanza__prose";
+        p.textContent = role.summary;
+        body.appendChild(p);
       } else if (role.bullets && role.bullets.length) {
         const ul = document.createElement("ul");
-        ul.className = "bullet-list";
+        ul.className = "track-stanza__list";
         role.bullets.forEach(function (b) {
           const bullet = document.createElement("li");
           bullet.textContent = b;
           ul.appendChild(bullet);
         });
-        reveal.appendChild(ul);
+        body.appendChild(ul);
       }
 
-      card.appendChild(dot);
-      card.appendChild(waypoint);
-      card.appendChild(head);
-      card.appendChild(reveal);
-
-      li.appendChild(card);
+      li.appendChild(num);
+      li.appendChild(body);
       container.appendChild(li);
-
-      if (i < roles.length - 1) {
-        const connector = document.createElement("li");
-        connector.className = "game-board__connector";
-        connector.setAttribute("role", "presentation");
-        connector.setAttribute("aria-hidden", "true");
-        const runway = document.createElement("div");
-        runway.className = "game-board__runway";
-        runway.setAttribute("aria-hidden", "true");
-        const shimmer = document.createElement("span");
-        shimmer.className = "game-board__shimmer";
-        const runner = document.createElement("span");
-        runner.className = "game-board__runner";
-        runway.appendChild(shimmer);
-        runway.appendChild(runner);
-        connector.appendChild(runway);
-        container.appendChild(connector);
-      }
     });
   }
 
@@ -325,49 +304,40 @@
     const cs =
       globalThis.PORTFOLIO_I18N?.[lang]?.caseStudies || globalThis.PORTFOLIO_I18N?.en?.caseStudies;
     if (!container || !cs?.items) return;
-    const expandHint = t(lang, "caseStudies.expandLabel") || t("en", "caseStudies.expandLabel") || "";
     container.replaceChildren();
-    cs.items.forEach(function (item) {
-      const details = document.createElement("details");
-      details.className = "case-study-card";
-      const summary = document.createElement("summary");
-      summary.className = "case-study-summary";
-      if (expandHint) {
-        summary.setAttribute("aria-label", expandHint + ": " + item.headline);
-      }
-      const summaryText = document.createElement("div");
-      summaryText.className = "case-study-summary-text";
+    cs.items.forEach(function (item, i) {
+      const li = document.createElement("li");
+      li.className = "case-stanza reveal reveal-blur" + (i > 0 ? " reveal-delay-" + Math.min(i, 3) : "");
+
       const company = document.createElement("p");
-      company.className = "case-study-company";
+      company.className = "case-stanza__company";
       company.textContent = item.company;
+
       const h3 = document.createElement("h3");
-      h3.className = "case-study-title";
+      h3.className = "case-stanza__headline";
       h3.textContent = item.headline;
-      summaryText.appendChild(company);
-      summaryText.appendChild(h3);
-      const teaserText = item.teaser || "";
-      if (teaserText) {
+
+      const teaser = item.teaser || "";
+      if (teaser) {
         const teaserEl = document.createElement("p");
-        teaserEl.className = "case-study-teaser";
-        teaserEl.textContent = teaserText;
-        summaryText.appendChild(teaserEl);
+        teaserEl.className = "case-stanza__teaser";
+        teaserEl.textContent = teaser;
+        li.appendChild(company);
+        li.appendChild(h3);
+        li.appendChild(teaserEl);
+      } else {
+        li.appendChild(company);
+        li.appendChild(h3);
       }
-      const chevron = document.createElement("span");
-      chevron.className = "case-study-chevron";
-      chevron.setAttribute("aria-hidden", "true");
-      chevron.innerHTML =
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
-      summary.appendChild(summaryText);
-      summary.appendChild(chevron);
-      const expand = document.createElement("div");
-      expand.className = "case-study-expand";
-      const p = document.createElement("p");
-      p.className = "case-study-body";
-      p.textContent = item.body;
-      expand.appendChild(p);
-      details.appendChild(summary);
-      details.appendChild(expand);
-      container.appendChild(details);
+
+      if (item.body) {
+        const p = document.createElement("p");
+        p.className = "case-stanza__body";
+        p.textContent = item.body;
+        li.appendChild(p);
+      }
+
+      container.appendChild(li);
     });
   }
 
@@ -419,6 +389,16 @@
   */
 
   let heroSceneInstance = null;
+  let auroraInstance = null;
+  let ambientInstance = null;
+
+  function shouldDisableScenes() {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const lowPower =
+      (typeof navigator.hardwareConcurrency === "number" && navigator.hardwareConcurrency <= 2) ||
+      (typeof navigator.deviceMemory === "number" && navigator.deviceMemory <= 1);
+    return reduceMotion || lowPower;
+  }
 
   function readHeroSceneColors() {
     const styles = getComputedStyle(root);
@@ -437,12 +417,7 @@
     const wrap = document.querySelector(".hero-art");
     if (!canvas || !wrap) return;
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const lowPower =
-      (typeof navigator.hardwareConcurrency === "number" && navigator.hardwareConcurrency <= 2) ||
-      (typeof navigator.deviceMemory === "number" && navigator.deviceMemory <= 1);
-
-    if (reduceMotion || lowPower || !globalThis.HeroScene) {
+    if (shouldDisableScenes() || !globalThis.HeroScene) {
       wrap.classList.add("hero-art--static");
       return;
     }
@@ -457,13 +432,29 @@
 
     if (!heroSceneInstance) {
       wrap.classList.add("hero-art--static");
-      return;
     }
+  }
 
-    const themeObserver = new MutationObserver(function () {
-      if (heroSceneInstance) heroSceneInstance.setColors(readHeroSceneColors());
+  function initAurora() {
+    const canvas = document.getElementById("aurora-canvas");
+    if (!canvas) return;
+    if (shouldDisableScenes() || !globalThis.HeroAurora) return;
+    try {
+      auroraInstance = globalThis.HeroAurora.create({ canvas: canvas });
+    } catch (err) {
+      auroraInstance = null;
+    }
+  }
+
+  function initAmbient() {
+    if (!globalThis.HeroAmbient) return;
+    // Ambient orchestrator ties scroll/cursor/theme to the scenes.
+    // It runs even if aurora/hero failed, so mood tracking stays coherent.
+    ambientInstance = globalThis.HeroAmbient.create({
+      aurora: auroraInstance,
+      heroScene: heroSceneInstance,
+      heroColors: readHeroSceneColors,
     });
-    themeObserver.observe(root, { attributes: true, attributeFilter: ["data-theme"] });
   }
 
   function initIntakeForm() {
@@ -626,6 +617,8 @@
   // renderReferences(locale);
   initIntakeForm();
   initHeroScene();
+  initAurora();
+  initAmbient();
 
   document.querySelector(".theme-toggle")?.addEventListener("click", function () {
     const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
@@ -678,40 +671,6 @@
     }
   }
 
-  // Custom cursor ring
-  if (!reducedMotion && window.matchMedia("(hover: hover)").matches) {
-    var cursorRing = document.createElement("div");
-    cursorRing.className = "cursor-ring";
-    document.body.appendChild(cursorRing);
-
-    var cx = -100, cy = -100;
-    document.addEventListener("mousemove", function (e) {
-      cx = e.clientX;
-      cy = e.clientY;
-      cursorRing.style.transform = "translate(" + cx + "px, " + cy + "px)";
-    }, { passive: true });
-
-    function attachCursorHover(selector) {
-      document.querySelectorAll(selector).forEach(function (el) {
-        el.addEventListener("mouseenter", function () {
-          cursorRing.classList.add("cursor-ring--active");
-        });
-        el.addEventListener("mouseleave", function () {
-          cursorRing.classList.remove("cursor-ring--active");
-        });
-      });
-    }
-
-    function initCursor() {
-      attachCursorHover("a, button, [role='button'], .hub-card, .stat-card, .pricing-card, .service-card");
-    }
-
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initCursor);
-    } else {
-      initCursor();
-    }
-  }
 
   // Trust strip marquee — re-duplicate after i18n rewrites content
   function initMarquee() {

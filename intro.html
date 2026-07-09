@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="intro">
+    <canvas id="aurora-canvas" class="aurora-canvas" aria-hidden="true"></canvas>
     <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
     <header class="site-header" id="site-header">
       <div class="container header-inner">
@@ -49,7 +50,7 @@
       </div>
     </header>
 
-    <main id="main">
+    <main id="main" data-mood="threshold">
       <!-- Intro video section (hidden)
       <section id="intro-video" class="section video-section video-section--page" aria-label="Intro video">
         <div class="container">
@@ -107,6 +108,8 @@
       </div>
     </footer>
 
+    <script src="vendor/aurora.js" defer></script>
+    <script src="vendor/ambient.js" defer></script>
     <script src="i18n.js" defer></script>
     <script src="i18n.fr-es-de.js" defer></script>
     <script src="script.js" defer></script>

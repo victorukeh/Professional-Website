@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="work">
+    <canvas id="aurora-canvas" class="aurora-canvas" aria-hidden="true"></canvas>
     <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
     <header class="site-header" id="site-header">
       <div class="container header-inner">
@@ -53,109 +54,108 @@
     </header>
 
     <main id="main">
-      <section class="section page-cross page-cross--top" aria-label="Page">
-        <div class="container page-cross-inner">
-          <nav class="page-cross-breadcrumb" aria-label="Breadcrumb">
-            <ol class="page-cross-breadcrumb-list">
-              <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-              <li aria-current="page"><span data-i18n="workPage.breadcrumbCurrent">Work</span></li>
-            </ol>
-          </nav>
-          <div class="page-cross-local-wrap">
-            <p class="page-cross-onpage-label" id="work-local-nav-label" data-i18n="workPage.onThisPage">On this page</p>
-            <nav class="page-cross-local" aria-labelledby="work-local-nav-label">
-              <a href="#case-studies" data-i18n="workPage.jumpCases">Selected work</a>
-              <a href="#stats" data-i18n="workPage.jumpMetrics">Production metrics</a>
-              <!-- <a href="#testimonial-heading" data-i18n="workPage.jumpRefs">References</a> -->
-              <a href="#experience" data-i18n="workPage.jumpTrack">The track</a>
-            </nav>
-          </div>
-        </div>
-      </section>
-
-      <section id="case-studies" class="section case-studies-section" aria-labelledby="case-studies-heading">
-        <div class="container">
-          <h2 id="case-studies-heading" class="section-title">
-            <span class="section-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </span>
-            <span data-i18n="caseStudies.title">Selected work</span>
-          </h2>
-          <p class="section-intro" data-i18n="caseStudies.intro">
+      <section class="chapter chapter--opener" data-mood="threshold">
+        <div class="chapter__inner">
+          <figure class="chapter__photo chapter__photo--full reveal reveal-blur">
+            <img
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=70"
+              alt=""
+              loading="eager"
+              decoding="async"
+              width="1600"
+              height="686"
+            />
+          </figure>
+          <span class="chapter__eyebrow reveal">Work</span>
+          <h1 class="chapter__title reveal reveal-delay-1" data-i18n="caseStudies.title">Selected work</h1>
+          <p class="chapter__lead reveal reveal-delay-2" data-i18n="caseStudies.intro">
             Key results below. Full writeups will be made available when we connect.
           </p>
-          <div id="case-studies-root" class="case-studies-grid"></div>
         </div>
       </section>
 
-      <section id="stats" class="section stats-section" aria-labelledby="stats-heading">
-        <div class="container">
-          <h2 id="stats-heading" class="section-title">
-            <span class="section-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-            </span>
-            <span data-i18n="stats.title">Outcomes that survived production</span>
-          </h2>
-          <p class="section-intro" data-i18n="stats.intro">Figures from production systems, not slide decks.</p>
-          <div class="stats-bento stats-bento--compact">
-            <article class="stat-card">
-              <span class="stat-value" data-i18n="stats.s1v">&lt;250ms</span>
-              <span class="stat-label" data-i18n="stats.s1l">API latency target</span>
-              <p class="stat-detail" data-i18n="stats.s1d">Kept while scaling savings flows</p>
-            </article>
-            <article class="stat-card">
-              <span class="stat-value" data-i18n="stats.s2v">~10M / mo</span>
-              <span class="stat-label" data-i18n="stats.s2l">Event-driven requests</span>
-              <p class="stat-detail" data-i18n="stats.s2d">Idempotent savings on payment events</p>
-            </article>
-            <article class="stat-card">
-              <span class="stat-value" data-i18n="stats.s3v">0%</span>
-              <span class="stat-label" data-i18n="stats.s3l">Fraud cases</span>
-              <p class="stat-detail" data-i18n="stats.s3d">Security posture on critical products</p>
-            </article>
-            <article class="stat-card">
-              <span class="stat-value" data-i18n="stats.s4v">~1M jobs / day</span>
-              <span class="stat-label" data-i18n="stats.s4l">Fault-tolerant jobs</span>
-              <p class="stat-detail" data-i18n="stats.s4d">High throughput with race conditions removed at the job layer</p>
-            </article>
-          </div>
+      <section id="case-studies" class="chapter chapter--cases" aria-labelledby="case-studies-heading" data-mood="craft">
+        <div class="chapter__inner chapter__inner--wide">
+          <h2 id="case-studies-heading" class="visually-hidden" data-i18n="caseStudies.title">Selected work</h2>
+          <ol id="case-studies-root" class="case-stanzas" role="list"></ol>
         </div>
       </section>
 
-      <!-- References section (hidden)
-      <section class="section testimonial-section" aria-labelledby="testimonial-heading">
-        <div class="container">
-          <h2 id="testimonial-heading" class="section-title">
-            <span class="section-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 3.417 3.134 7 6 7z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 3.417 3.134 7 6 7z"/></svg>
-            </span>
-            <span data-i18n="testimonial.title">References</span>
+      <section id="stats" class="chapter chapter--metrics" aria-labelledby="stats-heading" data-mood="value">
+        <div class="chapter__inner">
+          <span class="chapter__eyebrow reveal">The record</span>
+          <h2 id="stats-heading" class="chapter__title reveal reveal-delay-1" data-i18n="stats.title">
+            Outcomes that survived production
           </h2>
-          <blockquote class="testimonial-block">
-            <p data-i18n="testimonial.body">
-              Formal written recommendations from engineering leadership at Moniepoint and GetStac are available on request, including via LinkedIn.
-            </p>
-          </blockquote>
-          <div id="reference-cards" class="reference-cards" role="list"></div>
-          <p class="testimonial-attribution" data-i18n="testimonial.attribution">
-            Ask when you email or book a call.
+          <p class="chapter__lead reveal reveal-delay-2" data-i18n="stats.intro">
+            Figures from production systems, not slide decks.
           </p>
+          <dl class="metric-lines" role="list">
+            <div class="metric-line reveal reveal-blur" role="listitem">
+              <dt class="metric-line__value" data-i18n="stats.s1v">&lt;250ms</dt>
+              <dd class="metric-line__body">
+                <span class="metric-line__label" data-i18n="stats.s1l">API latency target</span>
+                <span class="metric-line__detail" data-i18n="stats.s1d">Kept while scaling savings flows</span>
+              </dd>
+            </div>
+            <div class="metric-line reveal reveal-blur reveal-delay-1" role="listitem">
+              <dt class="metric-line__value" data-i18n="stats.s2v">~10M / mo</dt>
+              <dd class="metric-line__body">
+                <span class="metric-line__label" data-i18n="stats.s2l">Event-driven requests</span>
+                <span class="metric-line__detail" data-i18n="stats.s2d">Idempotent savings on payment events</span>
+              </dd>
+            </div>
+            <div class="metric-line reveal reveal-blur reveal-delay-2" role="listitem">
+              <dt class="metric-line__value" data-i18n="stats.s3v">0%</dt>
+              <dd class="metric-line__body">
+                <span class="metric-line__label" data-i18n="stats.s3l">Fraud cases</span>
+                <span class="metric-line__detail" data-i18n="stats.s3d">Security posture on critical products</span>
+              </dd>
+            </div>
+            <div class="metric-line reveal reveal-blur reveal-delay-3" role="listitem">
+              <dt class="metric-line__value" data-i18n="stats.s4v">~1M jobs / day</dt>
+              <dd class="metric-line__body">
+                <span class="metric-line__label" data-i18n="stats.s4l">Fault-tolerant jobs</span>
+                <span class="metric-line__detail" data-i18n="stats.s4d">High throughput with race conditions removed at the job layer</span>
+              </dd>
+            </div>
+          </dl>
         </div>
       </section>
-      -->
 
-      <section id="experience" class="section experience-section">
-        <div class="container">
-          <h2 class="section-title">
-            <span class="section-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>
-            </span>
-            <span data-i18n="exp.title">The track</span>
-          </h2>
-          <p class="section-intro" data-i18n="exp.introShort">
+      <section id="experience" class="chapter chapter--track" data-mood="craft">
+        <div class="chapter__inner">
+          <span class="chapter__eyebrow reveal">The track</span>
+          <h2 class="chapter__title reveal reveal-delay-1" data-i18n="exp.title">The track</h2>
+          <p class="chapter__lead reveal reveal-delay-2" data-i18n="exp.introShort">
             Four stops: current savings work, a high-growth marketplace role, Moniepoint Cash Back, and the regulated cash chapter before that.
           </p>
-          <ol id="experience-timeline" class="game-board" role="list"></ol>
+          <ol id="experience-timeline" class="track-stanzas" role="list"></ol>
+        </div>
+      </section>
+
+      <section class="chapter chapter--invite" data-mood="invite">
+        <div class="chapter__inner">
+          <span class="chapter__eyebrow reveal">Where to next</span>
+          <h2 class="chapter__title reveal reveal-delay-1">Curious to see the rest?</h2>
+          <ol class="chapter-nav" role="list">
+            <li class="chapter-nav__item reveal reveal-blur">
+              <a class="chapter-nav__link" href="services.html">
+                <span class="chapter-nav__num">01</span>
+                <span class="chapter-nav__title" data-i18n="nav.services">Services</span>
+                <span class="chapter-nav__desc" data-i18n="home.hubServicesDesc">Offerings, rates, and stack.</span>
+                <span class="chapter-nav__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li class="chapter-nav__item reveal reveal-blur reveal-delay-1">
+              <a class="chapter-nav__link chapter-nav__link--primary" href="contact.html">
+                <span class="chapter-nav__num">02</span>
+                <span class="chapter-nav__title" data-i18n="nav.contact">Contact</span>
+                <span class="chapter-nav__desc" data-i18n="home.hubContactDesc">Book a call or send a note.</span>
+                <span class="chapter-nav__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ol>
         </div>
       </section>
     </main>
@@ -173,6 +173,8 @@
       </div>
     </footer>
 
+    <script src="vendor/aurora.js" defer></script>
+    <script src="vendor/ambient.js" defer></script>
     <script src="i18n.js" defer></script>
     <script src="i18n.fr-es-de.js" defer></script>
     <script src="script.js" defer></script>

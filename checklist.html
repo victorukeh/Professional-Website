@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="checklist">
+    <canvas id="aurora-canvas" class="aurora-canvas" aria-hidden="true"></canvas>
     <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
     <header class="site-header" id="site-header">
       <div class="container header-inner">
@@ -50,24 +51,32 @@
     </header>
 
     <main id="main">
-      <section id="free-checklist" class="section checklist-section checklist-section--page">
-        <div class="container">
-          <h1 class="section-title">
-            <span class="section-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </span>
-            <span data-i18n="checklist.title">Free one page backend checklist</span>
+      <section id="free-checklist" class="chapter chapter--opener" data-mood="craft">
+        <div class="chapter__inner">
+          <figure class="chapter__photo chapter__photo--full reveal reveal-blur">
+            <img
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=70"
+              alt=""
+              loading="eager"
+              decoding="async"
+              width="1600"
+              height="686"
+            />
+          </figure>
+          <span class="chapter__eyebrow reveal">Free resource</span>
+          <h1 class="chapter__title reveal reveal-delay-1" data-i18n="checklist.title">
+            Free one page backend checklist
           </h1>
-          <p class="section-intro" data-i18n="checklist.intro">
-            A self serve one page checklist for teams shipping production backends.  No sales call, no email required to access.
+          <p class="chapter__lead reveal reveal-delay-2" data-i18n="checklist.intro">
+            A self serve one page checklist for teams shipping production backends. No sales call, no email required to access.
           </p>
-          <ul class="checklist-points" role="list">
-            <li data-i18n="checklist.item1">Idempotency and retries for money movement flows</li>
-            <li data-i18n="checklist.item2">Observability baseline for APIs, jobs, and incidents</li>
-            <li data-i18n="checklist.item3">Fraud and security control checkpoints</li>
-            <li data-i18n="checklist.item4">Release safety checks for migrations and cutovers</li>
-          </ul>
-          <p class="checklist-cta-wrap">
+          <ol class="checklist-stanzas" role="list">
+            <li class="checklist-stanza reveal reveal-blur" data-i18n="checklist.item1">Idempotency and retries for money movement flows</li>
+            <li class="checklist-stanza reveal reveal-blur reveal-delay-1" data-i18n="checklist.item2">Observability baseline for APIs, jobs, and incidents</li>
+            <li class="checklist-stanza reveal reveal-blur reveal-delay-2" data-i18n="checklist.item3">Fraud and security control checkpoints</li>
+            <li class="checklist-stanza reveal reveal-blur reveal-delay-3" data-i18n="checklist.item4">Release safety checks for migrations and cutovers</li>
+          </ol>
+          <p class="chapter__cta reveal">
             <a
               class="btn btn-primary"
               href="https://www.notion.so/Backend-Production-Readiness-Assessment-3400c0d95e4180c1987ef6ce453a71d3?source=copy_link"
@@ -76,8 +85,8 @@
               data-i18n="checklist.download"
               >Open checklist in Notion</a>
           </p>
-          <p class="checklist-back">
-            <a href="services.html" data-i18n="nav.services">Services</a>
+          <p class="chapter__back">
+            <a href="services.html" data-i18n="nav.services">← Services</a>
           </p>
         </div>
       </section>
@@ -96,6 +105,8 @@
       </div>
     </footer>
 
+    <script src="vendor/aurora.js" defer></script>
+    <script src="vendor/ambient.js" defer></script>
     <script src="i18n.js" defer></script>
     <script src="i18n.fr-es-de.js" defer></script>
     <script src="script.js" defer></script>

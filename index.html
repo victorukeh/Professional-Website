@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="home">
+    <canvas id="aurora-canvas" class="aurora-canvas" aria-hidden="true"></canvas>
     <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
     <header class="site-header" id="site-header">
       <div class="container header-inner">
@@ -71,7 +72,7 @@
     </header>
 
     <main id="main">
-      <section class="hero hero--home">
+      <section class="hero hero--home" data-mood="threshold">
         <div class="hero-aurora" aria-hidden="true"></div>
         <div class="hero-noise" aria-hidden="true"></div>
         <div class="container hero-inner">
@@ -135,49 +136,152 @@
         <div class="hero-grid-bg" aria-hidden="true"></div>
       </section>
 
-      <section class="trust-strip" aria-label="Domains">
-        <div class="trust-text" role="marquee" aria-live="off">
-          <span data-i18n="trust.line">REST &amp; gRPC APIs · Event-driven systems · PostgreSQL, MongoDB &amp; Redis · Kafka &amp; message queues · Docker &amp; Kubernetes · Observability &amp; reliability</span>
-          <span aria-hidden="true" data-i18n="trust.line">REST &amp; gRPC APIs · Event-driven systems · PostgreSQL, MongoDB &amp; Redis · Kafka &amp; message queues · Docker &amp; Kubernetes · Observability &amp; reliability</span>
-        </div>
-      </section>
-
-      <section class="employer-strip" aria-labelledby="employer-heading">
-        <div class="container employer-strip-inner">
-          <h2 id="employer-heading" class="employer-strip-label" data-i18n="home.employersLabel">Previously at</h2>
-          <ul class="employer-logos" role="list">
-            <li class="employer-logo" data-i18n="home.employer1">Moniepoint</li>
-            <li class="employer-logo" data-i18n="home.employer2">GetStac</li>
+      <section class="chapter chapter--craft" aria-labelledby="craft-heading" data-mood="craft">
+        <div class="chapter__inner">
+          <figure class="chapter__photo reveal reveal-blur">
+            <img
+              src="https://images.unsplash.com/photo-1516110833967-0b5716ca1387?auto=format&fit=crop&w=1400&q=70"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width="1400"
+              height="600"
+            />
+          </figure>
+          <span class="chapter__eyebrow reveal">The material</span>
+          <h2 id="craft-heading" class="chapter__title reveal reveal-delay-1">
+            What I actually work with, day to day.
+          </h2>
+          <p class="chapter__lead reveal reveal-delay-2">
+            Not a stack sheet. The tools and terrain I'm fluent in — the ones that pay for themselves in the second sprint, not the tenth.
+          </p>
+          <ul class="chapter-tags reveal reveal-blur reveal-delay-2" role="list">
+            <li>REST &amp; gRPC APIs</li>
+            <li>Event-driven systems</li>
+            <li>PostgreSQL, MongoDB, Redis</li>
+            <li>Kafka &amp; message queues</li>
+            <li>Docker &amp; Kubernetes</li>
+            <li>Observability &amp; reliability</li>
           </ul>
         </div>
       </section>
 
-      <section class="section home-hub" aria-labelledby="hub-heading">
-        <div class="container">
-          <h2 id="hub-heading" class="home-hub-heading" data-i18n="home.hubSectionTitle">Explore</h2>
-          <ul class="home-hub-grid" role="list">
-            <li>
-              <a class="hub-card" href="work.html">
-                <h3 class="hub-card-title" data-i18n="home.hubWorkTitle">Work</h3>
-                <p class="hub-card-desc" data-i18n="home.hubWorkDesc">Case studies, metrics, and experience.</p>
-                <span class="hub-card-arrow" aria-hidden="true">→</span>
+      <section class="chapter chapter--value" aria-labelledby="value-heading" data-mood="value">
+        <div class="chapter__inner">
+          <span class="chapter__eyebrow reveal">What that becomes</span>
+          <h2 id="value-heading" class="chapter__title reveal reveal-delay-1">
+            The engineering, translated into things you'd actually put on a roadmap.
+          </h2>
+          <p class="chapter__lead reveal reveal-delay-2">
+            Backend work only matters if it moves the business. Three of the ways it usually does.
+          </p>
+          <ol class="value-stops" role="list">
+            <li class="value-stop reveal reveal-blur">
+              <div>
+                <h3 class="value-stop__title">Ship what you promised</h3>
+                <p class="value-stop__desc">Backends that go live on the date you told the customer, not on the day the ticket queue clears.</p>
+              </div>
+            </li>
+            <li class="value-stop reveal reveal-blur reveal-delay-1">
+              <div>
+                <h3 class="value-stop__title">Sleep through the night</h3>
+                <p class="value-stop__desc">Systems designed for the failure modes, not just the happy path — because the pager is a business problem, not a lifestyle.</p>
+              </div>
+            </li>
+            <li class="value-stop reveal reveal-blur reveal-delay-2">
+              <div>
+                <h3 class="value-stop__title">Scale without the rewrite</h3>
+                <p class="value-stop__desc">APIs and data flows shaped so next year's growth doesn't cost you next year's roadmap.</p>
+              </div>
+            </li>
+          </ol>
+          <p class="chapter__footer reveal">
+            Track record built at
+            <span class="chapter__footer-mark" data-i18n="home.employer1">Moniepoint</span>
+            <span aria-hidden="true">·</span>
+            <span class="chapter__footer-mark" data-i18n="home.employer2">GetStac</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="chapter chapter--grounded" aria-labelledby="grounded-heading" data-mood="grounded">
+        <div class="chapter__inner">
+          <figure class="chapter__photo reveal reveal-blur">
+            <img
+              src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=70"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width="1400"
+              height="1750"
+            />
+          </figure>
+          <h2 id="grounded-heading" class="visually-hidden">The still point</h2>
+          <p class="grounded-verse reveal reveal-blur">
+            &ldquo;I can do all things through Christ who strengthens me.&rdquo;
+          </p>
+          <span class="grounded-cite reveal reveal-delay-1">Philippians 4:13</span>
+          <p class="grounded-secondary reveal reveal-delay-2">
+            The work has meaning because there are plans I did not draw.
+            <span class="grounded-secondary-cite">Jeremiah 29:11</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="chapter chapter--human" aria-labelledby="human-heading" data-mood="human">
+        <div class="chapter__inner">
+          <figure class="chapter__photo reveal reveal-blur">
+            <img
+              src="https://images.unsplash.com/photo-1529543544282-ea669407fca3?auto=format&fit=crop&w=1400&q=70"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width="1400"
+              height="933"
+            />
+          </figure>
+          <span class="chapter__eyebrow reveal">Off the clock</span>
+          <h2 id="human-heading" class="human-line reveal reveal-delay-1">
+            Between systems, there are <span class="human-accent">people</span>.
+          </h2>
+          <p class="human-sub reveal reveal-delay-2">
+            I like the long table, the late conversation, the part where the good stuff comes out after the second coffee. Bring your team, or bring yourself.
+          </p>
+        </div>
+      </section>
+
+      <section class="chapter chapter--invite" aria-labelledby="invite-heading" data-mood="invite">
+        <div class="chapter__inner">
+          <span class="chapter__eyebrow reveal">Where to next</span>
+          <h2 id="invite-heading" class="chapter__title reveal reveal-delay-1">
+            Ready when you are.
+          </h2>
+          <ol class="chapter-nav" role="list">
+            <li class="chapter-nav__item reveal reveal-blur">
+              <a class="chapter-nav__link" href="work.html">
+                <span class="chapter-nav__num">01</span>
+                <span class="chapter-nav__title" data-i18n="home.hubWorkTitle">Work</span>
+                <span class="chapter-nav__desc" data-i18n="home.hubWorkDesc">Case studies, metrics, and experience.</span>
+                <span class="chapter-nav__arrow" aria-hidden="true">→</span>
               </a>
             </li>
-            <li>
-              <a class="hub-card" href="services.html">
-                <h3 class="hub-card-title" data-i18n="home.hubServicesTitle">Services</h3>
-                <p class="hub-card-desc" data-i18n="home.hubServicesDesc">Offerings, rates, and stack.</p>
-                <span class="hub-card-arrow" aria-hidden="true">→</span>
+            <li class="chapter-nav__item reveal reveal-blur reveal-delay-1">
+              <a class="chapter-nav__link" href="services.html">
+                <span class="chapter-nav__num">02</span>
+                <span class="chapter-nav__title" data-i18n="home.hubServicesTitle">Services</span>
+                <span class="chapter-nav__desc" data-i18n="home.hubServicesDesc">Offerings, rates, and stack.</span>
+                <span class="chapter-nav__arrow" aria-hidden="true">→</span>
               </a>
             </li>
-            <li>
-              <a class="hub-card hub-card--cta" href="contact.html">
-                <h3 class="hub-card-title" data-i18n="home.hubContactTitle">Contact</h3>
-                <p class="hub-card-desc" data-i18n="home.hubContactDesc">Book a call or send a note.</p>
-                <span class="hub-card-arrow" aria-hidden="true">→</span>
+            <li class="chapter-nav__item reveal reveal-blur reveal-delay-2">
+              <a class="chapter-nav__link chapter-nav__link--primary" href="contact.html">
+                <span class="chapter-nav__num">03</span>
+                <span class="chapter-nav__title" data-i18n="home.hubContactTitle">Contact</span>
+                <span class="chapter-nav__desc" data-i18n="home.hubContactDesc">Book a call or send a note.</span>
+                <span class="chapter-nav__arrow" aria-hidden="true">→</span>
               </a>
             </li>
-          </ul>
+          </ol>
         </div>
       </section>
     </main>
@@ -194,6 +298,8 @@
     </footer>
 
     <script src="vendor/hero-scene.js" defer></script>
+    <script src="vendor/aurora.js" defer></script>
+    <script src="vendor/ambient.js" defer></script>
     <script src="i18n.js" defer></script>
     <script src="i18n.fr-es-de.js" defer></script>
     <script src="script.js" defer></script>

@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="services">
+    <canvas id="aurora-canvas" class="aurora-canvas" aria-hidden="true"></canvas>
     <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
     <header class="site-header" id="site-header">
       <div class="container header-inner">
@@ -53,80 +54,65 @@
     </header>
 
     <main id="main">
-      <section class="section page-cross page-cross--top" aria-label="Page">
-        <div class="container page-cross-inner">
-          <nav class="page-cross-breadcrumb" aria-label="Breadcrumb">
-            <ol class="page-cross-breadcrumb-list">
-              <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-              <li aria-current="page"><span data-i18n="servicesPage.breadcrumbCurrent">Services</span></li>
-            </ol>
-          </nav>
-          <div class="page-cross-local-wrap">
-            <p class="page-cross-onpage-label" id="services-local-nav-label" data-i18n="servicesPage.onThisPage">On this page</p>
-            <nav class="page-cross-local" aria-labelledby="services-local-nav-label">
-              <a href="#services" data-i18n="servicesPage.jumpOfferings">What I do</a>
-              <a href="#pricing" data-i18n="servicesPage.jumpRates">Engagement &amp; rates</a>
-              <a href="#skills" data-i18n="servicesPage.jumpStack">Core stack</a>
-              <a href="#checklist-teaser" data-i18n="servicesPage.jumpChecklist">Checklist</a>
-            </nav>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" class="section services-section">
-        <div class="container">
-          <h2 class="section-title">
-            <span class="section-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V10H8v10"/><path d="M4 10h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10Z"/><path d="M8 10V8a4 4 0 0 1 8 0v2"/></svg>
-            </span>
-            <span data-i18n="services.title">What I do for clients</span>
-          </h2>
-          <p class="section-intro" data-i18n="services.intro">
+      <section class="chapter chapter--opener" data-mood="threshold">
+        <div class="chapter__inner">
+          <figure class="chapter__photo chapter__photo--full reveal reveal-blur">
+            <img
+              src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1600&q=70"
+              alt=""
+              loading="eager"
+              decoding="async"
+              width="1600"
+              height="686"
+            />
+          </figure>
+          <span class="chapter__eyebrow reveal">Services</span>
+          <h1 class="chapter__title reveal reveal-delay-1" data-i18n="services.title">What I do for clients</h1>
+          <p class="chapter__lead reveal reveal-delay-2" data-i18n="services.intro">
             Backend work that respects your users, your ledger, and your on call rotation.
           </p>
-          <div id="services-root" class="services-grid"></div>
         </div>
       </section>
 
-      <section id="pricing" class="section pricing-section">
-        <div class="container">
-          <h2 class="section-title">
-            <span class="section-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </span>
-            <span data-i18n="pricing.title">Engagement and rates</span>
-          </h2>
-          <p class="section-intro" data-i18n="pricing.intro">
+      <section id="services" class="chapter chapter--offerings" data-mood="craft">
+        <div class="chapter__inner">
+          <ol id="services-root" class="service-stanzas" role="list"></ol>
+        </div>
+      </section>
+
+      <section id="pricing" class="chapter chapter--engagement" data-mood="value">
+        <div class="chapter__inner chapter__inner--wide">
+          <span class="chapter__eyebrow reveal">Engagement &amp; rates</span>
+          <h2 class="chapter__title reveal reveal-delay-1" data-i18n="pricing.title">Engagement and rates</h2>
+          <p class="chapter__lead reveal reveal-delay-2" data-i18n="pricing.intro">
             Indicative USD starting points. Final fees depend on scope, integrations, compliance, and risk.
           </p>
-          <p class="pricing-fx" data-i18n="pricing.fx">Invoices are in USD unless we agree otherwise in writing.</p>
-          <div id="pricing-root" class="pricing-grid"></div>
-          <p class="pricing-cta-wrap">
+          <p class="chapter__foot-note reveal reveal-delay-2" data-i18n="pricing.fx">
+            Invoices are in USD unless we agree otherwise in writing.
+          </p>
+          <ol id="pricing-root" class="engagement-stanzas" role="list"></ol>
+          <p class="chapter__cta reveal">
             <a class="btn btn-primary mailto-guided" href="mailto:victorukeh1@gmail.com" data-i18n="pricing.cta">Discuss scope by email</a>
           </p>
         </div>
       </section>
 
-      <section class="section personality-inline-section" aria-label="Working style">
-        <div class="container">
-          <p class="personality-inline" data-i18n="personality.inline">
+      <section class="chapter chapter--working-style" data-mood="human" aria-label="Working style">
+        <div class="chapter__inner">
+          <p class="working-style-line reveal reveal-blur" data-i18n="personality.inline">
             I work in ways your team can actually follow. Async, documented, and shipped in slices small enough to review. EU and US morning overlap for calls; deployments and cutovers are planned and communicated, not surprise Friday pushes.
           </p>
         </div>
       </section>
 
-      <section id="skills" class="section skills-section skills-section--core">
-        <div class="container">
-          <h2 class="section-title">
-            <span class="section-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
-            </span>
-            <span data-i18n="skills.title">Core stack</span>
-          </h2>
-          <p class="section-intro" data-i18n="skills.coreIntro">
+      <section id="skills" class="chapter chapter--stack" data-mood="craft">
+        <div class="chapter__inner">
+          <span class="chapter__eyebrow reveal">Core stack</span>
+          <h2 class="chapter__title reveal reveal-delay-1" data-i18n="skills.title">Core stack</h2>
+          <p class="chapter__lead reveal reveal-delay-2" data-i18n="skills.coreIntro">
             What I reach for on day one of a regulated backend or payments engagement—not an exhaustive inventory.
           </p>
-          <ul class="skill-core-list" role="list">
+          <ul class="chapter-tags reveal reveal-blur reveal-delay-2" role="list">
             <li>TypeScript</li>
             <li>Go</li>
             <li>PostgreSQL</li>
@@ -141,18 +127,16 @@
         </div>
       </section>
 
-      <section id="checklist-teaser" class="section checklist-teaser" aria-labelledby="checklist-teaser-heading">
-        <div class="container">
-          <h2 id="checklist-teaser-heading" class="section-title">
-            <span class="section-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </span>
-            <span data-i18n="checklist.title">Free one page backend checklist</span>
+      <section id="checklist-teaser" class="chapter chapter--checklist-teaser" data-mood="invite" aria-labelledby="checklist-teaser-heading">
+        <div class="chapter__inner">
+          <span class="chapter__eyebrow reveal">Free resource</span>
+          <h2 id="checklist-teaser-heading" class="chapter__title reveal reveal-delay-1" data-i18n="checklist.title">
+            Free one page backend checklist
           </h2>
-          <p class="section-intro" data-i18n="checklist.intro">
-            A self serve one page checklist for teams shipping production backends.  No sales call, no email required to access.
+          <p class="chapter__lead reveal reveal-delay-2" data-i18n="checklist.intro">
+            A self serve one page checklist for teams shipping production backends. No sales call, no email required to access.
           </p>
-          <p class="checklist-teaser-actions">
+          <p class="chapter__cta reveal">
             <a class="btn btn-ghost" href="checklist.html" data-i18n="servicesPage.checklistCta">Free one-page backend checklist</a>
           </p>
         </div>
@@ -172,6 +156,8 @@
       </div>
     </footer>
 
+    <script src="vendor/aurora.js" defer></script>
+    <script src="vendor/ambient.js" defer></script>
     <script src="i18n.js" defer></script>
     <script src="i18n.fr-es-de.js" defer></script>
     <script src="script.js" defer></script>

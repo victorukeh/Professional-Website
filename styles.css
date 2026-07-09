@@ -31,6 +31,9 @@
   --accent-dim: rgba(41, 151, 255, 0.14);
   --accent-warm: #f97316;
   --accent-warm-dim: rgba(249, 115, 22, 0.12);
+  --accent-gold: #f5c78a;
+  --accent-gold-dim: rgba(245, 199, 138, 0.14);
+  --accent-rose: #e88ab0;
   --grid-line: rgba(255, 255, 255, 0.065);
   --aurora-a: rgba(41, 151, 255, 0.28);
   --aurora-b: rgba(99, 88, 255, 0.18);
@@ -57,6 +60,9 @@
   --accent-dim: rgba(0, 102, 204, 0.09);
   --accent-warm: #ea6c00;
   --accent-warm-dim: rgba(234, 108, 0, 0.08);
+  --accent-gold: #b58a3f;
+  --accent-gold-dim: rgba(181, 138, 63, 0.10);
+  --accent-rose: #a04570;
   --grid-line: rgba(0, 0, 0, 0.055);
   --aurora-a: rgba(0, 102, 204, 0.16);
   --aurora-b: rgba(99, 88, 255, 0.10);
@@ -75,6 +81,7 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--bg);
+  transition: background-color 0.25s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -96,8 +103,8 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
   color: var(--text);
-  background: var(--bg);
-  transition: background-color 0.25s ease, color 0.25s ease;
+  background: transparent;
+  transition: color 0.25s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -3049,36 +3056,1318 @@ body {
   z-index: 1;
 }
 
-/* ─── Custom cursor ring ────────────────────────────────────────────────────── */
+/* ─── Global aurora canvas + view transitions ─────────────────────────────── */
 
-.cursor-ring {
+.aurora-canvas {
   position: fixed;
-  top: -12px;
-  left: -12px;
-  width: 24px;
-  height: 24px;
-  border: 1.5px solid color-mix(in srgb, var(--accent) 70%, transparent);
-  border-radius: 50%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
   pointer-events: none;
-  z-index: 9999;
-  transition:
-    width 0.2s ease,
-    height 0.2s ease,
-    top 0.2s ease,
-    left 0.2s ease,
-    opacity 0.2s ease;
-  mix-blend-mode: difference;
-  will-change: transform;
+  display: block;
 }
 
-.cursor-ring--active {
-  width: 44px;
-  height: 44px;
-  top: -22px;
-  left: -22px;
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.55s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── Walkthrough chapter primitives ──────────────────────────────────────── */
+
+.chapter {
+  padding: clamp(4.5rem, 11vw, 8rem) 0;
+  position: relative;
+}
+
+.chapter__inner {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding-inline: 1rem;
+  width: 100%;
+}
+
+.chapter--wide .chapter__inner {
+  max-width: var(--max-w);
+}
+
+.chapter__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-md);
+  display: block;
+}
+
+.chapter__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.85rem, 4.5vw, 3rem);
+  line-height: 1.12;
+  color: var(--text);
+  margin: 0 0 var(--space-md);
+  max-width: 22ch;
+}
+
+.chapter__lead {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  color: var(--text-muted);
+  max-width: 46ch;
+  margin: 0 0 var(--space-xl);
+  line-height: 1.65;
+}
+
+/* Value stops — the Business chapter's numbered list. */
+
+.value-stops {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: value-stop;
+  display: grid;
+  gap: 0;
+}
+
+.value-stop {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  column-gap: var(--space-lg);
+  align-items: baseline;
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--border);
+  counter-increment: value-stop;
+  transition:
+    color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.value-stops > .value-stop:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.value-stop::before {
+  content: "0" counter(value-stop);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  transition: color 0.6s ease;
+}
+
+.value-stop__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  margin: 0 0 var(--space-xs);
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.value-stop__desc {
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 42ch;
+}
+
+.value-stop.is-visible::before {
+  color: var(--accent-warm);
+}
+
+.value-stop.is-visible .value-stop__title {
+  color: var(--text);
+}
+
+/* Grounded (Faith) chapter — the still point. */
+
+.chapter--grounded {
+  padding: clamp(7rem, 15vw, 11rem) 0;
+  text-align: center;
+}
+
+.chapter--grounded .chapter__inner {
+  max-width: 34rem;
+}
+
+.grounded-verse {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.4;
+  color: var(--accent-gold);
+  margin: 0 auto var(--space-md);
+  font-style: italic;
+  max-width: 26ch;
+}
+
+.grounded-cite {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin: 0 0 var(--space-3xl);
+}
+
+.grounded-secondary {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  max-width: 36ch;
+  margin: 0 auto;
+  line-height: 1.75;
+  font-style: italic;
+}
+
+.grounded-secondary-cite {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-top: var(--space-sm);
+  font-style: normal;
+  opacity: 0.7;
+}
+
+/* Human chapter — warm, unforced. */
+
+.chapter--human .chapter__inner {
+  max-width: 46rem;
+}
+
+.human-line {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3.6vw, 2.3rem);
+  line-height: 1.3;
+  color: var(--text);
+  margin: 0 0 var(--space-md);
+  max-width: 22ch;
+}
+
+.human-sub {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 40ch;
+  margin: 0;
+}
+
+.human-accent {
+  color: var(--accent-rose);
+}
+
+/* Reveal variants — additive to the existing .reveal system. */
+
+.reveal-blur {
+  filter: blur(6px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-blur.is-visible {
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-blur {
+    filter: none !important;
+  }
+}
+
+/* ─── Additional chapter primitives ───────────────────────────────────────── */
+
+.chapter-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+
+.chapter-tags li {
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  background: color-mix(in srgb, var(--bg-elevated) 32%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.chapter__footer {
+  margin: var(--space-xl) 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0.75;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  align-items: center;
+}
+
+.chapter__footer-mark {
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+/* Invite chapter navigation — text-first, no cards. */
+
+.chapter--invite {
+  padding: clamp(5rem, 12vw, 8rem) 0;
+}
+
+.chapter-nav {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-2xl) 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.chapter-nav__item {
+  border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.chapter-nav__item:last-child {
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.chapter-nav__link {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  column-gap: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1.4rem, 3vw, 2rem) 0.25rem;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chapter-nav__link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent) 8%, transparent) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.chapter-nav__link:hover::before,
+.chapter-nav__link:focus-visible::before {
+  opacity: 1;
+}
+
+.chapter-nav__link:hover,
+.chapter-nav__link:focus-visible {
+  transform: translateX(6px);
+}
+
+.chapter-nav__num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  align-self: baseline;
+  grid-row: 1;
+}
+
+.chapter-nav__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.1;
+  grid-row: 1;
+}
+
+.chapter-nav__desc {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  max-width: 42ch;
+}
+
+.chapter-nav__arrow {
+  grid-row: 1 / span 2;
+  align-self: center;
+  font-size: 1.5rem;
+  color: var(--accent);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chapter-nav__link:hover .chapter-nav__arrow,
+.chapter-nav__link:focus-visible .chapter-nav__arrow {
+  transform: translateX(10px);
+}
+
+.chapter-nav__link--primary .chapter-nav__title {
+  color: var(--accent);
+}
+
+@media (max-width: 520px) {
+  .chapter-nav__link {
+    grid-template-columns: auto 1fr;
+    row-gap: 0.35rem;
+  }
+  .chapter-nav__arrow {
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: end;
+    font-size: 1.25rem;
+  }
+  .chapter-nav__title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Opener chapter — sits at top of inner pages. */
+.chapter--opener {
+  padding-top: clamp(5rem, 12vw, 8rem);
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.chapter__inner--wide {
+  max-width: 52rem;
+}
+
+/* Case study stanzas — text-forward, no cards. */
+.case-stanzas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 7vw, 5rem);
+  counter-reset: case-stanza;
+}
+
+.case-stanza {
+  counter-increment: case-stanza;
+  position: relative;
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.case-stanza::before {
+  content: "0" counter(case-stanza);
+  position: absolute;
+  top: clamp(1.75rem, 3.5vw, 2.5rem);
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.case-stanza__company {
+  margin: 0 0 0.85rem;
+  padding-left: 3rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.case-stanza__headline {
+  margin: 0 0 var(--space-md);
+  padding-left: 3rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.55rem, 3.2vw, 2.35rem);
+  line-height: 1.15;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  max-width: 22ch;
+}
+
+.case-stanza__teaser {
+  margin: 0 0 var(--space-sm);
+  padding-left: 3rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 44ch;
+}
+
+.case-stanza__body {
+  margin: 0;
+  padding-left: 3rem;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  max-width: 52ch;
+  opacity: 0.85;
+}
+
+@media (max-width: 640px) {
+  .case-stanza::before {
+    position: static;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+  .case-stanza__company,
+  .case-stanza__headline,
+  .case-stanza__teaser,
+  .case-stanza__body {
+    padding-left: 0;
+  }
+}
+
+/* Metric lines — inline stat rows, not bento cards. */
+.metric-lines {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-line {
+  display: grid;
+  grid-template-columns: minmax(10rem, 14rem) 1fr;
+  column-gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: baseline;
+  padding: clamp(1.4rem, 3vw, 2rem) 0;
+  border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  margin: 0;
+}
+
+.metric-lines .metric-line:last-child {
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.metric-line__value {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--text);
+}
+
+.metric-line__body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.metric-line__label {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+
+.metric-line__detail {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  max-width: 40ch;
+}
+
+@media (max-width: 560px) {
+  .metric-line {
+    grid-template-columns: 1fr;
+    row-gap: 0.5rem;
+  }
+}
+
+/* Track stanzas — experience timeline in chapter grammar. */
+.track-stanzas {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xl) 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.track-stanza {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  column-gap: clamp(1rem, 2.5vw, 1.75rem);
+  padding: clamp(1.4rem, 3vw, 2rem) 0;
+  border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.track-stanzas .track-stanza:last-child {
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.track-stanza__num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  padding-top: 0.35rem;
+}
+
+.track-stanza__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.track-stanza__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  color: var(--text);
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.track-stanza__meta {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+
+.track-stanza__org {
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: -0.01em;
+}
+
+.track-stanza__sep {
   opacity: 0.5;
 }
 
-@media (hover: none) {
-  .cursor-ring { display: none; }
+.track-stanza__prose {
+  margin: 0.25rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  max-width: 54ch;
+}
+
+.track-stanza__list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.track-stanza__list li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 54ch;
+}
+
+.track-stanza__list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+  .track-stanza {
+    grid-template-columns: 1fr;
+    row-gap: 0.35rem;
+  }
+  .track-stanza__num {
+    padding-top: 0;
+  }
+}
+
+/* Service stanzas — offerings as numbered chapter items. */
+.service-stanzas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-stanza {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  column-gap: clamp(1rem, 2.5vw, 1.75rem);
+  padding: clamp(1.5rem, 3.5vw, 2.25rem) 0;
+  border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.service-stanzas .service-stanza:last-child {
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.service-stanza__num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  opacity: 0.75;
+  padding-top: 0.4rem;
+}
+
+.service-stanza__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.service-stanza__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.service-stanza__desc {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  max-width: 52ch;
+}
+
+/* Engagement stanzas — pricing tiers as prose blocks. */
+.engagement-stanzas {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xl) 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.engagement-stanza {
+  padding: clamp(1.75rem, 4vw, 2.5rem) 0;
+  border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.engagement-stanzas .engagement-stanza:last-child {
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.engagement-stanza--featured .engagement-stanza__title {
+  color: var(--accent);
+}
+
+.engagement-stanza__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.engagement-stanza__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.7rem 1.1rem;
+}
+
+.engagement-stanza__num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.engagement-stanza__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.35rem, 2.8vw, 1.8rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.engagement-stanza__badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  padding: 0.25em 0.7em;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent-warm) 45%, transparent);
+  background: color-mix(in srgb, var(--accent-warm) 8%, transparent);
+}
+
+.engagement-stanza__for {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  max-width: 52ch;
+}
+
+.engagement-stanza__scope {
+  margin: 0;
+  color: color-mix(in srgb, var(--text-muted) 92%, var(--accent) 8%);
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  max-width: 52ch;
+}
+
+.engagement-stanza__features {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0.4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.35rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .engagement-stanza__features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.engagement-stanza__features li {
+  position: relative;
+  padding-left: 1.2rem;
+  color: var(--text-muted);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.engagement-stanza__features li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+.engagement-stanza__cta {
+  align-self: flex-start;
+  margin-top: 0.4rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.15rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  transition: color 0.2s ease, border-bottom-color 0.2s ease, transform 0.3s ease;
+}
+
+.engagement-stanza__cta:hover,
+.engagement-stanza__cta:focus-visible {
+  border-bottom-color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* Chapter CTA row + foot note. */
+.chapter__cta {
+  margin: var(--space-xl) 0 0;
+}
+
+.chapter__foot-note {
+  margin: calc(var(--space-xl) * -1 + 0.5rem) 0 var(--space-xl);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  opacity: 0.75;
+}
+
+/* Working style — single elevated line. */
+.chapter--working-style {
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+}
+
+.working-style-line {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 48ch;
+  text-align: center;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+/* ─── Contact chapters ─────────────────────────────────────────────────────── */
+
+.bio-flow {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5vw, 3rem);
+}
+
+.bio-flow__portrait {
+  margin: 0;
+  border-radius: var(--radius-lg, 1.25rem);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  width: 100%;
+}
+
+.bio-flow__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.bio-flow__portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--bg) 0%, transparent) 55%,
+    color-mix(in srgb, var(--bg) 70%, transparent) 100%
+  );
+  pointer-events: none;
+}
+
+.bio-flow__prose {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.85rem, 1.8vw, 1.15rem);
+}
+
+.bio-line {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.5;
+  color: var(--text);
+  max-width: 40ch;
+}
+
+.bio-line--emphasis {
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* Chapter nav compact variant (contact page). */
+.chapter-nav--compact .chapter-nav__link {
+  padding: clamp(1.1rem, 2.4vw, 1.5rem) 0.25rem;
+}
+
+.chapter-nav--compact .chapter-nav__title {
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+}
+
+.social-line {
+  margin: var(--space-xl) 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.social-line a {
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--text-muted) 35%, transparent);
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+.social-line a:hover,
+.social-line a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.social-line span[aria-hidden] {
+  opacity: 0.5;
+}
+
+/* Intake form — chapter grammar. */
+.intake-form--chapter {
+  margin: var(--space-xl) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.intake-textarea--chapter {
+  background: color-mix(in srgb, var(--bg-elevated) 40%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--text);
+  resize: vertical;
+  min-height: 10rem;
+  width: 100%;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.intake-textarea--chapter:hover,
+.intake-textarea--chapter:focus-visible {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  outline: none;
+  background: color-mix(in srgb, var(--bg-elevated) 55%, transparent);
+}
+
+.intake-form--chapter .intake-actions {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.intake-form--chapter .intake-mailto-note {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  opacity: 0.75;
+  line-height: 1.6;
+  max-width: 52ch;
+}
+
+/* Checklist stanzas — the list on checklist.html. */
+.checklist-stanzas {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xl) 0 var(--space-xl);
+  counter-reset: checklist-stanza;
+  display: flex;
+  flex-direction: column;
+}
+
+.checklist-stanza {
+  counter-increment: checklist-stanza;
+  position: relative;
+  padding: clamp(1.1rem, 2.4vw, 1.5rem) 0 clamp(1.1rem, 2.4vw, 1.5rem) 3rem;
+  border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  font-family: var(--font-sans);
+  font-size: clamp(1.02rem, 1.6vw, 1.15rem);
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.checklist-stanzas .checklist-stanza:last-child {
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.checklist-stanza::before {
+  content: "0" counter(checklist-stanza);
+  position: absolute;
+  top: clamp(1.35rem, 2.5vw, 1.7rem);
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  opacity: 0.75;
+}
+
+.chapter__back {
+  margin: var(--space-2xl) 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.chapter__back a {
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--text-muted) 25%, transparent);
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+.chapter__back a:hover,
+.chapter__back a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ─── Unify layer: dissolve legacy bands & cards into the walkthrough ─────── */
+
+/* Hero: kill legacy background layers now that mesh + site aurora handle it. */
+.hero-aurora,
+.hero-noise,
+.hero-grid-bg,
+.hero-art-static {
+  display: none;
+}
+
+.hero {
+  background: transparent;
+}
+
+.hero--home {
+  padding-top: clamp(3rem, 8vw, 6rem);
+  padding-bottom: clamp(4rem, 10vw, 7rem);
+}
+
+/* De-slab horizontal bands so aurora reads continuously. */
+.trust-strip,
+.employer-strip,
+.skills-section,
+.pricing-section,
+.personality-inline-section,
+.checklist-section,
+.checklist-teaser,
+.services-section,
+.stats-section,
+.case-studies-section,
+.experience-section,
+.video-section,
+.contact-section {
+  background: transparent !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.trust-strip {
+  padding-block: clamp(1.25rem, 3vw, 2rem);
+  opacity: 0.62;
+}
+
+.employer-strip {
+  padding-block: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+/* Page-cross breadcrumb: hairline underline only, no filled band. */
+.page-cross {
+  background: transparent !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent) !important;
+}
+
+/* Section titles: quieter icon chips so the airy chapters lead visually. */
+.section-icon {
+  background: transparent;
+  border-color: color-mix(in srgb, var(--accent) 28%, transparent);
+  opacity: 0.85;
+}
+
+/* ── Glass card treatment ── */
+:root {
+  --glass-bg: color-mix(in srgb, var(--bg-elevated) 55%, transparent);
+  --glass-border: color-mix(in srgb, var(--border) 70%, transparent);
+  --glass-shadow: 0 1px 0 color-mix(in srgb, var(--text) 6%, transparent) inset,
+    0 20px 40px -30px color-mix(in srgb, var(--text) 22%, transparent);
+}
+
+[data-theme="light"] {
+  --glass-bg: color-mix(in srgb, #ffffff 60%, transparent);
+  --glass-border: color-mix(in srgb, var(--border) 80%, transparent);
+}
+
+.hub-card,
+.stat-card,
+.service-card,
+.pricing-card,
+.skill-card {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  border-color: var(--glass-border) !important;
+  box-shadow: var(--glass-shadow) !important;
+}
+
+.hub-card:hover,
+.stat-card:hover,
+.service-card:hover,
+.pricing-card:hover {
+  background: color-mix(in srgb, var(--bg-elevated) 72%, transparent) !important;
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--glass-border)) !important;
+}
+
+.pricing-card--featured {
+  background: color-mix(in srgb, var(--bg-elevated) 68%, transparent) !important;
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--glass-border)) !important;
+  box-shadow:
+    var(--glass-shadow),
+    0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent),
+    0 0 60px color-mix(in srgb, var(--accent) 15%, transparent) !important;
+}
+
+/* Skills list: strip the tile grid, breathe with chapter typography. */
+.skill-core-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+
+.skill-core-list li {
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Chapter atmospheric photo slot — thin, wide, cinematic. */
+.chapter__photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 0 var(--space-2xl);
+  aspect-ratio: 21 / 9;
+  border-radius: var(--radius-lg, 1.25rem);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chapter__photo--full {
+  aspect-ratio: 21 / 9;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.chapter__photo.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.chapter__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85) contrast(1.02);
+}
+
+.chapter__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--bg) 0%, transparent) 55%,
+    color-mix(in srgb, var(--bg) 82%, transparent) 100%
+  );
+  pointer-events: none;
+}
+
+.chapter--grounded .chapter__photo {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 21 / 9;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.chapter--human .chapter__photo {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 21 / 9;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+/* Employer strip: read as understated inline mention, not a chip row. */
+.employer-strip-inner {
+  gap: var(--space-sm) var(--space-lg);
+}
+
+.employer-strip-label {
+  opacity: 0.7;
+}
+
+.employer-logo {
+  font-weight: 500;
+  opacity: 0.72;
+  letter-spacing: 0.02em;
+}
+
+/* Home hub: pull inward, drop hover lift, feel like part of the flow. */
+.home-hub {
+  padding-block: clamp(4rem, 9vw, 6rem);
+}
+
+.hub-card {
+  min-height: 9.5rem;
+}
+
+.hub-card:hover {
+  transform: none;
+}
+
+/* Trust-strip: quieter marquee, sits beneath value chapter. */
+.trust-text {
+  opacity: 0.85;
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .hub-card,
+  .stat-card,
+  .service-card,
+  .pricing-card,
+  .skill-card,
+  .skill-core-list li {
+    background: color-mix(in srgb, var(--bg-elevated) 88%, transparent) !important;
+  }
 }

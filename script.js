@@ -418,47 +418,52 @@
   }
   */
 
-  let heroLottieInstance = null;
+  let heroSceneInstance = null;
 
-  function initHeroLottie() {
-    const container = document.getElementById("hero-lottie");
+  function readHeroSceneColors() {
+    const styles = getComputedStyle(root);
+    const accent = styles.getPropertyValue("--accent").trim() || "#2997ff";
+    const text = styles.getPropertyValue("--text").trim() || "#f5f5f7";
+    const isDark = root.getAttribute("data-theme") !== "light";
+    return {
+      edgeColor: accent,
+      pulseColor: isDark ? text : accent,
+      particleColor: accent,
+    };
+  }
+
+  function initHeroScene() {
+    const canvas = document.getElementById("hero-scene");
     const wrap = document.querySelector(".hero-art");
-    if (!container || !wrap) return;
+    if (!canvas || !wrap) return;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) {
+    const lowPower =
+      (typeof navigator.hardwareConcurrency === "number" && navigator.hardwareConcurrency <= 2) ||
+      (typeof navigator.deviceMemory === "number" && navigator.deviceMemory <= 1);
+
+    if (reduceMotion || lowPower || !globalThis.HeroScene) {
       wrap.classList.add("hero-art--static");
       return;
     }
 
-    const Lottie = globalThis.lottie || globalThis.bodymovin;
-    if (!Lottie || typeof Lottie.loadAnimation !== "function") {
+    try {
+      heroSceneInstance = globalThis.HeroScene.create(
+        Object.assign({ canvas: canvas }, readHeroSceneColors())
+      );
+    } catch (err) {
+      heroSceneInstance = null;
+    }
+
+    if (!heroSceneInstance) {
       wrap.classList.add("hero-art--static");
       return;
     }
 
-    const jsonUrl = new URL("images/hero-lottie.json", document.baseURI).href;
-    fetch(jsonUrl)
-      .then(function (r) {
-        if (!r.ok) throw new Error("hero-lottie fetch");
-        return r.json();
-      })
-      .then(function (data) {
-        heroLottieInstance = Lottie.loadAnimation({
-          container: container,
-          renderer: "svg",
-          loop: true,
-          autoplay: true,
-          animationData: data,
-          rendererSettings: {
-            preserveAspectRatio: "xMidYMid meet",
-            className: "hero-lottie-svg",
-          },
-        });
-      })
-      .catch(function () {
-        wrap.classList.add("hero-art--static");
-      });
+    const themeObserver = new MutationObserver(function () {
+      if (heroSceneInstance) heroSceneInstance.setColors(readHeroSceneColors());
+    });
+    themeObserver.observe(root, { attributes: true, attributeFilter: ["data-theme"] });
   }
 
   function initIntakeForm() {
@@ -620,7 +625,7 @@
   renderCaseStudies(locale);
   // renderReferences(locale);
   initIntakeForm();
-  initHeroLottie();
+  initHeroScene();
 
   document.querySelector(".theme-toggle")?.addEventListener("click", function () {
     const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";

@@ -341,6 +341,200 @@
     });
   }
 
+  const WEBSITE_PROJECT_TYPES = [
+    {
+      title: "Landing Page",
+      forWho: "For a single offer, portfolio, or pre launch page that needs to look serious fast.",
+      scope: "Most launch sites ship in under two weeks.",
+      prices: { NGN: "₦1,050,000", USD: "$650", EUR: "€600" },
+      features: [
+        "Up to 5 pages, built mobile first",
+        "Copy structure, SEO basics, and analytics wired in",
+        "Contact or booking flow connected end to end",
+      ],
+    },
+    {
+      title: "Business Website",
+      forWho: "For a company that needs to be found, trusted, and easy to contact.",
+      scope: "Typical turnaround: three to four weeks.",
+      prices: { NGN: "₦2,900,000", USD: "$1,800", EUR: "€1,650" },
+      features: [
+        "Up to 10 pages with a CMS you can actually edit yourself",
+        "Booking, payment, or contact integrations wired up",
+        "Analytics and on page SEO from day one",
+      ],
+    },
+    {
+      title: "E-commerce Store",
+      forWho: "For a business that needs to sell online without duct taping plugins together.",
+      scope: "Typical turnaround: four to six weeks.",
+      prices: { NGN: "₦4,800,000", USD: "$3,000", EUR: "€2,750" },
+      features: [
+        "Product catalog, cart, and checkout wired to a real payment processor",
+        "Inventory and order management you can actually run",
+        "Built to survive a launch day traffic spike",
+      ],
+    },
+    {
+      title: "Web App / SaaS",
+      forWho: "For a team turning an idea into a real product, not another brochure site.",
+      scope: "Timeline scoped to what you're building.",
+      prices: { NGN: "₦7,200,000", USD: "$4,500", EUR: "€4,150" },
+      features: [
+        "Auth, database, and admin panel from day one",
+        "Architecture built to hold past your first 10,000 users",
+        "Deployment and monitoring set up before handoff",
+      ],
+    },
+  ];
+
+  // Eurozone members as of 2026 — everyone else outside Nigeria defaults to USD.
+  const EUROZONE_COUNTRIES = new Set([
+    "AT", "BE", "HR", "CY", "EE", "FI", "FR", "DE", "GR", "IE",
+    "IT", "LV", "LT", "LU", "MT", "NL", "PT", "SK", "SI", "ES",
+  ]);
+
+  function detectVisitorCurrency() {
+    return new Promise(function (resolve) {
+      const CURRENCY_KEY = "ukeh-visitor-currency";
+      const cached = sessionStorage.getItem(CURRENCY_KEY);
+      if (cached === "USD" || cached === "NGN" || cached === "EUR") {
+        resolve(cached);
+        return;
+      }
+      const controller = new AbortController();
+      const timeoutId = setTimeout(function () {
+        controller.abort();
+      }, 2500);
+      fetch("https://ipwho.is/", { signal: controller.signal })
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (data) {
+          let currency = "NGN";
+          if (data && data.success !== false && data.country_code) {
+            if (data.country_code === "NG") currency = "NGN";
+            else if (EUROZONE_COUNTRIES.has(data.country_code)) currency = "EUR";
+            else currency = "USD";
+          }
+          sessionStorage.setItem(CURRENCY_KEY, currency);
+          resolve(currency);
+        })
+        .catch(function () {
+          resolve("NGN");
+        })
+        .finally(function () {
+          clearTimeout(timeoutId);
+        });
+    });
+  }
+
+  function initWebsiteProjectTypes() {
+    const grid = document.getElementById("project-type-grid");
+    const modal = document.getElementById("project-price-modal");
+    if (!grid || !modal || typeof modal.showModal !== "function") return;
+
+    const titleEl = modal.querySelector(".project-modal__title");
+    const forEl = modal.querySelector(".project-modal__for");
+    const scopeEl = modal.querySelector(".project-modal__scope");
+    const pricesEl = modal.querySelector(".project-modal__prices");
+    const featuresEl = modal.querySelector(".project-modal__features");
+    const ctaEl = modal.querySelector(".project-modal__cta");
+
+    const PRICE_LABELS = { NGN: "Naira", USD: "Dollars", EUR: "Euros" };
+    const CURRENCY_ORDER = ["NGN", "USD", "EUR"];
+    // Naira until IP lookup resolves — matches the "can't tell, use Naira" default.
+    let visitorCurrency = "NGN";
+    detectVisitorCurrency().then(function (c) {
+      visitorCurrency = c;
+    });
+
+    grid.replaceChildren();
+    WEBSITE_PROJECT_TYPES.forEach(function (project, i) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "project-type-card reveal reveal-blur" + (i > 0 ? " reveal-delay-" + Math.min(i, 3) : "");
+      btn.setAttribute("role", "listitem");
+
+      const h3 = document.createElement("h3");
+      h3.className = "project-type-card__title";
+      h3.textContent = project.title;
+
+      const forP = document.createElement("p");
+      forP.className = "project-type-card__for";
+      forP.textContent = project.forWho;
+
+      const hint = document.createElement("span");
+      hint.className = "project-type-card__hint";
+      hint.textContent = "See indicative pricing →";
+
+      btn.appendChild(h3);
+      btn.appendChild(forP);
+      btn.appendChild(hint);
+
+      btn.addEventListener("click", function () {
+        titleEl.textContent = project.title;
+        forEl.textContent = project.forWho;
+        scopeEl.textContent = project.scope;
+
+        pricesEl.replaceChildren();
+        const primary = document.createElement("div");
+        primary.className = "project-modal__price project-modal__price--primary";
+        const primaryLabel = document.createElement("span");
+        primaryLabel.className = "project-modal__price-label";
+        primaryLabel.textContent = PRICE_LABELS[visitorCurrency];
+        const primaryValue = document.createElement("span");
+        primaryValue.className = "project-modal__price-value";
+        primaryValue.textContent = project.prices[visitorCurrency];
+        primary.appendChild(primaryLabel);
+        primary.appendChild(primaryValue);
+        pricesEl.appendChild(primary);
+
+        const secondaryGroup = document.createElement("div");
+        secondaryGroup.className = "project-modal__price-secondary-group";
+        CURRENCY_ORDER.filter(function (code) {
+          return code !== visitorCurrency;
+        }).forEach(function (code) {
+          const wrap = document.createElement("div");
+          wrap.className = "project-modal__price project-modal__price--secondary";
+          const label = document.createElement("span");
+          label.className = "project-modal__price-label";
+          label.textContent = PRICE_LABELS[code];
+          const value = document.createElement("span");
+          value.className = "project-modal__price-value";
+          value.textContent = project.prices[code];
+          wrap.appendChild(label);
+          wrap.appendChild(value);
+          secondaryGroup.appendChild(wrap);
+        });
+        pricesEl.appendChild(secondaryGroup);
+
+        featuresEl.replaceChildren();
+        project.features.forEach(function (f) {
+          const li = document.createElement("li");
+          li.textContent = f;
+          featuresEl.appendChild(li);
+        });
+
+        ctaEl.href = "mailto:victorukeh1@gmail.com?subject=" + encodeURIComponent(project.title);
+
+        modal.showModal();
+      });
+
+      grid.appendChild(btn);
+    });
+
+    modal.addEventListener("click", function (event) {
+      const rect = modal.getBoundingClientRect();
+      const inDialog =
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width;
+      if (!inDialog) modal.close();
+    });
+  }
+
   function linkedinProfileLooksValid(href) {
     return /^https?:\/\/(www\.)?linkedin\.com\/(in|pub|company)\//i.test(String(href || ""));
   }
@@ -619,6 +813,7 @@
   initHeroScene();
   initAurora();
   initAmbient();
+  initWebsiteProjectTypes();
 
   document.querySelector(".theme-toggle")?.addEventListener("click", function () {
     const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";

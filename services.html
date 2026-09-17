@@ -97,6 +97,48 @@
         </div>
       </section>
 
+      <section id="website-packages" class="chapter chapter--website-packages" data-mood="value">
+        <div class="chapter__inner chapter__inner--wide">
+          <span class="chapter__eyebrow reveal">Website packages</span>
+          <h2 class="chapter__title reveal reveal-delay-1">
+            The same backend discipline, priced for a website instead of a platform.
+          </h2>
+          <p class="chapter__lead reveal reveal-delay-2">
+            Most website bugs never look like backend bugs — until they do.
+          </p>
+          <ul class="war-stories reveal reveal-blur reveal-delay-2" role="list">
+            <li>An N+1 query nobody profiled, quietly tripling a page's load time for a year before anyone noticed.</li>
+            <li>A missing index on a 40 million row table that turned a two second report into a ten minute outage.</li>
+            <li>A synchronous call that should have been a queue, taking checkout down every time one vendor had a bad day.</li>
+          </ul>
+          <p class="chapter__lead reveal reveal-delay-2">
+            None of that shows up on a small site until it does. Pick a project type below to see what it costs to have that discipline on yours from day one.
+          </p>
+          <p class="chapter__foot-note reveal reveal-delay-2">
+            Priced in your currency when I can tell — Naira in Nigeria, Euros in the EU, Dollars everywhere else. Can't tell? You'll see Naira. Every figure is a starting point, renegotiated once we know your actual requirements.
+          </p>
+          <div id="project-type-grid" class="project-type-grid" role="list"></div>
+          <p class="website-packages-note reveal">
+            From here on, this is what I'll be writing about: backend systems, the seam where backend meets product, and the judgment calls nobody trains you for.
+          </p>
+        </div>
+      </section>
+
+      <dialog id="project-price-modal" class="project-modal" aria-labelledby="project-modal-title">
+        <form method="dialog" class="project-modal__form">
+          <button type="submit" class="project-modal__close" aria-label="Close">&times;</button>
+          <h3 id="project-modal-title" class="project-modal__title"></h3>
+          <p class="project-modal__for"></p>
+          <p class="project-modal__scope"></p>
+          <div class="project-modal__prices"></div>
+          <ul class="project-modal__features"></ul>
+          <p class="project-modal__disclaimer">
+            Renegotiable: the number above is a starting point. Final cost depends on scope, integrations, and what we find once we actually talk.
+          </p>
+          <a class="project-modal__cta" href="mailto:victorukeh1@gmail.com">Ask about this project <span aria-hidden="true">→</span></a>
+        </form>
+      </dialog>
+
       <section class="chapter chapter--working-style" data-mood="human" aria-label="Working style">
         <div class="chapter__inner">
           <p class="working-style-line reveal reveal-blur" data-i18n="personality.inline">

@@ -93,6 +93,7 @@
     contact: "docContact",
     checklist: "docChecklist",
     intro: "docIntro",
+    rates: "docRates",
   };
 
   function applyPageTitle(lang) {

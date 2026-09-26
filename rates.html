@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Fixed-price offers for backend engineering, full product delivery, and advisory work, with Naira and international USD pricing."
+    />
+    <title>Rates · Victor Ukeh</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231c1c1e'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='15' font-weight='600' fill='%232997ff' font-family='system-ui,sans-serif'%3EU%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="theme-boot.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="rates">
+    <canvas id="aurora-canvas" class="aurora-canvas" aria-hidden="true"></canvas>
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+    <header class="site-header" id="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo-mark">Victor Ukeh</a>
+        <button
+          type="button"
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open menu"
+        >
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <!-- <a href="intro.html" data-i18n="nav.video">Intro</a> -->
+          <a href="work.html" data-i18n="nav.work">Work</a>
+          <a href="services.html" data-i18n="nav.services">Services</a>
+          <a href="rates.html" aria-current="page" data-i18n="nav.pricing">Pricing</a>
+          <a href="contact.html" class="nav-cta" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="header-tools">
+          <label class="lang-label">
+            <span class="visually-hidden" data-i18n="nav.langAria">Language</span>
+            <select id="lang-select" class="lang-select" aria-label="Language"></select>
+          </label>
+          <button type="button" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
+            <span class="theme-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="chapter chapter--opener" data-mood="threshold">
+        <div class="chapter__inner chapter__inner--rates">
+          <span class="chapter__eyebrow reveal">Rates</span>
+          <h1 class="chapter__title reveal reveal-delay-1">The rate card</h1>
+          <p class="chapter__lead reveal reveal-delay-2">
+            Every offer below names a concrete outcome, what's included, and a fixed starting price &mdash; not a vague scope you have to chase down over email.
+          </p>
+          <p class="chapter__foot-note reveal reveal-delay-2">
+            Priced in Naira for Nigerian clients. International USD pricing is further down the page. Every figure is a starting point, confirmed after a short scoping call.
+          </p>
+          <ul class="chapter-tags reveal reveal-blur reveal-delay-2" role="list">
+            <li><a href="#track-a">Backend engineering</a></li>
+            <li><a href="#track-b">Full product delivery</a></li>
+            <li><a href="#track-c">Advisory &amp; support</a></li>
+            <li><a href="#international">International (USD)</a></li>
+            <li><a href="#terms">Terms</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="track-a" class="chapter chapter--rates" data-mood="craft">
+        <div class="chapter__inner chapter__inner--rates">
+          <span class="chapter__eyebrow reveal">Track A</span>
+          <h2 class="chapter__title reveal reveal-delay-1">Backend engineering offers</h2>
+          <p class="chapter__lead reveal reveal-delay-2">
+            For founders, agencies, and developers who already have frontend or mobile covered and need a strong backend.
+          </p>
+
+          <div class="rate-offer-grid">
+            <article class="rate-offer reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">A3</span>
+                  <h3 class="rate-offer__title">Launch-Ready API Sprint</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">From ₦250,000</span>
+                  <span class="rate-offer__price-range">Typical range ₦200k&ndash;₦500k</span>
+                </div>
+              </header>
+              <p class="rate-offer__for">For frontend or mobile developers and agencies who need a clean, documented API quickly.</p>
+              <p class="rate-offer__outcome">A working, deployed API your frontend team can plug into immediately.</p>
+              <ul class="rate-offer__included">
+                <li>Authentication (signup, login, password reset)</li>
+                <li>Up to 5 core resources (CRUD)</li>
+                <li>Database design</li>
+                <li>API documentation (Swagger/Postman)</li>
+                <li>Deployment with CI/CD</li>
+              </ul>
+              <dl class="rate-offer__meta">
+                <div><dt>Bonus</dt><dd>Postman collection your team can use immediately.</dd></div>
+                <div><dt>Guarantee</dt><dd>30-day bug warranty on delivered features, fixed free.</dd></div>
+              </dl>
+            </article>
+
+            <article class="rate-offer rate-offer--full reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">A4</span>
+                  <h3 class="rate-offer__title">MVP Backend in 30 Days</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">From ₦500,000</span>
+                  <span class="rate-offer__price-range">Starter tier</span>
+                </div>
+              </header>
+              <p class="rate-offer__for">For startups and business owners turning an idea into a first working product.</p>
+              <p class="rate-offer__outcome">A production-ready backend for your MVP, launched in 30 days.</p>
+
+              <div class="rate-compare">
+                <div class="rate-compare__col">
+                  <h4 class="rate-compare__title">Starter</h4>
+                  <p class="rate-compare__for">Admin systems, booking apps</p>
+                  <p class="rate-compare__price">From ₦500,000</p>
+                  <ul class="rate-compare__features">
+                    <li>Auth + roles &amp; permissions</li>
+                    <li>Up to 8 core features</li>
+                    <li>Basic admin analytics endpoints</li>
+                    <li>30-day bug warranty</li>
+                  </ul>
+                </div>
+                <div class="rate-compare__col rate-compare__col--featured">
+                  <h4 class="rate-compare__title">Growth</h4>
+                  <p class="rate-compare__for">E-commerce, SaaS MVPs</p>
+                  <p class="rate-compare__price">From ₦900,000</p>
+                  <ul class="rate-compare__features">
+                    <li>Auth + roles &amp; permissions</li>
+                    <li>Up to 15 core features</li>
+                    <li>Payment integration + subscriptions/billing</li>
+                    <li>Full admin analytics endpoints</li>
+                    <li>60-day bug warranty</li>
+                  </ul>
+                </div>
+              </div>
+
+              <dl class="rate-offer__meta">
+                <div><dt>Bonuses</dt><dd>Free Blueprint Session (worth ₦100,000); handover documentation + a 1-hour recorded walkthrough; 2 weeks of free post-launch support.</dd></div>
+                <div><dt>Guarantee</dt><dd>Milestone-based payments &mdash; you only pay for each stage after you've seen it working.</dd></div>
+                <div><dt>Availability</dt><dd>2 MVP builds per month.</dd></div>
+              </dl>
+            </article>
+
+            <article class="rate-offer reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">A5</span>
+                  <h3 class="rate-offer__title">Scale-Ready Platform Backend</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">From ₦1,200,000</span>
+                  <span class="rate-offer__price-range">Typical range ₦1.2M&ndash;₦4.5M</span>
+                </div>
+              </header>
+              <p class="rate-offer__for">For businesses building marketplaces, logistics apps, management systems, or thrift/savings platforms.</p>
+              <p class="rate-offer__outcome">A platform that handles many users, vendors, and transactions without breaking.</p>
+              <ul class="rate-offer__included">
+                <li>Multi-role system (admins, vendors, customers, riders, etc.)</li>
+                <li>Complex business logic (commissions, payouts, scheduling, tracking)</li>
+                <li>Payment + wallet integration</li>
+                <li>Notifications (email, SMS, push, WhatsApp)</li>
+                <li>Monitoring and error alerts</li>
+                <li>Load testing before launch</li>
+              </ul>
+              <dl class="rate-offer__meta">
+                <div><dt>Bonuses</dt><dd>1 month of free maintenance after launch; admin reporting endpoints; an architecture diagram for investors and future hires.</dd></div>
+                <div><dt>Guarantee</dt><dd>90-day bug warranty + milestone-based payments.</dd></div>
+              </dl>
+            </article>
+
+            <article class="rate-offer reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">A6</span>
+                  <h3 class="rate-offer__title">Bank-Grade Fintech Backend</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">From ₦5,000,000</span>
+                  <span class="rate-offer__price-range">Typical range ₦5M&ndash;₦20M</span>
+                </div>
+              </header>
+              <p class="rate-offer__for">For fintechs, microfinance banks, cooperatives, and lenders building wallets, lending, POS, or agency banking.</p>
+              <p class="rate-offer__outcome">A secure, compliant financial backend you can trust with customers' money.</p>
+              <ul class="rate-offer__included">
+                <li>Double-entry ledger system</li>
+                <li>KYC/KYB integration (BVN, NIN, CAC)</li>
+                <li>Transfers, wallets, loans, repayments, or POS flows (per scope)</li>
+                <li>Fraud checks and transaction limits</li>
+                <li>Full audit logging</li>
+                <li>Security hardening + penetration test preparation</li>
+              </ul>
+              <dl class="rate-offer__meta">
+                <div><dt>Bonuses</dt><dd>Reconciliation dashboard endpoints; security and architecture documentation for regulators and investors; 3 months of priority support.</dd></div>
+                <div><dt>Guarantee</dt><dd>90-day bug warranty on all delivered features + milestone-based payments.</dd></div>
+                <div><dt>Availability</dt><dd>Only 1 fintech build at a time, to protect quality.</dd></div>
+              </dl>
+            </article>
+
+            <article class="rate-offer rate-offer--custom reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">A7</span>
+                  <h3 class="rate-offer__title">Custom Infrastructure Partnership</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">Custom quote</span>
+                  <span class="rate-offer__price-range">Typically from ₦25,000,000</span>
+                </div>
+              </header>
+              <p class="rate-offer__for">For banks, payment companies, and enterprises needing core banking, payment switching, or BaaS infrastructure.</p>
+              <p class="rate-offer__outcome">Mission-critical financial infrastructure built by someone who understands scale &mdash; fully custom scope, phased delivery, dedicated team.</p>
+              <a class="rate-offer__cta" href="mailto:victorukeh1@gmail.com?subject=Blueprint%20Session%20%E2%80%94%20Custom%20Infrastructure">Book a Blueprint Session <span aria-hidden="true">&rarr;</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="track-b" class="chapter chapter--rates" data-mood="craft">
+        <div class="chapter__inner chapter__inner--rates">
+          <span class="chapter__eyebrow reveal">Track B</span>
+          <h2 class="chapter__title reveal reveal-delay-1">Full product delivery, done for you</h2>
+          <p class="chapter__lead reveal reveal-delay-2">
+            For business owners who want the whole product built. I assemble and lead the team &mdash; design, frontend, mobile, QA, DevOps &mdash; own the architecture, and deliver the finished product.
+          </p>
+          <p class="rate-callout reveal reveal-blur reveal-delay-2">
+            Why this costs more: you're not just paying for code. You're paying for one accountable person who hires, manages, reviews, and delivers, so you don't have to manage five freelancers yourself.
+          </p>
+
+          <div class="rate-offer-grid">
+            <article class="rate-offer reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">B1</span>
+                  <h3 class="rate-offer__title">Business Website in 14 Days</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">From ₦500,000</span>
+                  <span class="rate-offer__price-range">Typical range ₦500k&ndash;₦1.2M</span>
+                </div>
+              </header>
+              <p class="rate-offer__for">For small businesses that need a professional online presence.</p>
+              <p class="rate-offer__outcome">A fast, modern website that makes your business look credible and brings in enquiries.</p>
+              <ul class="rate-offer__included">
+                <li>Custom design (up to 6 pages)</li>
+                <li>Content management so you can edit your own content</li>
+                <li>WhatsApp/contact integration</li>
+                <li>Basic SEO setup</li>
+                <li>Hosting + domain setup</li>
+              </ul>
+              <dl class="rate-offer__meta">
+                <div><dt>Bonuses</dt><dd>Google Business Profile setup; 1 month of free updates.</dd></div>
+                <div><dt>Guarantee</dt><dd>Unlimited design revisions until you're happy, before development starts.</dd></div>
+              </dl>
+            </article>
+
+            <article class="rate-offer reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">B2</span>
+                  <h3 class="rate-offer__title">Idea-to-Launch Web MVP in 60 Days</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">From ₦1,500,000</span>
+                  <span class="rate-offer__price-range">Typical range ₦1.5M&ndash;₦4M</span>
+                </div>
+              </header>
+              <p class="rate-offer__for">For founders with an idea and no technical team.</p>
+              <p class="rate-offer__outcome">Go from idea to a live web app with real users in 60 days, without hiring a single developer yourself.</p>
+              <ul class="rate-offer__included">
+                <li>Product scoping + blueprint</li>
+                <li>UI/UX design</li>
+                <li>Frontend + backend development</li>
+                <li>Payment integration</li>
+                <li>Testing + deployment</li>
+                <li>Admin dashboard</li>
+              </ul>
+              <dl class="rate-offer__meta">
+                <div><dt>Bonuses</dt><dd>Free Blueprint Session (worth ₦150,000); launch checklist + analytics setup; 30 days of free post-launch support; investor-ready technical overview document.</dd></div>
+                <div><dt>Guarantee</dt><dd>Milestone payments + 60-day bug warranty.</dd></div>
+                <div><dt>Availability</dt><dd>1 full-product slot per month.</dd></div>
+              </dl>
+            </article>
+
+            <article class="rate-offer reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">B3</span>
+                  <h3 class="rate-offer__title">Web + Mobile Launch Package</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">From ₦3,000,000</span>
+                  <span class="rate-offer__price-range">Typical range ₦3M&ndash;₦8M</span>
+                </div>
+              </header>
+              <p class="rate-offer__for">For businesses that need both a web platform and a mobile app (Android + iOS).</p>
+              <p class="rate-offer__outcome">Your product in the app stores and on the web, launched together.</p>
+              <ul class="rate-offer__included">
+                <li>Everything in the Idea-to-Launch Web MVP, plus:</li>
+                <li>Cross-platform mobile app (Android + iOS)</li>
+                <li>Push notifications</li>
+                <li>App store submission handled for you</li>
+                <li>QA testing across devices</li>
+              </ul>
+              <dl class="rate-offer__meta">
+                <div><dt>Bonuses</dt><dd>App store listing copy + screenshots; 60 days of post-launch support.</dd></div>
+                <div><dt>Guarantee</dt><dd>Milestone payments + 90-day bug warranty.</dd></div>
+              </dl>
+            </article>
+
+            <article class="rate-offer reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">B4</span>
+                  <h3 class="rate-offer__title">Done-For-You Platform Build</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">From ₦6,000,000</span>
+                  <span class="rate-offer__price-range">Typical range ₦6M&ndash;₦18M</span>
+                </div>
+              </header>
+              <p class="rate-offer__for">For businesses building marketplaces, logistics platforms, school/hospital/property systems, or savings platforms.</p>
+              <p class="rate-offer__outcome">A complete, scalable platform with web, mobile, and admin, run by one accountable lead.</p>
+              <ul class="rate-offer__included">
+                <li>Everything in the Web + Mobile Launch Package, plus:</li>
+                <li>Multi-role systems (admins, vendors, customers, riders, etc.)</li>
+                <li>Scale-ready architecture</li>
+                <li>Monitoring, alerts, and load testing</li>
+                <li>Staff training session</li>
+              </ul>
+              <dl class="rate-offer__meta">
+                <div><dt>Bonuses</dt><dd>3 months of free maintenance; architecture and operations documentation; a priority support line.</dd></div>
+                <div><dt>Guarantee</dt><dd>Milestone payments + 90-day bug warranty.</dd></div>
+              </dl>
+            </article>
+
+            <article class="rate-offer reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">B5</span>
+                  <h3 class="rate-offer__title">Fintech Launch Program</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">From ₦20,000,000</span>
+                  <span class="rate-offer__price-range">Typical range ₦20M&ndash;₦60M</span>
+                </div>
+              </header>
+              <p class="rate-offer__for">For founders and institutions launching a wallet, lending, savings, or POS product.</p>
+              <p class="rate-offer__outcome">A complete, secure fintech product, from design to launch, built by someone who has done fintech at scale.</p>
+              <ul class="rate-offer__included">
+                <li>Everything in the Done-For-You Platform Build, plus:</li>
+                <li>Bank-grade backend</li>
+                <li>Compliance-ready design, KYC, audit trails</li>
+                <li>Security review before launch</li>
+                <li>Partner/bank API integrations</li>
+              </ul>
+              <dl class="rate-offer__meta">
+                <div><dt>Bonuses</dt><dd>Regulator and investor-ready technical documentation; 6 months of priority support; launch-week on-call support.</dd></div>
+                <div><dt>Guarantee</dt><dd>Milestone payments + 90-day bug warranty.</dd></div>
+                <div><dt>Availability</dt><dd>1 fintech program at a time.</dd></div>
+              </dl>
+            </article>
+
+            <article class="rate-offer rate-offer--custom reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">B6</span>
+                  <h3 class="rate-offer__title">Enterprise Product Partnership</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">Custom quote</span>
+                  <span class="rate-offer__price-range">Typically from ₦60,000,000</span>
+                </div>
+              </header>
+              <p class="rate-offer__for">For corporates and institutions with large, multi-phase projects, delivered in phases.</p>
+              <a class="rate-offer__cta" href="mailto:victorukeh1@gmail.com?subject=Blueprint%20Session%20%E2%80%94%20Enterprise%20Partnership">Book a Blueprint Session <span aria-hidden="true">&rarr;</span></a>
+            </article>
+
+            <article class="rate-offer reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">B7</span>
+                  <h3 class="rate-offer__title">Technical Project Lead</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">From ₦300,000/mo</span>
+                  <span class="rate-offer__price-range">₦300k&ndash;₦1.5M/mo, or 15&ndash;25% of project budget</span>
+                </div>
+              </header>
+              <p class="rate-offer__for">For businesses that already have developers but no one to lead them.</p>
+              <p class="rate-offer__outcome">Your existing team ships on time, with fewer bugs and a clear technical direction. Orchestration only &mdash; no hands-on build.</p>
+              <ul class="rate-offer__included">
+                <li>Sprint planning and task management</li>
+                <li>Code reviews and architecture decisions</li>
+                <li>Weekly status reports to leadership</li>
+                <li>Hiring support for new developers</li>
+              </ul>
+              <dl class="rate-offer__meta">
+                <div><dt>Guarantee</dt><dd>Month-to-month. Cancel anytime with 2 weeks' notice.</dd></div>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="track-c" class="chapter chapter--rates" data-mood="value">
+        <div class="chapter__inner chapter__inner--rates">
+          <span class="chapter__eyebrow reveal">Track C</span>
+          <h2 class="chapter__title reveal reveal-delay-1">Advisory &amp; ongoing support</h2>
+          <p class="chapter__lead reveal reveal-delay-2">
+            Lower-commitment ways to work together &mdash; scoping, second opinions, audits, and month-to-month care.
+          </p>
+
+          <div class="rate-offer-grid">
+            <article class="rate-offer rate-offer--featured reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">C1</span>
+                  <h3 class="rate-offer__title">The Blueprint Session</h3>
+                  <span class="rate-offer__badge">Main entry offer</span>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">₦50,000&ndash;₦200,000</span>
+                  <span class="rate-offer__price-range">Depending on project size</span>
+                </div>
+              </header>
+              <p class="rate-offer__outcome">Walk away knowing exactly what to build, how long it will take, and what it will cost.</p>
+              <ul class="rate-offer__included">
+                <li>60&ndash;90 minute session</li>
+                <li>Written project blueprint (features, tech stack, timeline, budget)</li>
+              </ul>
+              <dl class="rate-offer__meta">
+                <div><dt>Guarantee</dt><dd>100% of the fee is credited toward your project if you build with me.</dd></div>
+              </dl>
+              <a class="rate-offer__cta" href="mailto:victorukeh1@gmail.com?subject=Blueprint%20Session%20request">Book a Blueprint Session <span aria-hidden="true">&rarr;</span></a>
+            </article>
+
+            <article class="rate-offer rate-offer--custom reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">C2</span>
+                  <h3 class="rate-offer__title">Expert Call</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">₦30,000&ndash;₦80,000</span>
+                  <span class="rate-offer__price-range">per hour</span>
+                </div>
+              </header>
+              <p class="rate-offer__for">For a focused conversation on architecture, a decision, or a second opinion.</p>
+            </article>
+
+            <article class="rate-offer reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">C3</span>
+                  <h3 class="rate-offer__title">Code Health Check</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">From ₦150,000</span>
+                  <span class="rate-offer__price-range">Typical range ₦150k&ndash;₦1M</span>
+                </div>
+              </header>
+              <p class="rate-offer__outcome">Know exactly what's wrong with your codebase before it costs you customers.</p>
+              <ul class="rate-offer__included">
+                <li>Code, security, and performance audit</li>
+                <li>Prioritized fix list</li>
+              </ul>
+            </article>
+
+            <article class="rate-offer rate-offer--full reveal reveal-blur">
+              <header class="rate-offer__head">
+                <div class="rate-offer__heading">
+                  <span class="rate-offer__num">C4</span>
+                  <h3 class="rate-offer__title">Peace-of-Mind Care Plans</h3>
+                </div>
+                <div class="rate-offer__price">
+                  <span class="rate-offer__price-value">₦100k&ndash;₦800k/mo</span>
+                  <span class="rate-offer__price-range">Monthly maintenance</span>
+                </div>
+              </header>
+              <div class="rate-compare rate-compare--three">
+                <div class="rate-compare__col">
+                  <h4 class="rate-compare__title">Basic</h4>
+                  <p class="rate-compare__price">₦100,000/mo</p>
+                  <ul class="rate-compare__features">
+                    <li>Uptime monitoring &amp; security updates</li>
+                    <li>Bug fixes up to 5 hrs</li>
+                    <li>48-hr response time</li>
+                  </ul>
+                </div>
+                <div class="rate-compare__col rate-compare__col--featured">
+                  <h4 class="rate-compare__title">Standard</h4>
+                  <p class="rate-compare__price">₦300,000/mo</p>
+                  <ul class="rate-compare__features">
+                    <li>Uptime monitoring &amp; security updates</li>
+                    <li>Bug fixes up to 15 hrs</li>
+                    <li>24-hr response time</li>
+                    <li>Small feature updates</li>
+                    <li>Monthly performance report</li>
+                  </ul>
+                </div>
+                <div class="rate-compare__col">
+                  <h4 class="rate-compare__title">Premium</h4>
+                  <p class="rate-compare__price">₦800,000/mo</p>
+                  <ul class="rate-compare__features">
+                    <li>Uptime monitoring &amp; security updates</li>
+                    <li>Bug fixes up to 40 hrs</li>
+                    <li>4-hr response time</li>
+                    <li>Small feature updates</li>
+                    <li>Monthly performance report</li>
+                  </ul>
+                </div>
+              </div>
+              <dl class="rate-offer__meta">
+                <div><dt>Bonus</dt><dd>Pay 12 months upfront, get 2 months free.</dd></div>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="international" class="chapter chapter--rates" data-mood="value">
+        <div class="chapter__inner chapter__inner--rates">
+          <span class="chapter__eyebrow reveal">International pricing</span>
+          <h2 class="chapter__title reveal reveal-delay-1">USD starting points</h2>
+          <p class="chapter__lead reveal reveal-delay-2">
+            For clients outside Nigeria. Invoiced in USD unless we agree otherwise in writing.
+          </p>
+          <ul class="rate-intl reveal reveal-blur reveal-delay-2" role="list">
+            <li class="rate-intl__row"><span class="rate-intl__name">A3 &middot; Launch-Ready API Sprint</span><span class="rate-intl__price">$600</span></li>
+            <li class="rate-intl__row"><span class="rate-intl__name">A4 &middot; MVP Backend in 30 Days</span><span class="rate-intl__price">$1,500</span></li>
+            <li class="rate-intl__row"><span class="rate-intl__name">A5 &middot; Scale-Ready Platform Backend</span><span class="rate-intl__price">$4,000</span></li>
+            <li class="rate-intl__row"><span class="rate-intl__name">A6 &middot; Bank-Grade Fintech Backend</span><span class="rate-intl__price">$12,000</span></li>
+            <li class="rate-intl__row"><span class="rate-intl__name">B2 &middot; Idea-to-Launch Web MVP</span><span class="rate-intl__price">$5,000</span></li>
+            <li class="rate-intl__row"><span class="rate-intl__name">B3 &middot; Web + Mobile Launch Package</span><span class="rate-intl__price">$10,000</span></li>
+            <li class="rate-intl__row"><span class="rate-intl__name">B7 &middot; Technical Project Lead</span><span class="rate-intl__price">$1,000/mo</span></li>
+            <li class="rate-intl__row"><span class="rate-intl__name">C1 &middot; Blueprint Session</span><span class="rate-intl__price">$100&ndash;$300</span></li>
+            <li class="rate-intl__row"><span class="rate-intl__name">C2 &middot; Expert Call</span><span class="rate-intl__price">$50&ndash;$100/hr</span></li>
+            <li class="rate-intl__row"><span class="rate-intl__name">Hourly (general)</span><span class="rate-intl__price">$30&ndash;$60/hr</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="terms" class="chapter chapter--rates" data-mood="craft">
+        <div class="chapter__inner chapter__inner--rates">
+          <span class="chapter__eyebrow reveal">Terms</span>
+          <h2 class="chapter__title reveal reveal-delay-1">How engagements work</h2>
+          <ul class="rate-terms reveal reveal-blur reveal-delay-2" role="list">
+            <li><strong>Payment:</strong> small tasks are 50&ndash;100% upfront; projects run on milestones (e.g. 40% / 30% / 30%).</li>
+            <li><strong>Not included:</strong> hosting, domains, and third-party API fees (SMS, KYC, payment gateway charges) are paid by the client.</li>
+            <li><strong>Scope changes:</strong> priced separately via a change request.</li>
+            <li><strong>Rush delivery:</strong> +25&ndash;50%.</li>
+            <li><strong>Long projects (3+ months):</strong> prices may be adjusted for major exchange-rate changes affecting dollar-based costs.</li>
+            <li><strong>Prices shown are starting points.</strong> Final quote depends on scope, confirmed after the Blueprint Session.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="chapter chapter--rates-cta" data-mood="invite">
+        <div class="chapter__inner">
+          <span class="chapter__eyebrow reveal">Next step</span>
+          <h2 class="chapter__title reveal reveal-delay-1">Not sure which offer fits?</h2>
+          <p class="chapter__lead reveal reveal-delay-2">
+            Start with a Blueprint Session. In 60&ndash;90 minutes you'll know exactly what to build, how long it takes, and what it costs &mdash; and the fee is credited toward your project if you build with me.
+          </p>
+          <p class="chapter__cta reveal">
+            <a class="btn btn-primary" href="mailto:victorukeh1@gmail.com?subject=Blueprint%20Session%20request">Book a Blueprint Session <span aria-hidden="true">&rarr;</span></a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Victor Ukeh</p>
+        <p class="footer-legal">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">·</span>
+          <a href="email-templates.html">Email templates</a>
+          <span aria-hidden="true">·</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="vendor/aurora.js" defer></script>
+    <script src="vendor/ambient.js" defer></script>
+    <script src="i18n.js" defer></script>
+    <script src="i18n.fr-es-de.js" defer></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>

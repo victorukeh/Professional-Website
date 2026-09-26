@@ -57,6 +57,7 @@
         docContact: "Contact · Victor Ukeh",
         docChecklist: "Checklist · Victor Ukeh",
         docIntro: "Intro video · Victor Ukeh",
+        docRates: "Rates · Victor Ukeh",
       },
       workPage: {
         breadcrumbCurrent: "Work",
@@ -403,6 +404,7 @@
         docContact: "Contact · Victor Ukeh",
         docChecklist: "Checklist · Victor Ukeh",
         docIntro: "Intro video · Victor Ukeh",
+        docRates: "Rates · Victor Ukeh",
       },
       workPage: {
         breadcrumbCurrent: "Work",

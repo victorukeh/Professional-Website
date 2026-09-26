@@ -42,7 +42,8 @@
     "docServices": "Services · Victor Ukeh",
     "docContact": "Contact · Victor Ukeh",
     "docChecklist": "Checklist · Victor Ukeh",
-    "docIntro": "Vidéo d’intro · Victor Ukeh"
+    "docIntro": "Vidéo d’intro · Victor Ukeh",
+    "docRates": "Tarifs · Victor Ukeh"
   },
   "workPage": {
     "breadcrumbCurrent": "Réalisations",
@@ -355,7 +356,8 @@
     "docServices": "Servicios · Victor Ukeh",
     "docContact": "Contacto · Victor Ukeh",
     "docChecklist": "Checklist · Victor Ukeh",
-    "docIntro": "Vídeo de intro · Victor Ukeh"
+    "docIntro": "Vídeo de intro · Victor Ukeh",
+    "docRates": "Precios · Victor Ukeh"
   },
   "workPage": {
     "breadcrumbCurrent": "Trabajos",
@@ -668,7 +670,8 @@
     "docServices": "Leistungen · Victor Ukeh",
     "docContact": "Kontakt · Victor Ukeh",
     "docChecklist": "Checkliste · Victor Ukeh",
-    "docIntro": "Intro-Video · Victor Ukeh"
+    "docIntro": "Intro-Video · Victor Ukeh",
+    "docRates": "Preise · Victor Ukeh"
   },
   "workPage": {
     "breadcrumbCurrent": "Arbeiten",
